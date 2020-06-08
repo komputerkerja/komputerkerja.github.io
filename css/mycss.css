@@ -67,7 +67,10 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
 }
-
+.flex-auto{
+    display: flex;
+    justify-content: space-between;
+}
 
 /* Rounded */
     .rounded-10{
@@ -118,6 +121,10 @@ body{
 
     }
 
+    .bg-light-grey{
+        background-color: rgb(194, 194, 194);
+    }
+
     .primary{
         color: rgb(241, 130, 26);
     }
@@ -155,7 +162,9 @@ body{
     }
 /* Colors */
 
-
+m-auto{
+    margin: auto;
+}
 .mt-20{
     margin-top: 20px;
 }
@@ -264,9 +273,50 @@ td{
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 6px;
+    font-size: 12px;
+}
+.btn-primary{
+    height: 30px;
+    width: 100%;
+    background-color: rgba(245, 137, 36);
+    border-radius: 6px;
+    font-size: 12px;
+}
+.btn-success{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(29, 230, 96);
+    border-radius: 6px;
+    font-size: 12px;
+}
+.btn-danger{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(228, 31, 57);
+    border-radius: 6px;
+    font-size: 12px;
+}.btn-done{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(82, 85, 226);
+    border-radius: 6px;
+    font-size: 12px;
+}
+.btn-dark-3{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(35, 35, 36);
+    border-radius: 6px;
+    font-size: 12px;
 }
 
 
+.w100{
+    width: 100%;
+}
 
 
-
+.container-mini-form{
+    padding: 20px;
+    width: 50%;
+}
