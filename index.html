@@ -3,13 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mystyle.css">
-    <title>My first Website on Github</title>
+    <link rel="stylesheet" href="css/mycss.css">
 </head>
 <body>
 
-    <h1>Cool this git hub so cool!</h1>
+    <div class="container mt-10">        
 
+        <!-- Navigation Bar -->
+        <div class="navbar mb-15 bg-dark-2 light-3 rounded-6">
+            <div class="nav-title">
+                <span class="logo dark">Sahabat Xilva</span>
+            </div>
+            <div class="nav-menu">
+                <ul class="form-group flex-row">
+                    <li class="form-list rounded-8 bg-done"><a class="light-3" href="#">Home</a></li>
+                    <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">Book Library</a></li>
+                    <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">Another API</a></li>
+                    <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+
+
+        <div class="container">
+            <h3 class="mb-10">Input Form</h3>
+            <p class="justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod temporibus dignissimos illo delectus. Molestiae voluptates ut nisi nesciunt reprehenderit vitae quisquam, molestias unde ea, provident cum rem sapiente sit pariatur!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod temporibus dignissimos illo delectus. Molestiae voluptates ut nisi nesciunt reprehenderit vitae quisquam, molestias unde ea, provident cum rem sapiente sit pariatur!</p>
+        </div>
+        <!-- User form -->
+        <div class="container mt-20">
+            <form action="">
+                <div class="form-list">
+                    <label for="username">Username</label>
+                    <input class="rounded-7 pl-8 pr-8" type="text" id="username" name="username" required autofocus>
+                </div>
+                <div class="form-list">
+                    <label for="contact">Contact</label>
+                    <input class="rounded-7 pl-8 pr-8" type="text" id="contact" name="contact"  required>
+                </div>
+                <div class="form-list">
+                    <label for="email">Email</label>
+                    <input class="rounded-7 pl-8 pr-8" type="email" id="email" name="email"  required>
+                </div>
+                <div class="form-list">
+                    <label for="salary">Salary</label>
+                    <input class="rounded-7 pl-8 pr-8" type="number" id="salary" name="salary"  required>
+                </div>
+            </form>
+        </div>
+        <!-- User form -->
+
+        <!-- Data Table -->
+        <div class="container mt-20 flex-row">
+            <table>
+                <thead class="bg-primary light-3">
+                    <tr>
+                        <th class="pb-8 pt-8">User name</th>
+                        <th class="pb-8 pt-8">Contact</th>
+                        <th class="pb-8 pt-8">Email</th>
+                        <th class="pb-8 pt-8">Salary</th>
+                        <th class="pb-8 pt-8">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ronal Latupeirissa</td>
+                        <td>08521457550+</td>
+                        <td>ronallatupeirissa@gmail.com</td>
+                        <td>250000000</td>
+                        <td class="form-list" ><a class="btn-min light-3 bg-danger" href="#">x</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 
 <script src="js/main.js"></script>
 </body>

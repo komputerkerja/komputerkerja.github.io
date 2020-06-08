@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav-title{
+    margin: 10px;
+}
+
+.nav-menu{
+ 
+}
+
+
+
+
+
+.form-group{
+    list-style: none;
+}
+
+
+
+
+.form-list{
+    padding: 10px;
+    width: 100px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.form-list a{
+    text-decoration: none;
+}
+.form-list:hover{
+    opacity: 90%;
+}
+
+
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+/* Rounded */
+    .rounded-10{
+        border-radius: 10px;
+    }
+    .rounded-9{
+        border-radius: 9px;
+    }
+    .rounded-8{
+        border-radius: 8px;
+    }
+    .rounded-7{
+        border-radius: 7px;
+    }
+    .rounded-6{
+        border-radius: 6px;
+    }
+    .rounded-5{
+        border-radius: 5px;
+    }
+/* Rounded */
+
+
+
+
+/* Colors */
+    .bg-primary{
+        background-color: rgba(245, 137, 36);
+    }
+    .bg-danger{
+        background-color: rgb(228, 31, 57);
+    }
+    .bg-success{
+        background-color: rgb(29, 230, 96);
+    }
+    .bg-done{
+        background-color: rgb(82, 85, 226);
+    }
+
+    .bg-dark-1{
+        background-color: rgb(56, 56, 58);
+    }
+    .bg-dark-2{
+        background-color: rgb(43, 43, 44);
+    }
+    .bg-dark-3{
+        background-color: rgb(35, 35, 36);
+
+    }
+
+    .primary{
+        color: rgb(241, 130, 26);
+    }
+    .danger{
+        color: rgb(228, 31, 57);
+    }
+    .success{
+        color: rgb(29, 230, 96);
+    }
+    .done{
+        color: rgb(73, 73, 224);
+    }
+
+
+
+
+    .light-1{
+        color: rgb(230, 251, 255);
+    }
+    .light-2{
+        color: rgb(241, 248, 250);
+    }
+    .light-3{
+        color: #fff;
+    }
+
+    .dark-1{
+        color: rgb(56, 56, 58);
+    }
+    .dark-2{
+        color: rgb(43, 43, 44);
+    }
+    .dark-3{
+        color: rgb(35, 35, 36);
+    }
+/* Colors */
+
+
+.mt-20{
+    margin-top: 20px;
+}
+.mt-15{
+    margin-top: 15px;
+}
+.mt-10{
+    margin-top: 10px;
+}
+.mt-8{
+    margin-top: 8px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-15{
+    margin-bottom: 15px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+/*  */
+.pt-20{
+    padding-top: 20px;
+}
+.pt-15{
+    padding-top: 15px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+.pt-8{
+    padding-top: 8px;
+}
+.pb-20{
+    padding-bottom: 20px;
+}
+.pb-15{
+    padding-bottom: 15px;
+}
+.pb-10{
+    padding-bottom: 10px;
+}
+.pb-8{
+   padding-bottom: 8px;
+}
+/*  */
+.pl-20{
+    padding-left: 20px;
+}
+.pl-15{
+    padding-left: 15px;
+}
+.pl-10{
+    padding-left: 10px;
+}
+.pl-8{
+    padding-left: 8px;
+}
+.pr-20{
+    padding-right: 20px;
+}
+.pr-15{
+    padding-right: 15px;
+}
+.pr-10{
+    padding-right: 10px;
+}
+.pr-8{
+   padding-right: 8px;
+}
+/*  */
+.logo{
+    font-style: italic;
+    font-size: 20px;
+}
+.justify{
+    text-align: justify;
+}
+
+.ml-0{
+    margin-left: 0;
+}
+
+table{
+    border: 10x solid black;
+}
+
+th{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+td{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+
+.btn-min{
+    height: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 6px;
+}
+
+
+
+
+
