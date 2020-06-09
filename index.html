@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mycss.css">
 </head>
-<body>
+<body onresize="resizeFunc()" onload="loadFunc()">
 
         
 
         <!-- Navigation Bar -->
-        <div class="navbar mb-15 bg-dark-2 light-3 rounded-6">
+        <div class="navbar mb-15 bg-dark-2 light-3">
             <div class="nav-title">
                 <span class="logo dark">Sahabat Xilva</span>
             </div>
+            <div class="base-menu-icon"><div class="menu-icon bg-light-grey"></div><div class="menu-icon bg-light-grey"></div><div class="menu-icon bg-light-grey"></div></div>
             <div class="nav-menu">
                 <ul class="form-group flex-row">
-                    <li class="form-list rounded-8 bg-done"><a class="light-3" href="#">Home</a></li>
+                    <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">Home</a></li>
                     <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">Book Library</a></li>
                     <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">Another API</a></li>
                     <li class="form-list rounded-8 bg-primary"><a class="light-3" href="#">About Me</a></li>
@@ -34,7 +35,7 @@
         <div class="container mt-20">
             <form action="" class="rounded-10 container-mini-form flex-col container bg-light-grey">
               
-                    <label for="username">Username</label>
+                    <label for="username">User Name</label>
                     <input class="rounded-7 pl-8 pr-8" type="text" id="username" name="username" required autofocus>
           
                     <label for="contact">Contact</label>
@@ -46,7 +47,7 @@
                     <label for="salary">Salary</label>
                     <input class="rounded-7 pl-8 pr-8" type="number" id="salary" name="salary"  required>
               
-                <button type="submit" class="btn-dark-3 rounded-10 mt-20 light-3">Add</button>
+                <button type="submit" class="btn bg-dark-3 light-1"><b>ADD</b></button>
             </form>
         </div>
         <!-- User form -->
@@ -69,7 +70,7 @@
                         <td>08521457550+</td>
                         <td>ronallatupeirissa@gmail.com</td>
                         <td>250000000</td>
-                        <td class="form-list" ><a class="btn-min light-3 bg-danger" href="#">x</a></td>
+                        <td><a class="btn-min light-3 bg-danger" href="#">x</a></td>
                     </tr>
                 </tbody>
             </table>
