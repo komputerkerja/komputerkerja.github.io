@@ -258,13 +258,13 @@ m-auto{
     border-collapse: collapse;    
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 200px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 15);
 }
 .content-table thead tr{
-    background-color: #009879;
+    background-color: rgb(56, 56, 58);
     color: #fff;
     text-align: left;
     font-weight: bold;
@@ -280,11 +280,11 @@ m-auto{
     background-color: #f3f3f3;
 }
 .content-table tbody tr:last-of-type{
-    border-bottom: 20px solid #009879;
+    border-bottom: 20px solid rgb(56, 56, 58);
 }
 .content-table tbody tr.active-row{
     font-weight: bold;
-    color: #009879;
+    color: rgb(56, 56, 58);
 }
 
 

@@ -12,27 +12,22 @@ btnAdd.addEventListener('click',function(e){
 });
 
 
-function connectDb(){
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET','data/db.json',true);
-    xhr.send();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4 && xhr.status == 200){
-            let data = JSON.parse(xhr.responseText);
-            let list = "";
-            for(let i = 0; i < data.length; i++){
-                list += `<tr>
-                            <td>${data[i]["username"]}</td>
-                            <td>${data[i]["contact"]}</td>
-                            <td>${data[i]["email"]}</td>
-                            <td>${data[i]["salary"]}</td>
-                            <td><a class="btn-min light-3 bg-danger" href="#">x</a></td>
-                        </tr>`;
-            }
-            datalist.innerHTML = list;
-        }
-    }
-    
+
+
+async function connectDb(){
+    const xhr = await fetch('data/db.json').catch(err=>console.log(err));
+    const result = await xhr.json();
+    let list = '';
+        result.forEach((e)=>{
+            list += `<tr>
+                <td>${e.username}</td>
+                <td>${e.contact}</td>
+                <td>${e.email}</td>
+                <td>${e.salary}</td>
+                <td><button class="btn btn-min bg-danger light-3">x</button></td>
+            </tr>`
+        });
+    datalist.innerHTML=list;
 }
 
     
