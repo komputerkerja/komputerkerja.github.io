@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    font-size: 20px;
+}
+
+.container-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.container-nav nav{
+    position: relative;
+    background-color: rgb(158, 93, 212);
+    display: flex;
+    height: 55px;
+}
+
+.container-nav nav .spanmenu {
+    display: none;
+    transition: 0.2s;
+}
+
+.container-nav nav input[type=checkbox]{
+    display: none;
+}
+
+.container-nav nav .spanmenu span{
+    background-color: white;
+    width: 30px;height: 1px;
+    transition: 0.2s;
+}
+
+.container-nav nav input[type=checkbox]:hover ~ .spanmenu{
+    opacity: 0.8;
+}
+
+.container-nav nav .title-icon{
+    position: absolute;
+    color: white;
+    left: 2%;
+}
+
+.container-nav nav .title-icon i{
+    display: inline-block;
+    height: 55px;
+    line-height: 55px;
+}
+
+.container-nav nav ul{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    right: 2%;
+    transition: 0.2s;
+}
+
+.container-nav nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    height: 55px;
+    width: 80px;
+    line-height: 55px;
+    text-align: center;
+    padding: 0 5px;
+    transition: 0.2s;
+}
+
+.container-nav nav ul li a:hover{
+    background-color: rgb(181, 132, 221);
+}
+
+
+
+
+
+@media screen and (max-width : 550px){
+    
+    .container-nav nav input[type=checkbox]{
+        position: absolute;right: 2%;width: 30px;top: 15px;
+        height: 25px;
+        z-index: 2;
+        opacity: 0;
+        display: flex
+    }
+
+    .container-nav nav .spanmenu {
+        position: absolute;right: 2%;width: 30px;top: 15px;
+        height: 25px;display: flex;justify-content: space-evenly;
+        flex-direction: column;z-index: 1;
+    }
+
+    .container-nav nav ul{
+        position: fixed;
+        top: -100px;
+        right: 0;
+        background-color: rgb(158, 93, 212);
+        width: 50px;
+        height: 50px;
+        border-radius: 0 50% 0 50%;
+        flex-direction: column;
+        padding-left: 80px;
+        padding-top: 90px;
+        justify-content: center;
+        overflow: hidden;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    .container-nav nav ul li a{
+        border-radius: 10px;
+        font-size: 1px;
+    }
+
+    .container-nav nav input[type=checkbox]:checked ~ ul{
+        position: fixed;
+        top: -120px;
+        right: -280px;
+        background-color: rgb(158, 93, 212);
+        width: 400px;
+        height: 400px;
+        border-radius: 50% 50% 0 50%;
+        flex-direction: column;
+        padding-left: 80px;
+        padding-top: 90px;
+        justify-content: center;
+        opacity: 1;
+        /* z-index: 1; */
+    }
+
+    .container-nav nav input[type=checkbox]:checked ~ ul li a{
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .container-nav nav input[type=checkbox]:checked ~ .spanmenu span:nth-child(1){
+        transform: rotate(40deg);
+        width: 20px;
+    }
+    .container-nav nav input[type=checkbox]:checked ~ .spanmenu span:nth-child(2){
+        display: none;
+    }
+    .container-nav nav input[type=checkbox]:checked ~ .spanmenu span:nth-child(3){
+        transform: rotate(-40deg);
+        width: 20px;
+        margin-top: -13px;
+    }
+}
