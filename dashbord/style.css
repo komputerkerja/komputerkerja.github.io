@@ -124,3 +124,18 @@ width: 80px;
     color: rgb(76, 110, 221);
     text-shadow: 1px 1px 1px rgba(78, 77, 77,0.5);
 }
+
+
+.data{
+    position: relative;
+}
+
+@media screen and (max-height: 700px){
+    .container-body .mainbar ul:nth-child(3) li{
+        padding: 10px 0;
+    }
+    .container-body .mainbar ul:nth-child(2) li a{
+        padding: 10px 0;
+    }
+}
+
