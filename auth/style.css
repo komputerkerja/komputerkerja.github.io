@@ -25,7 +25,7 @@ section:nth-child(1) {
     background-color: rgb(41, 91, 197);
 }
 section:nth-child(2) {
-    transform: translateX(100%);
+    transform: translateX(-100%);
     background-color: rgb(219, 61, 40);
     opacity: 0;
 }
