@@ -46,7 +46,7 @@ section:nth-child(3) {
 
 nav {
     position: fixed;
-    right: 8px;
+    left: 8px;
     top: 8px;
 }
 nav ul {
