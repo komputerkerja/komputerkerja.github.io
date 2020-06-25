@@ -4,6 +4,7 @@ const forgot = document.querySelector('nav ul li:nth-child(3)');
 const frmlogin = document.querySelector('section:nth-child(2)');
 const frmregist = document.querySelector('section:nth-child(3)');
 const frmforgot = document.querySelector('section:nth-child(4)');
+const viewP = document.querySelectorAll('form .input-group .password');
 
 login.addEventListener('click',()=>{
     login.classList.add('active');
@@ -33,3 +34,13 @@ forgot.addEventListener('click',()=>{
     frmforgot.classList.add('form-show');
 });
 
+viewP.forEach((e)=>{
+    e.addEventListener('mousedown', ()=>{
+        let pElement = e.parentElement.children[0];
+        pElement.type = 'text';
+    });
+    e.addEventListener('mouseup', ()=>{
+        let pElement = e.parentElement.children[0];
+        pElement.type = 'password';
+    });
+});

@@ -14,13 +14,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /* Menu Toggle */
 nav {
     position: fixed;
@@ -154,19 +147,65 @@ section:nth-child(4){
 
 
 /* User Input Forms */
+section h2 {
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px black;
+}
+form {
+    padding: 15px;
+    background-color: rgb(29, 47, 65);
+    width: 80vw;
+    max-width: 300px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+form .input-group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+form .input-group label{
+    order: 1;
+}
+form .input-group input{
+    order: 2;
+    display: block;
+    position: relative;
+    padding: 3px 0;
+    font-size: 16px;
+    color: #101820FF;
+}
 input[type=submit]{
     display: block;
     position: relative;
-    width: 100%;
+    margin-top: 20px;
     padding: 5px;
     background-color: #FEE715FF;
-    color: #101820FF;
     font-size: 16px;
     font-weight: bold;
     border: none;
+    order: 3;
 }
 input[type=submit]:hover{
-    background-color: greenyellow;
+    background-color: rgb(253, 241, 132);
+    color: #000;
+}
+form .input-group .password::after {
+    content: 'View';
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 15px;
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    z-index: 2;
+    background-color: #101820FF;
+    border-radius: 12%;
+    cursor: pointer;
 }
 /* End of User Input Forms */
 
@@ -177,6 +216,17 @@ input[type=submit]:hover{
 
 /* Media Screen */
 @media screen and (max-width : 600px) {
+    body::before {
+        content: '';
+        position: absolute;
+        height: 100vh;
+        width: calc(100vw - 80vw);
+        top: 0;
+        right: 0;
+        background-color: #FEE715FF;
+        border-radius: 0;
+    }
+
     nav .menu-bar {
         position: absolute;
         width: 30px;
@@ -210,11 +260,14 @@ input[type=submit]:hover{
         margin: 0 0;
     }
     nav input:checked ~ ul{
-        width: 140px;
-        height: 150px;
-        padding: 5px;
+        width: auto;
+        height: auto;
+        padding: 15px 25px;
         border-radius: 10px;
         border: 1px solid rgb(238, 237, 237);
+    }
+    nav input:checked ~ ul li{
+        margin: 10px 0;
     }
 
     nav input:checked ~ .menu-bar span{
@@ -223,11 +276,11 @@ input[type=submit]:hover{
         height: 4px;
     }
     nav input:checked ~ .menu-bar span:nth-child(1){
-        transform: rotate(400deg) translate(3px,-3px);
+        transform: rotate(400deg) translate(3.5px,-3px);
         z-index: 5;
     }
     nav input:checked ~ .menu-bar span:nth-child(2){
-        transform: rotate(500deg) translate(-2px,-2px);
+        transform: rotate(500deg) translate(-3px,-2.5px);
         z-index: 5;
     }
     nav input:checked ~ .menu-bar span:nth-child(3){
