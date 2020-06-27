@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <title>MyForms</title>
+</head>
+<body>
+    
+
+
+
+
+
+    <nav>
+        <input type="checkbox" id="menu">
+        <label for="menu"></label>
+        <div class="menu-bar"><span></span><span></span><span></span></div>
+        <ul>
+            <li>Login</li>
+            <li>Registrasi</li>
+            <li>Lupa Password</li>
+        </ul>
+    </nav>
+
+    <!-- Login -->
+    <section>
+        <h2>Login</h2>
+        <form action="">
+            <div class="input-group">
+                <input type="email" name="login-email" id="login-email" required>
+                <label for="login-email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="login-password" id="login-password" required>
+                <label for="login-password">Password</label>
+                <div class="password"></div>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Masuk" name="login-submit" id="login-submit" required>
+            </div>
+        </form>
+    </section>
+
+    <!-- Registrasi -->
+    <section>
+        <h2>Registrasi</h2>
+        <form action="">
+            <div class="input-group">
+                <input type="text" name="regist-user" id="regist-user" required>
+                <label for="regist-user">Nama Lengkap</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="regist-email" id="regist-email" required>
+                <label for="regist-email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="regist-password1" id="regist-password1" required>
+                <label  for="regist-password">Password</label>
+                <div class="password"></div>
+            </div>
+            <div class="input-group">
+                <input type="password" name="regist-password2" id="regist-password2" required>
+                <label  for="regist-password2">Konfirmasi Password</label>
+                <div class="password"></div>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Kirim" name="regist-submit" id="regist-submit">
+            </div>
+        </form>
+    </section>
+    
+    <section>
+        <h2>Lupa Password</h2>
+        <form action="">
+            <div class="input-group">
+                <input type="text" name="forgot-user" id="forgot-user" required>
+                <label for="forgot-user">Nama Lengkap</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="forgot-email" id="forgot-email" required>
+                <label for="forgot-email">Email</label>
+            </div>
+            <div clas
+            <div class="input-group">
+                <input type="submit" value="Kirim" name="forgot-submit" id="forgot-submit" required>
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+
+    <script src="auth.js"></script>
+</body>
+</html>
