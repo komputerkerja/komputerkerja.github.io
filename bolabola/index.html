@@ -8,7 +8,7 @@
 </head>
 <body>
     
-<div class="container">
+<div class="container" >
     <div id="test" class="cric cric1"></div>
     <div class="cric cric2"></div>
     <div class="cric cric3"></div>
@@ -26,5 +26,13 @@
     </svg> 
 </div>
 
+
+<script src="jquery.js"></script>
+<script src="jqueryUI.js"></script>
+<script>
+    $(function(){
+        $(".container .cric").draggable();
+    })
+</script>
 </body>
 </html>
