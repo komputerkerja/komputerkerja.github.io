@@ -54,6 +54,7 @@ nav ul {
   cursor: pointer;
   border-top: 1px solid rgba(255, 255, 255, 0.507);
   border-radius: 10px 10px 0 0;
+  transition: 0.2s;
 }
 nav ul.transaksi {
   z-index: 3;
@@ -68,7 +69,9 @@ nav ul.laporan {
   transform: translateY(50px);
 }
 .offset-menu {
-  z-index: 100 !important;
+  transform: translate(0 , 0)!important;
+  z-index: 10 !important;
+  transition: all 0.2s !important;
 }
 
 
