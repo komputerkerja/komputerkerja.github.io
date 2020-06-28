@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MyiConss</title>
+</head>
+<body>
+    
+<div class="container">
+    <div id="test" class="cric cric1"></div>
+    <div class="cric cric2"></div>
+    <div class="cric cric3"></div>
+    <div class="cric cric4"></div>
+    <svg>
+        <filter id="gooey">
+            <feGaussianBlurr in="SourceGraphic" stdDeviation="10"/>
+            <feColorMatrix values="
+            1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 20 -10
+            "/>
+        </filter>
+    </svg> 
+</div>
+
+</body>
+</html>
