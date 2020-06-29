@@ -32,7 +32,8 @@
     border-radius: 15px;
     transform: translate(5%,30%);
     color: white;
-    mix-blend-mode: multiply;
+    --moz-mix-blend-mode: multiply;	
+    --webkit-mix-blend-mode: multiply;
 }
 
 
