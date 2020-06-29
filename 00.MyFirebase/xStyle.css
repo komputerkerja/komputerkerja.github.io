@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    --webkit-justify-content: center;
+    --webkit-align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+}
+
+.main-container{
+    background-color: rgb(85, 60, 195);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .main-form{
+    padding: 10px 5px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .main-form .title{
+    color: #fff;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.main-container .main-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.main-container .main-form form .message{
+    background-color: rgba(98, 251, 51, 0.767);
+    color: white;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.main-container .main-form form .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-container .main-form form .form-group label{
+    color: rgb(204, 198, 241);
+}
+.main-container .main-form form .form-group input{
+    padding: 3px 0 ;
+    font-size: 16px;
+}
+
+.main-container .main-form form .form-group input[type=submit]{
+    margin-top: 20px;    
+    background-color: rgb(255, 113, 47);
+    color: white;
+    border: none;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.main-container .main-form form .form-group input[type=submit]:hover{
+    background-color: rgb(255, 173, 134);
+}
+
+.main-container .main-table{
+    padding: 10px 5px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    
+    border-collapse: collapse;
+    background-color: rgb(218, 240, 255);
+    --webkit-width: 100%;
+    text-align: left;
+    transition: 0.2s;
+}
+th,td{
+    padding: 5px 8px;
+    border-bottom: 1px solid rgba(163, 160, 160, 0.692);
+}
+th{
+    background-color: rgb(65, 133, 223);
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width:600px){
+    table {
+        --webkit-width: 100vw;
+        --moz-width: 100vw;
+        text-align: center;
+        font-size: 80%;
+    }
+    th,td{
+        padding: 8px;
+        max-width: 15vw;
+    }      
+}
+
+
