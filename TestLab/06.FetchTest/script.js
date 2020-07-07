@@ -19,16 +19,23 @@ const dataRequest       = 'http://www.omdbapi.com/?apikey='+ apiKeyPublic +'&'+ 
 
 const button = document.getElementById('button');
 button.addEventListener('click' , async () => {
+    console.log('tombol ditekan');
+
     let input = document.getElementById('input');input = input.value;input = dataRequestFree + input;
     let hasil = await fetch(input).then(res=>res.json());
     hasil = (hasil.Response === "True" ? hasil.Search : 'Not Found');
+
+    console.log('mulai pencaharian');
+
     if(hasil !== 'Not Found') buatTampilan(hasil);
+
+    console.log('hasil pencaharian');
 });
 
 // Poster,Title,Type,Year,imdbID
 function buatTampilan(data){
     let list = ``;
-    let hasil = document.querySelector('.hasil');
+    let hasil = document.querySelector('.hasil');hasil.innerHTML = '';
      data.forEach(e=>{
         list = `
             <div class="card">

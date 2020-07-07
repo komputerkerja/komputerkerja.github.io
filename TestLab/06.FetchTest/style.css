@@ -33,6 +33,9 @@ body{
     border: rgba(255, 255, 255, 0.336) 1px solid;
     border-radius: 10px;
     margin: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
 }
 
 .card img{
