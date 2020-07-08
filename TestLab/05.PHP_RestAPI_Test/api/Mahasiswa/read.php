@@ -21,12 +21,12 @@
 
         foreach($mahasiswa as $row):
             $filedArray = array(
-                'dbid'=>$row['id'],
-                'dbnama'=>$row['nama'],
-                'dbnrp'=>$row['nrp'],
-                'dbemail'=>$row['email'],
-                'dbjurusan'=>$row['jurusan'],
-                'dbgambar'=>$row['gambar']
+                'id'=>$row['id'],
+                'nama'=>$row['nama'],
+                'nrp'=>$row['nrp'],
+                'email'=>$row['email'],
+                'jurusan'=>$row['jurusan'],
+                'gambar'=>$row['gambar']
             );
         array_push($emptyArray,$filedArray);
         endforeach;
