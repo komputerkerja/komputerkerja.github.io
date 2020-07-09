@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    line-height: 1.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 95%;
+}
+
+.container form{
+    width: 100%;
+    overflow-x: hidden;
+    
+}
+
+.container form .form-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid rgba(128, 128, 128, 0.377);
+    margin: 15px 0;
+    padding: 15px 0;
+}
+
+
+
+.form-col .form-list{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.form-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-row .form-list{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    justify-content: flex-end;
+    margin: 0 3px;
+}
+
+label{
+    font-size: 15px;
+}
+input{
+    order: 1;
+    display: block;
+    font-size: 15px;
+    padding: 3px 0;
+    border: 1px solid rgba(128, 128, 128, 0.377);
+}
+
+input[type=button]{
+    margin-top: 15px;
+}
+
+.form-group .form-row .form-list:nth-child(4),
+.form-group .form-row .form-list:nth-child(5),
+.form-group .form-row .form-list:nth-child(2){
+    width: 80px;
+}
+
+.form-group .form-row .form-list:nth-child(3),
+.form-group .form-row .form-list:nth-child(6){
+    width: 130px;
+}

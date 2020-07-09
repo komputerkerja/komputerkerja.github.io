@@ -12,6 +12,7 @@ body{
     align-items: center;
 }
 
+
 .hasil{
     position: relative;
     width: 90vw;
@@ -87,4 +88,8 @@ a{
     border-radius: 50%;
     width: 40px;height: 50px;
     display: flex;justify-content: center;align-items: center;text-align: center;
+}
+
+h1 a{
+	color: #fff;
 }
