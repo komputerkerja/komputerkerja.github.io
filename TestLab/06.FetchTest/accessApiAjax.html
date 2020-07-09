@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 280px;
+            margin: 6px;
+        }
+        .form-group input{
+            order: 1;
+            display: block;
+            position: relative;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+        tbody{
+            cursor: pointer;
+        }
+        th{
+            background-color: rgb(240, 82, 9);
+            color: white;
+            font-size: 15px;
+        }
+        td{
+            font-size: 15px;
+            padding: 5px;
+        }
+    </style>
+    <title>MyIcons</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Acces API Using Ajax</h1>
+    <hr>
+    <form action="">
+        <input type="text" name="id" id="id" hidden>
+        <div class="form-group">
+            <input type="text" name="nama" id="nama">
+            <label for="nama">Nama</label>
+        </div>
+        <div class="form-group">
+            <input type="text" name="nrp" id="nrp">
+            <label for="nrp">NRP</label>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" id="email">
+            <label for="email">Email</label>   
+        </div>
+        <div class="form-group">
+            <input type="text" name="jurusan" id="jurusan">
+            <label for="jurusan">Jurusan</label>
+        </div>
+        <div class="form-group">
+            <input type="text" name="gambar" id="gambar">
+            <label for="gambar">Gambar</label>
+        </div>
+        <div class="form-group">
+            <input type="button" id="submit" name="submit" value="Add">
+        </div>
+    </form>
+    <hr>
+   
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NRP</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+                <th>Gambar</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const globalUrl = 'http://192.168.1.5:80/10. restAPI/06.testRestApiSendiri/api/Mahasiswa/';
+
+read(globalUrl + 'read.php');
+
+document.querySelector('tbody').addEventListener('click', async (e) => {
+    e.preventDefault();
+    if(e.target.className == 'hapus'){
+        if( !confirm('Hapus data ini?') ) return false;
+            let data = {
+            id: e.target.title
+        }
+        let url = globalUrl + 'delete.php';
+        const result = await del(url,data);
+        await read(globalUrl + 'read.php');
+        console.log(result);
+    }
+    if(e.target.className == 'ubah'){
+        document.getElementById('id').value = e.target.title;
+    }
+});
+
+document.getElementById('submit').addEventListener('click',async ()=>{
+    const nama = document.getElementById('nama');
+    const nrp = document.getElementById('nrp');
+    const email = document.getElementById('email');
+    const jurusan = document.getElementById('jurusan');
+    const gambar = document.getElementById('gambar');
+    let data = {
+        nama: nama.value,
+        nrp: nrp.value,
+        email: email.value,
+        jurusan: jurusan.value,
+        gambar: gambar.value
+    }
+    let url = globalUrl + 'create.php';
+    const result = await create(url,data);
+    await read(globalUrl + 'read.php');
+    // console.log(result);
+});
+
+
+async function read(url){
+    const request = await fetch(url).then(res=>res.json());
+    docRead(request);
+}
+
+function docRead(request){
+    const tbody = document.querySelector('tbody');
+    tbody.innerHTML = '';
+    let newRow;
+    let hasil = ``;
+    request.forEach(row => {
+        hasil = `
+                <td>${row.id}</td>
+                <td>${row.nama}</td>
+                <td>${row.nrp}</td>
+                <td>${row.email}</td>
+                <td>${row.jurusan}</td>
+                <td>${row.gambar}</td>
+                <td><a class="ubah" title="${row.id}">Ubah</a>|<a class="hapus" title="${row.id}">Hapus</a></td>    
+        `;
+        newRow = document.createElement('tr');
+        newRow.innerHTML = hasil;
+        tbody.appendChild(newRow);
+    });
+} 
+
+async function create(url,data){
+    const response = await fetch(url,{
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  }).then(res=>res);
+  return response;
+}
+
+async function del(url,data){
+    const response = await fetch(url,{
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  }).then(res=>res);
+  return response;
+}
+
+
+</script>
+</body>
+</html>
