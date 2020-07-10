@@ -1,0 +1,100 @@
+
+.pembelian{
+    position: relative;
+    width: 95%;
+    border: 1px solid black;
+    background-color: rgb(28, 41, 54);
+}
+
+.pembelian form{
+    width: 100%;
+    position: relative;
+    
+}
+
+.pembelian form .form-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.507);
+    background-color: #101820ff;
+    color: #fff;
+    margin: 15px 0;
+    padding: 15px 0;
+}
+
+
+
+.pembelian form .form-group .form-col .form-list{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.pembelian form .form-group .form-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pembelian form .form-group .form-row .form-list{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    justify-content: flex-end;
+    margin: 0 3px;
+}
+
+.pembelian form .form-group label{
+    font-size: 15px;
+}
+.pembelian form .form-group input{
+    order: 1;
+    display: block;
+    font-size: 15px;
+    padding: 3px 0;
+    border: 1px solid rgba(128, 128, 128, 0.377);
+}
+
+.pembelian form .form-group input[type=button]{
+    margin-top: 15px;
+    background-color: #fee715ff;
+    width: 30px;
+    color: #101820ff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pembelian form .form-group input[type=button]:hover{
+    background-color: rgb(231, 38, 38);
+    color: white;
+}
+
+
+.pembelian form  input[type=submit]{
+    font-size: 20px;
+    padding: 3px;
+    color: #101820ff;
+    background-color: #fee715ff;
+    cursor: pointer;
+    border: none;
+    display: block;
+    position: absolute;
+    right: 0;
+}
+
+.pembelian form  input[type=submit]:hover {
+    background-color: rgb(231, 38, 38);
+    color: white;
+  }
+  
+
+.pembelian form .form-group .form-row .form-list:nth-child(4),
+.pembelian form .form-group .form-row .form-list:nth-child(5),
+.pembelian form .form-group .form-row .form-list:nth-child(2){
+    width: 80px;
+}
+
+.pembelian form .form-group .form-row .form-list:nth-child(3),
+.pembelian form .form-group .form-row .form-list:nth-child(6){
+    width: 130px;
+}

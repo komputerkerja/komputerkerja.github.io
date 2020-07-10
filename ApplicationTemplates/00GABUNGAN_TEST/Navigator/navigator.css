@@ -1,0 +1,136 @@
+nav {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  left: -300px;
+  border: 1px solid black;
+  background-color: rgb(28, 41, 54);
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+nav i {
+  transform: translateY(8px);
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  color: #fee715ff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 260px;
+  height: 100vh;
+}
+
+nav ul {
+  position: absolute;
+  height: 100%;
+  background-color: #101820ff;
+  padding: 0 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  line-height: 2em;
+  left: 5%;
+  right: 5%;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.507);
+  border-radius: 10px 10px 0 0;
+  transition: 0.2s;
+}
+nav ul.transaksi {
+  z-index: 3;
+  transform: translateY(150px);
+}
+nav ul.pengaturan {
+  z-index: 2;
+  transform: translateY(100px);
+}
+nav ul.laporan {
+  z-index: 1;
+  transform: translateY(50px);
+}
+.offset-menu {
+  transform: translate(0 , 0)!important;
+  z-index: 10 !important;
+  transition: all 0.2s !important;
+}
+
+
+nav ul h2 {
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+nav ul .menu-control {
+  width: 100%;
+  overflow: hidden;
+}
+nav ul .menu-control .menu-list {
+  width: 100%;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  transition: 0.2s;
+  height: 0vh;
+  padding: 0;
+}
+.menu-list-open {
+  transform: translateX(0) !important;
+  height: 20vh !important  ;  
+}
+
+nav ul .menu-control h3 {
+  margin-top: 20px;
+  color: #101820ff;
+  background-color: #fee715ff;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+nav ul .menu-control h3:hover {
+  background-color: rgb(231, 38, 38);
+  color: white;
+}
+
+nav ul .menu-control .menu-list li {
+  color: rgb(207, 201, 201);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+nav ul .menu-control .menu-list li::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%;
+  height: 0px;
+  background-color: #fee715ff;
+  box-shadow: 0 0 5px 1px #fff;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+nav ul .menu-control .menu-list li:hover {
+  font-weight: bold;
+}
+nav ul .menu-control .menu-list li:hover::before {
+  height: 1px;
+  width: 100%;
+  opacity: 1;
+}
