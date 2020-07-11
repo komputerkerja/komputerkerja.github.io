@@ -5,7 +5,7 @@
     
 <form action="">
 
-    <div class="title"><img src="<?= BASEURL ?>/Assets/cart.svg"><h1>Pembelian</h1></div>
+    <div class="title"><img src="<?= BASEURL ?>/Assets/cart.svg"><h1><div class="blue">P</div>embelian</h1></div>
 
     <div class="form-group">
 

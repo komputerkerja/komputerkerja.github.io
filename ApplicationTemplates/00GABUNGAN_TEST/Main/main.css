@@ -64,6 +64,7 @@
     padding: 6px 10px;
     cursor: pointer;
     border: none;
+    transition: 0.2s;
 }
 
 .btn img{
@@ -74,6 +75,7 @@
 .btn:hover{
   opacity: 0.7;
 }
+
 
 .btn-success{
   background-color: rgb(30, 148, 1);
@@ -89,4 +91,9 @@
 
 .btn-orange{
   background-color: rgb(255, 136, 67);
+}
+
+.blue{
+  display: inline;
+  color: #039ee3;
 }
