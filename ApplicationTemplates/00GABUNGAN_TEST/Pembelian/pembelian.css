@@ -29,10 +29,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     border-top: 1px solid rgba(99, 99, 99, 0.507);
-    background-color: rgb(223, 222, 222);
+    background-color: #1978a5;
+    /* background-color: #d9a5b3; */
     color: rgb(49, 49, 49);
     margin: 15px 0;
     padding: 15px 0;
+    /* box-shadow: 0 5px 10px black; */
+    /* border-radius: 0 30px 0 0 ; */
 }
 
 .pembelian form .form-group .form-col{
@@ -64,7 +67,7 @@
 
 .pembelian form .form-group label{
     font-size: 18px;
-    color: rgb(71, 70, 70);
+    color: #333;
 }
 .pembelian form .form-group input{
     order: 1;
@@ -72,22 +75,14 @@
     font-size: 18px;
     padding: 3px 0;
     border: none;
-    color: rgb(83, 82, 172);
+    color: #000;
 }
 
-.pembelian form .form-group input[type=button]{
-    margin-top: 15px;
-    background-color: #fee715ff;
-    width: 30px;
-    color: #101820ff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
 
-.pembelian form .form-group input[type=button]:hover{
-    background-color: rgb(231, 38, 38);
-    color: white;
+.pembelian form .form-group .form-row .form-list a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #d9a5b3;
 }
 
 

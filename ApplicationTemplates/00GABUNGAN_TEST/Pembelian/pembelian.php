@@ -88,7 +88,7 @@
             </div>
         
             <div class="form-list">
-                <input type="button" name="add" id="add" value="+">
+                <a href="#" class="btn btn-danger"><img src="<?= BASEURL ?>/Assets/add-document.svg">Tambah</a>
             </div>
     
         </div>
