@@ -64,6 +64,8 @@
           <div class="menu-list">
             <li>Pembelian</li>
             <li>Retur Pembelian</li>
+            <li>Daftar Pembelian</li>
+            <li>Daftar Retur</li>
           </div>
         </div>
         <div class="menu-control">

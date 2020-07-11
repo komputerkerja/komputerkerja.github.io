@@ -2,8 +2,9 @@
 .pembelian{
     position: relative;
     width: 95%;
-    border: 1px solid black;
-    background-color: rgb(28, 41, 54);
+    max-width: 900px;
+    /* border: 1px solid rgba(0, 0, 0, 0.26); */
+    /* background-color: rgb(243, 243, 243); */
 }
 
 .pembelian form{
@@ -12,23 +13,40 @@
     
 }
 
+.pembelian form .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pembelian form .title img{
+    width: 40px;
+    fill: white;
+}
+
 .pembelian form .form-group{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-top: 1px solid rgba(255, 255, 255, 0.507);
-    background-color: #101820ff;
-    color: #fff;
+    border-top: 1px solid rgba(99, 99, 99, 0.507);
+    background-color: rgb(223, 222, 222);
+    color: rgb(49, 49, 49);
     margin: 15px 0;
     padding: 15px 0;
 }
 
-
+.pembelian form .form-group .form-col{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center
+    ;align-items: center; */
+}
 
 .pembelian form .form-group .form-col .form-list{
     display: flex;
     flex-direction: column;
-    width: 280px;
+    width: 320px;
+    margin: 8px 4px;
 }
 
 .pembelian form .form-group .form-row{
@@ -41,18 +59,20 @@
     flex-direction: column;
     width: 150px;
     justify-content: flex-end;
-    margin: 0 3px;
+    margin: 8px 3px;
 }
 
 .pembelian form .form-group label{
-    font-size: 15px;
+    font-size: 18px;
+    color: rgb(71, 70, 70);
 }
 .pembelian form .form-group input{
     order: 1;
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     padding: 3px 0;
-    border: 1px solid rgba(128, 128, 128, 0.377);
+    border: none;
+    color: rgb(83, 82, 172);
 }
 
 .pembelian form .form-group input[type=button]{
@@ -62,6 +82,7 @@
     color: #101820ff;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .pembelian form .form-group input[type=button]:hover{
@@ -70,23 +91,6 @@
 }
 
 
-.pembelian form  input[type=submit]{
-    font-size: 20px;
-    padding: 3px;
-    color: #101820ff;
-    background-color: #fee715ff;
-    cursor: pointer;
-    border: none;
-    display: block;
-    position: absolute;
-    right: 0;
-}
-
-.pembelian form  input[type=submit]:hover {
-    background-color: rgb(231, 38, 38);
-    color: white;
-  }
-  
 
 .pembelian form .form-group .form-row .form-list:nth-child(4),
 .pembelian form .form-group .form-row .form-list:nth-child(5),
@@ -97,4 +101,75 @@
 .pembelian form .form-group .form-row .form-list:nth-child(3),
 .pembelian form .form-group .form-row .form-list:nth-child(6){
     width: 130px;
+}
+
+
+.pembelian form .form-group .form-col .form-total {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pembelian form .form-group .form-col .form-total .total{
+    width: 200px;
+    margin: 8px;
+}
+
+.pembelian form .form-group .form-col .form-total .total:nth-child(1){
+    order: 1;
+}
+
+.pembelian form .action{
+    position: absolute;
+    right: 0;
+}
+
+.pembelian form .action ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pembelian form .action ul li{
+    position: relative;
+    list-style: none;
+}
+
+
+.pembelian form .action ul img{
+    width: 25px;
+    margin-right: 5px;
+}
+
+.pembelian form .footer{
+    height: 100px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    .pembelian form .form-group .form-col .form-list{
+        width: 280px;
+    }
+    .pembelian form .form-group .form-col .form-total .total{
+        width: 100%;
+        margin: 3px;
+    }
+    .pembelian form .form-group .form-col .form-total .total input{
+        display: block;
+        width: 100%;
+    }
+    .pembelian form .form-group .form-row .form-list{
+        width: 100%;
+    }
+    .pembelian form .form-group .form-col .form-list input{
+        display: block;
+        width: 100% !important;
+    }
+    .pembelian form .action{
+        width: 100%;
+    }
 }

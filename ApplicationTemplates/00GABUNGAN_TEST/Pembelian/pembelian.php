@@ -5,12 +5,14 @@
     
 <form action="">
 
+    <div class="title"><img src="<?= BASEURL ?>/Assets/cart.svg"><h1>Pembelian</h1></div>
+
     <div class="form-group">
 
         <div class="form-col">
     
             <div class="form-list">
-                <input type="date" name="tanggal" id="tanggal" autofocus> 
+                <input type="text" name="tanggal" id="tanggal" autofocus> 
                 <label for="tanggal">Tanggal</label>
             </div>
 
@@ -94,10 +96,73 @@
     </div>
 
 
+    <div class="form-group">
+        
+        <div class="form-col">
+    
+            <div class="form-total">
+                <div class="total">
+                    <input type="text" name="totalpembelian" id="totalpembelian">
+                </div>
+                <div class="total">
+                    <label for="totalpembelian">Pembelian</label>
+                </div>
+            </div>
+        
+            <div class="form-total">
+                <div class="total">
+                    <input type="text" name="diskonperbrg" id="diskonperbrg">
+                </div>
+                <div class="total">
+                    <label for="diskonperbrg">Diskon Perbarang</label>
+                </div>
+            </div>
+
+            <div class="form-total">
+                <div class="total">
+                    <input type="text" name="diskontambahan" id="diskontambahan">
+                </div>
+                <div class="total">
+                    <label for="diskontambahan">Diskon Perfaktur</label>
+                </div>
+            </div>
+            
+            <div class="form-total">
+                <div class="total">
+                    <input type="text" name="totaldiskon" id="totaldiskon">
+                </div>
+                <div class="total">
+                    <label for="totaldiskon">Total Diskon</label>
+                </div>
+            </div>
+
+            <div class="form-total">
+                <div class="total">
+                    <input type="text" name="totalppn" id="totalppn">
+                </div>
+                <div class="total">
+                    <label for="totalppn">PPn</label>
+                </div>
+            </div>
 
 
-    <input type="submit" name="submit" id="submit" value="Simpan">
+        </div>
 
+    </div>
+
+
+
+    <div class="action">
+        <ul>
+            <li><a href="#" class="btn btn-success"><img src="<?= BASEURL ?>/Assets/save.svg" width="30px"> Simpan</a></li>
+            <li><a href="#" class="btn btn-primary"><img src="<?= BASEURL ?>/Assets/preview.svg" width="30px"> Preview</a></li>
+            <li><a href="#" class="btn btn-danger"><img src="<?= BASEURL ?>/Assets/refresh.svg" width="30px"> Bersihkan</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        
+    </div>
 </form>
 
 </div>

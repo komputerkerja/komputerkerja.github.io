@@ -2,24 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6em;
   }
   
   body{
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    line-height: 1.6em;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-    background-color: rgb(44, 59, 73);
+    /* background-color: rgb(44, 59, 73); */
   }
 
   .toggle {
     position: fixed;
     top: 5px;left: 2vh;
-    background-color: rgba(231, 38, 38, 0.664);
+    /* background-color: rgba(231, 38, 38, 0.664); */
     width: 30px;
     height: 30px;
     border-radius: 10%;
@@ -34,7 +35,7 @@
   .toggle span{
     width: 25px;
     height: 1px;
-    background-color: #fff;
+    background-color: rgb(63, 63, 63);
     transition: 0.2s;
   }
 
@@ -44,11 +45,35 @@
   }
   .toggle-navigator-spanfirst{
     transform: rotate(45deg) translate(5px,6px) !important;
+    background-color: #fff !important;
   }
   .toggle-navigator-spansec{
     width: 0 !important;
   }
   .toggle-navigator-spanthird{
     transform: rotate(-45deg) translate(5px,-6px) !important;
+    background-color: #fff !important;
   }
 
+.btn{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    padding: 6px 10px;
+}
+
+.btn-success{
+  background-color: rgb(30, 148, 1);
+}
+
+.btn-primary{
+  background-color: rgb(1, 70, 148);
+}
+
+.btn-danger{
+  background-color: rgb(231, 38, 38);
+}
