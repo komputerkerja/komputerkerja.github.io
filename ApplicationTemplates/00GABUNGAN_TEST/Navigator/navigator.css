@@ -1,35 +1,27 @@
+
+/* Bagian Navigasi */
+
 nav {
-  position: absolute;
+  position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
   top: 0;
+  left: 0 ;
   left: -300px;
-  border: 1px solid black;
-  background-color: rgb(28, 41, 54);
+  border: 1px solid var(--border-light);
+  background-color: var(--font-min-dark);
   width: 260px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   transition: 0.2s;
-  z-index: 1;
+  z-index: 2;
 }
-
-nav i {
-  transform: translateY(8px);
-  text-align: center;
-  display: block;
-  font-size: 30px;
-  color: #fee715ff;
-  font-weight: bold;
-  cursor: pointer;
-  width: 260px;
-  height: 100vh;
-}
-
+  
 nav ul {
   position: absolute;
   height: 100%;
-  background-color: #101820ff;
+  background-color: var(--blue-black);
   padding: 0 10px 20px 10px;
   display: flex;
   flex-direction: column;
@@ -39,8 +31,7 @@ nav ul {
   left: 5%;
   right: 5%;
   cursor: pointer;
-  border-top: 1px solid rgba(255, 255, 255, 0.507);
-  border-radius: 10px 10px 0 0;
+  border-top: 1px solid var(--border-light);
   transition: 0.2s;
 }
 nav ul.transaksi {
@@ -63,7 +54,7 @@ nav ul.laporan {
 
 
 nav ul h2 {
-  color: #fff;
+  color: var(--white);
   margin-top: 10px;
   cursor: pointer;
 }
@@ -87,8 +78,8 @@ nav ul .menu-control .menu-list {
 
 nav ul .menu-control h3 {
   margin-top: 20px;
-  color: #101820ff;
-  background-color: #fee715ff;
+  color: var(--blue-black);
+  background-color: #fee715;
   width: 100%;
   text-align: center;
   cursor: pointer;
@@ -99,7 +90,7 @@ nav ul .menu-control h3 {
 }
 
 nav ul .menu-control h3:hover {
-  background-color: rgb(231, 38, 38);
+  background-color: #e72626;
   color: white;
 }
 
@@ -134,3 +125,6 @@ nav ul .menu-control .menu-list li:hover::before {
   width: 100%;
   opacity: 1;
 }
+
+
+
