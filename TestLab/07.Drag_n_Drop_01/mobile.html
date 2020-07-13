@@ -9,7 +9,7 @@
         .items{background-color: brown;color: white;margin: 5px 0;line-height: 1.6em;text-indent: 10px;cursor: pointer;}   
         .kirim{color:white;width: 300px;height: 150px; display: flex;flex-direction: column;background-color: royalblue;}
     </style>
-    <title>Test Ke 2</title>
+    <title>Mobile</title>
 </head>
 <body>
 
@@ -19,8 +19,8 @@
 
 
 
-    <h1>Test Drdp Ke dua</h1><hr>
-    <a href="mobile.html">test on mobile</a>
+    <h1>Test Mobile</h1><hr>
+    <a href="index.html">back</a>
     <div class="container">
         <div class="box"></div>
     
@@ -41,10 +41,6 @@
 
 
 
-
-
-
-
 <script>
     
     // Logika Drag n drop
@@ -60,6 +56,7 @@
         });
         i.addEventListener('dragenter',()=>item=null);
         i.addEventListener('dragleave',()=>item=backup);
+        i.addEventListener('touchstart',touchstart);
     });
 
     boxS.forEach((box) => {
@@ -71,6 +68,22 @@
             backup = null;
         });
     });
+
+    function touchstart(e){
+        e.preventDefault();
+        let thisItem = e.target;
+        let touch = e.touches[0];
+        let moveOffsetX = thisItem.offsetLeft - touch.pageX;
+        let moveOffsetY = thisItem.offsetTop - touch.pageY;
+
+        thisItem.addEventListener('touchmove',()=>{
+            let posX = touch.pageX + moveOffsetX;
+            let posY = touch.pageY + moveOffsetY;
+            thisItem.style.left = posX + 'px';
+            thisItem.style.top = posY + 'px';
+        });
+    }
+
 
 
     // Logia pengiriman data
