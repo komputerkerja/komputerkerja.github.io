@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{width: 95vw;display: flex;justify-content:space-around;margin: auto;}
+        .box{width: 250px;height: 300px;background-color: gray;display: inline-block;padding: 0 5px;box-sizing: border-box;}
+        .items{background-color: brown;color: white;margin: 5px 0;line-height: 1.6em;text-indent: 10px;cursor: pointer;}   
+        .kirim{color:white;width: 300px;height: 150px; display: flex;flex-direction: column;background-color: royalblue;}
+    </style>
+    <title>Test Ke 2</title>
+</head>
+<body>
+
+
+
+
+
+
+
+    <h1>Test Drdp Ke dua</h1><hr>
+    <div class="container">
+        <div class="box"></div>
+    
+        <div class="box">
+            <div class="items" draggable="true">item1</div>
+            <div class="items" draggable="true">item2</div>
+            <div class="items" draggable="true">item3</div>
+            <div class="items" draggable="true">item4</div>
+            <div class="items" draggable="true">item5</div>
+        </div>
+    </div>
+
+    <input type="button" value="send data" name="submit" id="submit">
+
+    <div class="kirim"></div>
+
+
+
+<script>
+    
+    // Logika Drag n drop
+    const boxS = document.querySelectorAll('.box');
+    const items = document.querySelectorAll('.items');
+    let backup = null;
+    let item = null;
+
+    items.forEach((i) => {
+        i.addEventListener('dragstart',(event) => {
+            item = event.target; // PINDAH!!! kedalam memory(item) penting
+            backup = item; // ini var backup supaya nggak niban item lain            
+        });
+        i.addEventListener('dragenter',()=>item=null);
+        i.addEventListener('dragleave',()=>item=backup);
+    });
+
+    boxS.forEach((box) => {
+        box.addEventListener('dragover',(event) => event.preventDefault());
+        box.addEventListener('drop',(event) => {
+            event.preventDefault();
+            if(item != null) if(item.className == 'items') event.target.appendChild(item);
+            item = null;
+            backup = null;
+        });
+    });
+
+
+    // Logia pengiriman data
+    const btn = document.getElementById('submit');
+    btn.addEventListener('click',()=>{
+        const items = document.querySelectorAll('.box:nth-child(1) .items');
+        items.forEach(i => {
+            document.querySelector('.kirim').innerHTML += ('<b>' + i.textContent + '</b>');
+        });
+    })
+    
+</script>
+</body>
+</html>
