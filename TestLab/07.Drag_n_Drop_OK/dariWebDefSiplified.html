@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{display: flex;}
+        .container{margin: 10px; width: 200px;min-height: 30px;background-color: #333;padding: 5px;box-sizing: border-box;cursor: pointer;;--webkit-user-select:none;--moz-user-select:none;--o-user-select:none;user-select:none;}
+        p{display: block;background-color: #eee;padding: 3px;box-sizing: border-box;cursor: pointer;--webkit-user-select:none;--moz-user-select:none;--o-user-select:none;user-select:none;}
+        .dragging{opacity: 0.8;}
+        .invisible{display: none;}
+        .visible{display: block;}
+    </style>
+    <title>Dari WEBDEFF</title>
+</head>
+<body>
+    
+
+
+
+    <div class="container">
+        <p draggable="true" class="myitems">Items-1</p>
+        <p draggable="true" class="myitems">Items-2</p>
+    </div>  
+
+    <div class="container">
+        <p draggable="true" class="myitems">Items-3</p>
+        <p draggable="true" class="myitems">Items-4</p>
+    </div>
+
+
+
+<script>
+    const myItems = document.querySelectorAll('.myitems');
+    const containers = document.querySelectorAll('.container');
+
+    myItems.forEach(myItem => {
+        myItem.addEventListener('dragstart', (e) => {
+            myItem.classList.add('dragging');
+        });
+
+        myItem.addEventListener('dragend', (e) => {
+            e.preventDefault();
+            myItem.classList.remove('dragging');
+        });
+    });
+
+    containers.forEach(container => {
+        container.addEventListener('dragover',e=>e.preventDefault());
+        container.addEventListener('drop',(e)=>{
+            e.preventDefault();
+            const myItem = document.querySelector('.dragging');
+            container.appendChild(myItem);
+        });
+    });
+
+</script>
+</body>
+</html>

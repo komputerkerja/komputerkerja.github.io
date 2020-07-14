@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{background-color:#fff;margin: auto; width: 100vw;min-height: 100vh;display: flex;justify-content: center;align-items: center;}
+        .fill{width: 70px;height: 70px;border-radius: 50%;background-color: orangered;}
+        .empty{width: 80px;height: 80px;border-radius: 50%;border: 1px solid black;display: flex;justify-content: center;align-items: center;}
+        .hold{border: solid #ccc 4px;}        
+        .hovered{background-color: #f4f4f4;border-style: dashed;}
+        .invisible{display: none;}
+    </style>
+    <title>MyAnimation</title>
+</head>
+<body>
+    
+
+
+
+    <div class="container">
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"><div draggable="true" class="fill"></div></div>
+
+    </div>
+    <a href="dariWebDefSiplified.html">Lihat Satu lagi</a>
+
+
+
+
+<script>
+    const fill = document.querySelector('.fill');
+    const empties = document.querySelectorAll('.empty');
+
+    // Fill Listener
+    fill.addEventListener('dragstart',dragStart);
+    fill.addEventListener('dragend',dragEnd);
+
+    // Loop through empties and call drag events
+    for(const empty of empties){
+        empty.addEventListener('dragover',dragOver);
+        empty.addEventListener('dragenter',dragEnter);
+        empty.addEventListener('dragleave',dragLeave);
+        empty.addEventListener('drop',dragDrop);
+    }
+
+    // Drag Function
+    function dragStart(){
+        this.className += ' hold';
+        setTimeout(()=>this.className = 'invisible',0);
+    }
+
+    function dragEnd(){
+        this.className = 'fill';
+    }
+
+    // Drag Events
+    function dragOver(e){
+        e.preventDefault();
+    }
+
+    function dragEnter(e){
+        e.preventDefault();
+        this.className += ' hovered';
+    }
+
+    function dragLeave(){
+        this.className = 'empty';
+    }
+
+    function dragDrop(){
+        this.className = 'empty';
+        this.append(fill);
+    }
+
+</script>
+</body>
+</html>
+

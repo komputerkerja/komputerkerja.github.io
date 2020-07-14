@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            color: #eee;
+        }
+
+        input{
+            display: block;
+            width: 80%;
+            border: none;
+            line-height: 1.8em;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+        input[type=text]{
+            text-indent: 10px;
+        }
+        input[type=submit]{
+            background-color: rgb(110, 14, 199);
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+    <title>Injection</title>
+</head>
+<body>
+    
+
+
+
+    <form action="">
+        <label for="username">User Name</label>
+        <input type="text" name="username" id="username">
+        <input type="submit" id="submit" name="submit" value="send">
+    </form>
+
+    <p></p>
+
+
+
+
+<script>
+    const btn = document.getElementById('submit');
+    const uName = document.getElementById('username');
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        const p = document.getElementsByTagName('p')[0];
+        p.textContent = (uName.value);
+    });
+</script>
+</body>
+</html>
+
+
