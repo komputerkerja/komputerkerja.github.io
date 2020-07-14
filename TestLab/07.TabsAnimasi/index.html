@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul{margin-top: 20px;display: flex;}
+        li{list-style: none;}
+        a{text-decoration: none;display: inline-block;height: 40px;background-color: brown;color: white;line-height: 40px;text-align: center;padding: 0 10px;}
+        .marker{position: absolute;width: 0px;height: 20px; border-bottom: none;background-color: brown;transition: 0.2s;border-radius: 10px 10px 0 0;}        
+    </style>
+    <title>My Tabs</title>
+</head>
+<body>
+    <h1>Tabs Animate</h1>
+    <div class="marker"></div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Templates</a></li>
+        <li><a href="#">Menu Man</a></li>
+    </ul>
+
+
+
+<script>
+    window.addEventListener('load',bikinMarker);
+    function _(apa){ return document.querySelector(apa) }
+    function bikinMarker(){
+        _('.marker').style.left = _('a').offsetLeft + 'px';
+        _('.marker').style.width = _('a').offsetWidth + 'px';
+        _('.marker').style.top = _('a').offsetTop-20 + 'px';
+        _('.marker').style.display = 'block';
+    }
+
+    const menuItem = document.querySelectorAll('a');
+    menuItem.forEach(i=>{
+        i.addEventListener('click',(e)=>{
+            e.preventDefault();
+            _('.marker').style.left = i.offsetLeft + 'px';
+            _('.marker').style.width = i.offsetWidth-1 + 'px';
+            _('.marker').style.top = i.offsetTop-20 + 'px';
+            _('.marker').style.display = 'block';
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyKeyAscii</title>
+</head>
+<body>
+
+    <h1>KeyAscii when key down</h1>
+
+    <div class="str-ascii"></div>
+    <div class="key-ascii"></div>
+
+    <script>
+        // document.onkeydown = (e)=>{
+        //     let key_press = String.fromCharCode(e.keyCode);
+        //     let key_code = e.keyCode;
+        //     document.querySelector('.str-ascii').innerHTML = key_press;
+        //     document.querySelector('.key-ascii').innerHTML = keyCode;
+        // }
+
+        document.onkeypress = (e)=>{
+            let key_press = String.fromCharCode(e.keyCode);
+            let key_code = e.keyCode;
+            document.querySelector('.str-ascii').innerHTML = key_press;
+            document.querySelector('.key-ascii').innerHTML = keyCode;
+        }
+        
+        document.onmousemove = (e)=>console.log(e.pageX)
+        
+        
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@
 
     <h1>Test Drdp Ke dua</h1><hr>
     <a href="mobile.html">Test ball on mobile</a>
-    <a href="mobile2.html">Test on mobile</a>
+    <a href="index.html">back home</a>
     <div class="container">
         <div class="box"></div>
     
@@ -61,6 +61,7 @@
         });
         i.addEventListener('dragenter',()=>item=null);
         i.addEventListener('dragleave',()=>item=backup);
+        i.addEventListener('touchmove',touchMove);
     });
 
     boxS.forEach((box) => {
@@ -74,6 +75,18 @@
     });
 
 
+
+    // Logika Untuk Mobile pohone
+    function touchMove(e){
+        e.preventDefault();
+        let thisItem = e.target;
+        let posX = Math.round(e.touches[0].clientX)-170;
+        let posY = Math.round(e.touches[0].clientY)-170;
+        thisItem.style.transform = 'translate('+posX+'px,'+posY+'px)';
+    }
+
+
+
     // Logia pengiriman data
     const btn = document.getElementById('submit');
     btn.addEventListener('click',()=>{
@@ -83,6 +96,10 @@
         });
     })
     
+
+
+
+
 </script>
 </body>
 </html>

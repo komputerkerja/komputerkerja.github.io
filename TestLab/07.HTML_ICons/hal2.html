@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyIcons</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(56, 56, 238);
+            font-size: 23px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        div > b{
+            font-size: 40px;
+        }
+        a{
+            display: block;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="hal3.html">Next Page</a>
+
+
+
+    <script>
+
+        for(let i=5000; i < 10000; i++){
+            document.write('<div>');
+            document.write('&amp;#' + i + ';');
+            document.write('<b>&#' + i + ';</b>');
+            document.write('</div>')
+        }
+
+    </script>
+</body>
+</html>

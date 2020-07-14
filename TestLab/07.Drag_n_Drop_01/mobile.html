@@ -4,97 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .container{width: 95vw;display: flex;justify-content:space-around;margin: auto;}
-        .box{width: 250px;height: 300px;background-color: gray;display: inline-block;padding: 0 5px;box-sizing: border-box;}
-        .items{background-color: brown;color: white;margin: 5px 0;line-height: 1.6em;text-indent: 10px;cursor: pointer;}   
-        .kirim{color:white;width: 300px;height: 150px; display: flex;flex-direction: column;background-color: royalblue;}
+        .container{margin:auto;position: relative;top: 0;width: 90vw;height: 100vh;background-color: bisque;}
+        .bola{width: 100px;height: 100px;background-color: rgb(78, 49, 204);border-radius: 50%;}
     </style>
     <title>Mobile</title>
 </head>
 <body>
 
-
-
-
-
-
-
-    <h1>Test Mobile</h1><hr>
-    <a href="index.html">back</a>
-    <div class="container">
-        <div class="box"></div>
     
-        <div class="box">
-            <div class="items" draggable="true">item1</div>
-            <div class="items" draggable="true">item2</div>
-            <div class="items" draggable="true">item3</div>
-            <div class="items" draggable="true">item4</div>
-            <div class="items" draggable="true">item5</div>
-        </div>
+    <div class="container">
+
+        <div class="bola"></div>
+
     </div>
 
-    <input type="button" value="send data" name="submit" id="submit">
-
-    <div class="kirim"></div>
 
 
 
 
+
+
+
+
+
+    
 
 <script>
     
-    // Logika Drag n drop
-    const boxS = document.querySelectorAll('.box');
-    const items = document.querySelectorAll('.items');
-    let backup = null;
-    let item = null;
-
-    items.forEach((i) => {
-        i.addEventListener('dragstart',(event) => {
-            item = event.target; // PINDAH!!! kedalam memory(item) penting
-            backup = item; // ini var backup supaya nggak niban item lain            
-        });
-        i.addEventListener('dragenter',()=>item=null);
-        i.addEventListener('dragleave',()=>item=backup);
-        i.addEventListener('touchstart',touchstart);
-    });
-
-    boxS.forEach((box) => {
-        box.addEventListener('dragover',(event) => event.preventDefault());
-        box.addEventListener('drop',(event) => {
-            event.preventDefault();
-            if(item != null) if(item.className == 'items') event.target.appendChild(item);
-            item = null;
-            backup = null;
-        });
-    });
-
-    function touchstart(e){
-        e.preventDefault();
-        let thisItem = e.target;
-        let touch = e.touches[0];
-        let moveOffsetX = thisItem.offsetLeft - touch.pageX;
-        let moveOffsetY = thisItem.offsetTop - touch.pageY;
-
-        thisItem.addEventListener('touchmove',()=>{
-            let posX = touch.pageX + moveOffsetX;
-            let posY = touch.pageY + moveOffsetY;
-            thisItem.style.left = posX + 'px';
-            thisItem.style.top = posY + 'px';
-        });
+    const bola = document.querySelector('.bola');
+    bola.addEventListener('touchmove',touchMove);
+    
+    function touchMove(e){
+        e.preventDefault()
+        bola.style.transform = 'translate(' + (Math.round((e.touches[0].clientX)) - 60)  + 'px, ' + (Math.round((e.touches[0].clientY))-60) + 'px)' ;
     }
 
-
-
-    // Logia pengiriman data
-    const btn = document.getElementById('submit');
-    btn.addEventListener('click',()=>{
-        const items = document.querySelectorAll('.box:nth-child(1) .items');
-        items.forEach(i => {
-            document.querySelector('.kirim').innerHTML += ('<b>' + i.textContent + '</b>');
-        });
-    })
-    
 </script>
+
+
+
+
+
 </body>
 </html>
