@@ -1,3 +1,139 @@
+<style>
+/* Bagian Navigasi */
+nav {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  left: 0 ;
+  left: -300px;
+  border: 1px solid var(--border-light);
+  background-color: var(--font-min-dark);
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  z-index: 2;
+}
+  
+nav ul {
+  position: absolute;
+  height: 100%;
+  background-color: var(--blue-black);
+  padding: 0 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  line-height: 2em;
+  left: 5%;
+  right: 5%;
+  cursor: pointer;
+  border-top: 1px solid var(--border-light);
+  transition: 0.2s;
+}
+nav ul.transaksi {
+  z-index: 3;
+  transform: translateY(150px);
+}
+nav ul.pengaturan {
+  z-index: 2;
+  transform: translateY(100px);
+}
+nav ul.laporan {
+  z-index: 1;
+  transform: translateY(50px);
+}
+.offset-menu {
+  transform: translate(0 , 0)!important;
+  z-index: 10 !important;
+  transition: all 0.2s !important;
+}
+
+
+nav ul h2 {
+  color: var(--white);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+nav ul .menu-control {
+  width: 100%;
+  overflow: hidden;
+}
+nav ul .menu-control .menu-list {
+  width: 100%;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  transition: 0.2s;
+  height: 0vh;
+  padding: 0;
+}
+.menu-list-open {
+  transform: translateX(0) !important;
+  height: 20vh !important  ;  
+}
+
+nav ul .menu-control h3 {
+  margin-top: 20px;
+  color: var(--blue-black);
+  background-color: #fee715;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+nav ul .menu-control h3:hover {
+  background-color: #e72626;
+  color: white;
+}
+
+nav ul .menu-control .menu-list li {
+  color: rgb(207, 201, 201);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+nav ul .menu-control .menu-list li::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%;
+  height: 0px;
+  background-color: #fee715ff;
+  box-shadow: 0 0 5px 1px #fff;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+nav ul .menu-control .menu-list li:hover {
+  font-weight: bold;
+}
+nav ul .menu-control .menu-list li:hover::before {
+  height: 1px;
+  width: 100%;
+  opacity: 1;
+}
+/* End of Bagian Navigasi */
+</style>
+
+
+
+
+
+
+
+
 
 
 
@@ -137,3 +273,53 @@
         </div>
       </ul>
     </nav>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const menu = document.querySelectorAll("nav ul");
+  const menu1H3 = document.querySelectorAll("nav ul.transaksi .menu-control h3");
+  const menu2H3 = document.querySelectorAll("nav ul.pengaturan .menu-control h3");
+  const menu3H3 = document.querySelectorAll("nav ul.laporan .menu-control h3");
+
+  menu1H3.forEach(e=>{
+      e.addEventListener('click',()=>{
+          e.parentElement.lastElementChild.classList.toggle('menu-list-open');
+      })
+  })
+  menu2H3.forEach(e=>{
+      e.addEventListener('click',()=>{
+          e.parentElement.lastElementChild.classList.toggle('menu-list-open');
+      })
+  })
+  menu3H3.forEach(e=>{
+      e.addEventListener('click',()=>{
+          e.parentElement.lastElementChild.classList.toggle('menu-list-open');
+      })
+  })
+
+
+
+  menu.forEach(e=>{
+      e.firstElementChild.addEventListener('click',()=>{
+          e.firstElementChild.parentElement.classList.toggle('offset-menu');
+      });
+  });
+
+</script>
