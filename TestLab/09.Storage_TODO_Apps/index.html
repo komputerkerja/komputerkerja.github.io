@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.8em;
+        }
+        body{
+            overflow: hidden;
+            min-height: 100vh;
+        }
+        .container{
+            min-height: 100vh;
+            width: 100vw;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+        .table{
+            width: 90%;
+            max-width: 400px;
+            overflow: auto;
+            max-height: 250px;
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 400px;
+        }
+        th{
+            padding: 3px;
+            box-sizing: border-box;
+            background-color: rgb(84, 84, 230);
+            color: ivory;
+            text-align: center;
+            border-left: #a39cda 1px solid;
+            border-right: #a39cda 1px solid;
+            border-bottom: 1px solid #a39cda;
+        }
+        td{
+            border-bottom: 1px solid #a39cda;
+            padding: 3px;
+            border-left: #a39cda 1px solid;
+            border-right: #a39cda 1px solid;
+        }
+        .table-wraper{
+            width: 90%;
+            max-height: 200px;
+            overflow: auto;
+        }
+        .myCoard{
+            width: 90%;
+            padding: 30px 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .formlist{
+            display: flex;
+            flex-direction: column;
+        }
+        form{
+            width: 100%;
+            max-width: 400px;
+        }
+        input{
+            order: 1;
+            border: none;
+            border-bottom: 1px solid #a39cda;
+        }
+        input[type=button]{
+            margin-top: 15px;
+            padding: 3px 0;
+            background-color: #2d22c3;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+        }
+        label{
+            color: lightslategray;
+        }
+        span{
+            color: orangered;
+        }
+        .alert-danger{
+            background-color: rgba(255, 0, 0, 0.493);
+            width: 100%;
+            font-size: 19px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .alert-success{
+            background-color: rgba(14, 153, 1, 0.493);
+            width: 100%;
+            font-size: 19px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .alert-warning{
+            background-color: rgba(255, 157, 0, 0.493);
+            width: 100%;
+            font-size: 19px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .alert-primary{
+            background-color: rgba(0, 68, 255, 0.493);
+            width: 100%;
+            font-size: 19px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .hapus{
+
+        }
+        .lihat{
+
+        }
+        .ubah{
+
+        }
+    </style>
+    <title>MyIcons</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+        <h1><span>M</span>y<span>T</span>ODO<span>L</span>ist</h1>
+
+        <div class="myCoard">
+            <form action="">
+                <input type="text" id="id" name="id" hidden>
+                <div class="formlist">
+                    <input type="date" name="hari" id="hari">
+                    <label for="hari">Hari</label>
+                </div>
+                <div class="formlist">
+                    <input type="text" name="kegiatan" id="kegiatan">
+                    <label for="kegiatan">Kegiatan</label>
+                </div>
+                <div class="formlist">
+                    <input type="text" name="catatan" id="catatan"> 
+                    <label for="catatan">Catatan</label>
+                </div>
+                <div class="formlist">
+                    <input type="button" name="button" id="button" value="Add">
+                </div>
+            </form>
+        </div>
+
+        <div class="table">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Kegiatan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Datasource -->
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    class TodoClass{
+        constructor(id, hari, kegiatan, catatan){
+            this.id = id;
+            this.hari = hari;
+            this.kegiatan = kegiatan;
+            this.catatan = catatan;
+        }
+    }
+
+    class Database{
+        static getData(){
+            let Todos;
+            if( localStorage.getItem('Todos') === null ) {
+                Todos = [];
+            }else{
+                Todos = JSON.parse(localStorage.getItem('Todos'));
+            }
+            return Todos;
+        }
+        static addData(newTodo){
+            let Todos = Database.getData();
+            Todos.push(newTodo);
+            localStorage.setItem('Todos',JSON.stringify(Todos));
+        }
+        static removeData(id){
+            let Todos = Database.getData();
+            Todos.forEach((key,index) => {
+                if(key.id == id){
+                    Todos.splice(index,1);
+                    return 1;
+                }
+            });
+            localStorage.setItem('Todos',JSON.stringify(Todos));
+        }
+    }
+
+    class UI{
+        static displayTodos(){
+            const storageTodos = Database.getData();
+            storageTodos.forEach(todo => {
+                UI.addNewTodos(todo);
+            });
+        }
+        static addNewTodos(todo){
+            const tbody = document.querySelector('tbody');
+            let newTodo = document.createElement('tr');
+            newTodo.innerHTML = `
+                <td>${todo.hari}</td>
+                <td>${todo.kegiatan}</td>
+                <td><a href="#" class="hapus">X</a>|<a href="#" class="ubah">U</a>|<a href="#" class="lihat">S</a></td>
+                <td hidden>${todo.id}</td>
+                <td hidden>${todo.catatan}</td>
+            `;
+            tbody.appendChild(newTodo);
+        }
+        static showAlert(pesan, classname){
+            const alert = document.createElement('div');
+            const beforeThis = document.querySelector('.formlist');
+            alert.className = classname;
+            alert.textContent = pesan;
+            document.querySelector('form').insertBefore(alert,beforeThis);
+            setTimeout(()=>{
+                alert.remove();
+                },2000);
+        }
+        static uuId(){
+            return ('' + (localStorage.length+1111) + '0' + Date.now() + (Math.ceil(Math.random()) + 1) + (Math.random()));
+        }
+        static cleanDom(){
+            const keg = document.getElementById('kegiatan');
+            const cttn = document.getElementById('catatan');
+            const hri = document.getElementById('hari');
+            keg.value = '';cttn.value = '';hri.value = '';
+        }
+    }
+    
+    // Tampil data
+    document.addEventListener('DOMContentLoaded',UI.displayTodos);
+    // Tambah data Dan Ubah Data
+    document.getElementById('button').addEventListener('click',(e) => {
+        e.preventDefault();
+        const id = UI.uuId();
+        const hari = document.getElementById('hari').value;
+        const kegiatan = document.getElementById('kegiatan').value;
+        const catatan = document.getElementById('catatan').value;
+        if( hari == '' || kegiatan == '' || catatan == '' ){
+            UI.showAlert('Data belum lengkap', 'alert-warning');
+            return;
+        }    
+        const newTodo = new TodoClass(id,hari,kegiatan,catatan);
+        Database.addData(newTodo);
+        UI.addNewTodos(newTodo);
+        UI.showAlert('Berhasl Menambah data','alert-success');
+        UI.cleanDom();
+    });
+    // Hapus Data
+    document.querySelector('tbody').addEventListener('click',(e) => {
+        e.preventDefault();
+        if(e.target.className == 'hapus'){
+            if(confirm('hapus data ini?')){
+                let id = (e.target.parentElement.nextElementSibling.textContent);
+                Database.removeData(id);
+                e.target.parentElement.parentElement.remove();
+                UI.showAlert('Berhasl Menghapus data','alert-primary')
+            }
+        }else if(e.target.className == 'ubah'){
+            let id=null;let hari=null;let catatan=null;let kegiatan=null;
+            let me = (e.target.parentElement.parentElement.children);
+            for(let i of me){
+                hari = ( i.cellIndex === 0 ? i.innerHTML : hari );
+                kegiatan = ( i.cellIndex === 1 ? i.innerHTML : kegiatan );
+                id = ( i.cellIndex === 3 ? i.innerHTML : id );
+                catatan = ( i.cellIndex === 4 ? i.innerHTML : catatan );
+            }
+            document.getElementById('id').value = id;
+            document.getElementById('hari').value = hari;
+            document.getElementById('kegiatan').value = kegiatan;
+            document.getElementById('catatan').value = catatan;            
+        }else if(e.target.className == 'lihat'){
+            console.log('lihat');
+        }
+    });
+
+    
+
+</script>
+</body>
+</html>
