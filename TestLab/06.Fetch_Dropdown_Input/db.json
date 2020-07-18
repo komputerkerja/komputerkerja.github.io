@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nama": "Ronal",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 2,
+        "nama": "Vera",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 3,
+        "nama": "Hamidah",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 4,
+        "nama": "Theo",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 5,
+        "nama": "Rizal",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 6,
+        "nama": "Ucok",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 7,
+        "nama": "Muklis",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 8,
+        "nama": "Edo",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 9,
+        "nama": "Bambang",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    },
+    {
+        "id": 10,
+        "nama": "ronal",
+        "umur": 32,
+        "pekerjaan": "Programer",
+        "nik": "801322200120",
+        "npwp": "072080031265000"
+    }
+]

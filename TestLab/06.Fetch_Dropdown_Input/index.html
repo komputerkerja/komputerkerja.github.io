@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyIcons</title>
+    <style>
+        body{height: 100vh;width: 100vw;overflow: hidden;}
+        .container{width: 100vw;height: 100vh;background-color: #333;position: relative;overflow: hidden;}
+        form{width: 100%;max-width: 300px;margin: 30px auto;}
+        .search-wraper{background-color: rgb(158, 164, 255);height: 100px;}
+        .form-group{display: flex;flex-direction: column;align-items: center;}
+        .form-group label{order: 1;color: #fff;font-size: 20px;font-weight: bold;}
+        .form-group input{background-color: transparent; border: none;border-bottom: 1px solid #242323;line-height: 1.7em; font-size: 18px;margin: 10px 0;order: 2;width: 250px;}
+        .auto-complete{border-radius: 0 0 1em 1em; max-height: 300px;width: 100%;background-color: #f5e79c;order: 3;display: flex;flex-direction: column;align-items: center;overflow-y: auto;overflow-x: hidden;z-index: 1;}
+        .auto-complete-list{height: 100px;width: 95%;margin: 2px 0;padding: 0;}
+        .auto-complete-list-group{display: flex;flex-direction: column;font-size: 13px;}
+        .auto-complete-list-group .item{display: flex;justify-content: space-between;margin-top: 4px;}
+        .nama{position: absolute;font-weight: bold;left: 0;font-size: 18px;}
+        .umur{position: absolute; font-weight: bold;right: 0;font-size: 18px;}        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <form action="">
+            <div class="search-wraper">
+                <div class="form-group">
+                    <input type="text" name="username" id="username" placeholder="search...">
+                    <label for="username">Find Users</label>
+                    <div class="auto-complete"></div>
+                </div>            
+            </div>
+        </form>
+
+
+    </div>
+    
+
+<script>
+    const uname = document.getElementById('username');
+    uname.addEventListener('input', async (e) => {
+        e.preventDefault();
+        if(uname.value == ''){
+            document.querySelector('.auto-complete').innerHTML = '';
+            return
+        }
+        let me = await fetching();
+        let allusers = await me.filter(user => {
+            const regex = new RegExp(`^${uname.value}`,`gi`);
+            return user.nama.match(regex);
+        })
+        me = await allusers.map(user => {
+            return  `
+                <div class="auto-complete-list">
+                    <div style="position: relative">
+                        <span class="nama">${user.nama}</span> <span class="umur">${user.umur} Thn</span>
+                    </div>
+                    <div class="auto-complete-list-group">
+                        <div style="margin-top: 30px;" class="item">
+                            <span>Pekerjaan</span>   
+                            <span>${user.pekerjaan}</span>   
+                        </div>
+                        <div class="item">
+                            <span>NIK</span>   
+                            <span>${user.nik}</span>   
+                        </div>
+                        <div class="item">
+                            <span>NPWP</span>        
+                            <span>${user.npwp}</span>        
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join();
+        document.querySelector('.auto-complete').innerHTML = me;
+    });
+
+    function fetching(){
+        let mydb = fetch('db.json')
+        .then(res => res.text())
+        .then(resJ => JSON.parse(resJ))
+        .catch(err => console.log(err));
+        return mydb;
+    }
+</script>
+
+</body>
+</html>
