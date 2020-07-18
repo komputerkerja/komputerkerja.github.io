@@ -202,6 +202,9 @@ nav ul li ul:hover{
         border-radius: 5px;
         z-index: 1;
         opacity: 1;
+        overflow-y: auto;
+        height: 300px;
+        overflow-x: hidden;
     }
     nav ul li ul li a{
         color: white;

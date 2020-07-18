@@ -15,6 +15,7 @@
             min-height: 100vh;
         }
         .container{
+            position: relative;
             min-height: 100vh;
             width: 100vw;
             background-color: #fff;
@@ -125,14 +126,99 @@
             color: #fff;
             margin-bottom: 10px;
         }
-        .hapus{
-
+        .show-modal{
+            transform: translate(0,0) !important;
+            opacity: 1 !important;
         }
-        .lihat{
-
+        .modal{
+            transform: translate(-100vh,0);
+            background-color: #2220207c;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            transition: 0.2s;
+            opacity: 0;
+        }
+        .modal-search{
+            z-index: 2;
+            position: absolute;
+            min-height: 40vh;
+            width: 70vw;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #1828b6;
+        }
+        .modal-search::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4e81f0;
+            --moz-clip-path: clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            --webkit-clip-path: clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+        .modal-search h3{
+            color: rgb(11, 19, 54);
+            --moz-text-shadow: 0px 2px 2px rgb(63, 58, 61);
+            --webkit-text-shadow: 0px 2px 2px rgb(63, 58, 61);
+            text-shadow: 0px 2px 2px rgb(63, 58, 61);
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+        .modal-search ul{
+            z-index: 3;
+            width: 100%;
+            list-style: none;
+        }
+        .modal-search ul li:nth-child(2),
+        .modal-search ul li:nth-child(1){
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            border-bottom: 1px solid #cac1c2;
+        }
+        .modal-search ul li:nth-child(3){
+            text-align: center;
+        }    
+        .modal-search ul li:nth-child(3) section:nth-child(2){
+            height: 120px;
+            background-color: #c2d1fb;
+            margin-top: 5px;
+            color: #151244;
+            font-size: 20px;
+            text-align: left;
+        }
+        .modal-search ul li:nth-child(3) section:nth-child(1){
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+        }
+        tbody a{
+            text-decoration: none;
+            padding: 0 3px;
+        }
+        .hapus{
+            color: red;
+            font-weight: bold;
         }
         .ubah{
-
+            color: rgb(5, 112, 5);
+            font-weight: bold;
+        }
+        .lihat{
+            color: rgb(221, 55, 152);
+            font-weight: bold;
         }
     </style>
     <title>MyIcons</title>
@@ -177,7 +263,7 @@
                 <input type="text" id="id" name="id" hidden>
                 <div class="formlist">
                     <input type="date" name="hari" id="hari">
-                    <label for="hari">Hari</label>
+                    <label for="hari">Tanggal</label>
                 </div>
                 <div class="formlist">
                     <input type="text" name="kegiatan" id="kegiatan">
@@ -188,17 +274,18 @@
                     <label for="catatan">Catatan</label>
                 </div>
                 <div class="formlist">
-                    <input type="button" name="button" id="button" value="Add">
+                    <input type="button" name="button" id="button" value="Tambah">
                 </div>
             </form>
         </div>
+
 
         <div class="table">
 
             <table>
                 <thead>
                     <tr>
-                        <th>Hari</th>
+                        <th>Tanggal</th>
                         <th>Kegiatan</th>
                         <th>Aksi</th>
                     </tr>
@@ -209,6 +296,16 @@
             </table>
         </div>
 
+        <div class="modal">
+            <div class="modal-search">
+                <h3>TODO</h3>
+                <ul>
+                    <li><section>Tanggal</section><section>10-07-2020</section></li>
+                    <li><section>Kegiatan</section><section>Berlari</section></li>
+                    <li><section>Catatan</section><section>Tidak ada catatan</section></li>
+                </ul>
+            </div>
+        </div>
 
     </div>
 
@@ -242,6 +339,8 @@
 
 
 <script>
+
+    // UI BACKEND
     class TodoClass{
         constructor(id, hari, kegiatan, catatan){
             this.id = id;
@@ -264,7 +363,7 @@
         static addData(newTodo){
             let Todos = Database.getData();
             Todos.push(newTodo);
-            localStorage.setItem('Todos',JSON.stringify(Todos));
+            // localStorage.setItem('Todos',JSON.stringify(Todos));
         }
         static removeData(id){
             let Todos = Database.getData();
@@ -272,6 +371,17 @@
                 if(key.id == id){
                     Todos.splice(index,1);
                     return 1;
+                }
+            });
+            localStorage.setItem('Todos',JSON.stringify(Todos));
+        }
+        static editData(newTodo){
+            let Todos = Database.getData();
+            Todos.forEach((key, index) => {
+                if(key.id == newTodo.id){
+                    key.hari = newTodo.hari;
+                    key.kegiatan = newTodo.kegiatan;
+                    key.catatan = newTodo.catatan;
                 }
             });
             localStorage.setItem('Todos',JSON.stringify(Todos));
@@ -291,7 +401,7 @@
             newTodo.innerHTML = `
                 <td>${todo.hari}</td>
                 <td>${todo.kegiatan}</td>
-                <td><a href="#" class="hapus">X</a>|<a href="#" class="ubah">U</a>|<a href="#" class="lihat">S</a></td>
+                <td><a href="#" class="hapus">&#10008;</a><a href="#" class="ubah">&#9998;</a><a href="#" class="lihat">&#8599;</a></td>
                 <td hidden>${todo.id}</td>
                 <td hidden>${todo.catatan}</td>
             `;
@@ -316,14 +426,31 @@
             const hri = document.getElementById('hari');
             keg.value = '';cttn.value = '';hri.value = '';
         }
+        static cleanCompleteDom(){
+            const keg = document.getElementById('kegiatan');
+            const cttn = document.getElementById('catatan');
+            const hri = document.getElementById('hari');
+            const tbody = document.querySelector('tbody');
+            keg.value = '';cttn.value = '';hri.value = '';
+            tbody.innerHTML = '';
+        }
     }
     
+
+
+
+
+
+
+
+
+
+    // USER INTERFACE
     // Tampil data
     document.addEventListener('DOMContentLoaded',UI.displayTodos);
     // Tambah data Dan Ubah Data
     document.getElementById('button').addEventListener('click',(e) => {
         e.preventDefault();
-        const id = UI.uuId();
         const hari = document.getElementById('hari').value;
         const kegiatan = document.getElementById('kegiatan').value;
         const catatan = document.getElementById('catatan').value;
@@ -331,11 +458,21 @@
             UI.showAlert('Data belum lengkap', 'alert-warning');
             return;
         }    
-        const newTodo = new TodoClass(id,hari,kegiatan,catatan);
-        Database.addData(newTodo);
-        UI.addNewTodos(newTodo);
-        UI.showAlert('Berhasl Menambah data','alert-success');
-        UI.cleanDom();
+        if(document.getElementById('button').value == 'Tambah'){
+            const id = UI.uuId();
+            const newTodo = new TodoClass(id,hari,kegiatan,catatan);
+            Database.addData(newTodo);
+            UI.addNewTodos(newTodo);
+            UI.showAlert('Berhasl Menambah data','alert-success');
+            UI.cleanDom();
+        }else{
+            const id = document.getElementById('id').value;
+            const newTodo = new TodoClass(id,hari,kegiatan,catatan);
+            Database.editData(newTodo);
+            UI.cleanCompleteDom();
+            UI.displayTodos();
+            UI.showAlert('Berhasl Mengubah data','alert-primary');
+        }
     });
     // Hapus Data
     document.querySelector('tbody').addEventListener('click',(e) => {
@@ -360,12 +497,30 @@
             document.getElementById('hari').value = hari;
             document.getElementById('kegiatan').value = kegiatan;
             document.getElementById('catatan').value = catatan;            
+            document.getElementById('button').value = 'Ubah';
         }else if(e.target.className == 'lihat'){
-            console.log('lihat');
+            document.querySelector('.modal').classList.add('show-modal');
+            let hari=null;let catatan=null;let kegiatan=null;
+            let me = (e.target.parentElement.parentElement.children);
+            for(let i of me){
+                hari = ( i.cellIndex === 0 ? i.innerHTML : hari );
+                kegiatan = ( i.cellIndex === 1 ? i.innerHTML : kegiatan );
+                catatan = ( i.cellIndex === 4 ? i.innerHTML : catatan );
+            }
+            document.querySelector('.modal .modal-search ul li:nth-child(1) section:nth-child(2)').textContent = hari;
+            document.querySelector('.modal .modal-search ul li:nth-child(2) section:nth-child(2)').textContent = kegiatan;
+            document.querySelector('.modal .modal-search ul li:nth-child(3) section:nth-child(2)').textContent = catatan;
         }
     });
 
-    
+    document.querySelector('.modal').addEventListener('click',(e) => {
+        const cList = (e.target.classList)
+        for(let i of cList){
+            if(i == 'modal'){
+                document.querySelector('.modal').className = 'modal';
+            }
+        }
+    });
 
 </script>
 </body>
