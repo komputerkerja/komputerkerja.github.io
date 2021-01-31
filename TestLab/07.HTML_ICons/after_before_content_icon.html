@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --matahari: "\2600"; /* Html Icon &#9728; */
+        --awan: "\2601";
+        --payung: "\2602";
+        --orang-salju: "\2603";
+        --checked: "\2611"; /* "\2713"; "\2714"; */
+        --silang: "\2716";
+        --menu-burger: "\2630";
+        --sad-emoticon: "\2639";
+        --flag: "\2690"; /* "\2691"; */
+        --gunting: "\2700"; /* "\2702"; */
+        --phone: "\2706"; /* "\2706"; */
+        --airplane: "\2708";
+        --message: "\2709";
+        --star: "\2729";
+        --love: "\2764";
+        --arrow-right: "\2770";
+        --arrow-left: "\2771"; /* "\2799"; */
+        --arrow-left-right: "\2966";
+        --arrow--all: "\2190"; /* Sampai - "\2199"; */
+        --arrow-up-down: "\1790";
+        
+        
+        --icon: var(--arrow-up-down);
+      }
+      div {
+        position: relative;
+        display: block;
+        padding: 10px 30px;
+        width: 300px;
+        background-color: lightblue;
+      }
+
+      .icon {
+        position: relative;
+      }
+
+      .icon::after {
+        content: var(--icon);
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 30px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="icon">Ikon Saya</div>
+
+    <script>
+      const icon = document.querySelector(".icon");
+      const computetIcon = window.getComputedStyle(icon, "::after");
+      console.log(computetIcon.content);
+    </script>
+  </body>
+</html>
