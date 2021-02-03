@@ -1,0 +1,12 @@
+[
+    {
+        "nama":"komputer kerja",
+        "umur":33,
+        "alamat":"jakarta"
+    },
+    {
+        "nama":"komputer rumah",
+        "umur":35,
+        "alamat":"bandung"
+    }
+]
