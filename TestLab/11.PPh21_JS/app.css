@@ -5,51 +5,113 @@
   --default-padding: 10px;
   --default-margin: 10px;
   --default-border-radius: 6px;
-  --color-primary: rgb(255, 145, 0);
-  --color-secondary: rgb(255, 212, 133);
-  --color-ancent-primary: rgb(153, 99, 0);
-  --color-font: rgb(73, 73, 73);
+  --color-primary: #1F2833;
+  --color-primary-transparent: #1f28338f;
+  --color-secondary:  #45A29E;
+  --color-ancent-primary: #66FCF1;
+  --color-font:  #C5C6C7;
+  --color-defend: #0B0C10;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 .container {
+  position: relative;
   min-height: 100vh;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    30deg,
+    var(--color-primary),
+    var(--color-defend),
+    transparent
+  );
+  opacity: 0.8;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    30deg,
+    transparent,
+    var(--color-secondary),
+    var(--color-ancent-primary),
+    transparent
+  );
+  top: 0;
+  right: 0;
+  z-index: -1;
+  clip-path: circle(50% at 50% 0);
+}
 .container .main-content {
   position: relative;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
 }
-.container .main-footer{
-    width: 90% ;
-    height: 60px;
+.container .main-footer {
+  width: 90%;
+  height: 60px;
 }
 .container .main-content h2 {
   text-align: center;
-  margin: var(--default-margin) 0;
-  color: var(--color-ancent-primary);
+  margin: 30px 0;
+  color: var(--color-font);
+  text-shadow: 1px 2px 3px var(--color-defend);
+  text-transform: uppercase;
+  transform: translate(0,-100vh) rotate(120deg);
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cubizbezier{
+    transform: translate(0,0) rotate(0) !important;
 }
 .container .main-content form.main-form {
-  border: 1px solid var(--color-ancent-primary);
+  border: 1px solid var(--color-primary-transparent);
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-radius: var(--default-border-radius);
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-transparent);
+  height: 85vh;
+  overflow-y: scroll;
+  transform: translate(150vw) rotate(40deg);
+  transition: all 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .container .main-content form.main-form .main-goup {
-  border: 1px solid var(--color-ancent-primary);
+  position: relative;
+  border: 1px solid var(--color-primary-transparent);
   margin: var(--default-margin) 0;
   padding: var(--default-padding);
   border-radius: var(--default-border-radius);
   background-color: var(--color-secondary);
+}
+.container .main-content form.main-form .main-goup::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-ancent-primary);
+  clip-path: circle(10% at 100% 0);
 }
 .container .main-content form.main-form .main-goup .form-group {
   display: flex;
@@ -66,15 +128,71 @@
   border: none;
   outline: none;
   appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -moz-appearance: none;
-  background-color: rgba(255, 255, 255, 0.431);
+  background-color: var(--color-defend);
   border-radius: var(--default-border-radius);
+  z-index: 1;
+  transform: translate(-150vw,400px) rotate(430deg);
+  transition: 0.5s;
+}
+.container .main-content form.main-form .main-goup .form-group select#npwp{
+    transform: translate(150vw,400px) rotate(430deg);
+    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container .main-content form.main-form .main-goup .form-group select#status{
+    transform: translate(300px,200vh) rotate(130deg);
+    transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container .main-content form.main-form .main-goup .form-group select#tanggungan{
+    transform: translate(1090px,200vh) rotate(800deg);
+    transition:all 4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container .main-content form.main-form .main-goup .form-group select#tahunpajak{
+    transform: translate(120vw,120vh) rotate(200deg);
+    transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container .main-content form.main-form .main-goup .form-group input#gajipokok{
+    transform: translate(-300px,-100vh) rotate(-430deg);
+    transition:all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container .main-content form.main-form .main-goup .form-group button {
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-ancent-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 3px rgba(59, 59, 59, 0.376);
+}
+.container .main-content form.main-form .main-goup .form-group button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    var(--color-secondary),
+    transparent
+  );
+  transform: translate(-110%, 0);
+  transition: all 0.4s;
+}
+.container
+  .main-content
+  form.main-form
+  .main-goup
+  .form-group
+  button:hover::before {
+  transform: translate(110%, 0);
 }
 .container .main-content form.main-form .main-goup .form-group label {
   order: 1;
-  color: var(--color-ancent-primary);
+  color: var(--color-defend);
+  margin: 20px 0 5px 0;
 }
 .container
   .main-content
@@ -91,26 +209,144 @@
   form.main-form
   .main-goup
   .form-group
-  .inline-form-group select:nth-child(1) {
-    order: 1;
-    width: 30%;
+  .inline-form-group
+  select:nth-child(1) {
+  order: 1;
+  width: 30%;
 }
 .container
   .main-content
   form.main-form
   .main-goup
   .form-group
-  .inline-form-group span:nth-child(2) {
-    order: 2;
-    color: var(--color-font);
-    width: 30%;
+  .inline-form-group
+  span:nth-child(2) {
+  order: 2;
+  color: var(--color-font);
+  width: 30%;
 }
 .container
   .main-content
   form.main-form
   .main-goup
   .form-group
-  .inline-form-group select:nth-child(3) {
-    order: 3;
-    width: 30%;
+  .inline-form-group
+  select:nth-child(3) {
+  order: 3;
+  width: 30%;
+}
+
+.splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  background-color: white;
+  color: var(--color-defend);
+  clip-path: circle(200% at 50% 50%);
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.splash-screen.display-none {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+}
+
+.anim-content{
+    position: absolute;
+    z-index: -1;
+    filter: contrast(30);
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+}
+.anim-content .ballxcric1{
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #bb1cbb;
+    filter: blur(6px);
+    left: 80px;top: 50%;
+    animation: anim1 3s both infinite;
+}
+.anim-content .ballxcric2{
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #bb1cbb;
+    filter: blur(6px);
+    left: 100px;top: 30%;
+    animation: anim2 4s both infinite;
+}
+.anim-content .ballxcric3{
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #bb1cbb;
+    filter: blur(6px);
+    left: 40px;top: 50%;
+    animation: anim3 5s both infinite;
+}
+@keyframes anim1 {
+    0%{
+        transform: translate(0,0);
+    }
+    20%{
+        transform: translate(-25px,30px);        
+    }
+    60%{
+        transform: translate(-10px,-20px) scale(1.5);        
+    }
+    70%{
+        transform: translate(15px,22px);        
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+@keyframes anim2 {
+    0%{
+        transform: translate(0,0);
+    }
+    30%{
+        transform: translate(-5px,10px) scale(2);        
+    }
+    50%{
+        transform: translate(-10px,-20px);        
+    }
+    80%{
+        transform: translate(15px,10px) scale(0.5);        
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+@keyframes anim3 {
+    0%{
+        transform: translate(0,0);
+    }
+    20%{
+        transform: translate(-0,0);        
+    }
+    35%{
+        transform: translate(10px,-10px);        
+    }
+    50%{
+        transform: translate(0,0) scale(0.0);        
+    }
+    60%{
+        transform: translate(30px,-50px);        
+    }
+    100%{
+        transform: translate(0,0);
+    }
 }

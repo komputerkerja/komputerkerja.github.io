@@ -93,7 +93,6 @@ class CallculationTax {
 
     // PTKP
     this.status = this.status + this.tanggungan;
-    console.log(this.npwp + " - " + this.status + " - " + this.tahunpajak);
     this._ptkp = parseFloat(
       this.tarif[0]["ptkp"][this.tahunpajak][this.status]
     );

@@ -39,9 +39,39 @@ hitung.addEventListener("click", (e) => {
     iuranpensiun.value
   );
 
-  const cTax =  new CallculationTax(userInput);
+  const cTax = new CallculationTax(userInput);
 
   let pph21 = cTax.getPPh21();
-  
-  hasil.value = (pph21[11]['hasil']);
+
+  hasil.value = pph21[11]["hasil"];
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  const spScreen = document.querySelector(".splash-screen");
+  const h2 = document.querySelector(".container .main-content h2");
+  const select = document.querySelectorAll(
+    ".container .main-content form.main-form .main-goup .form-group select"
+  );
+  const button = document.querySelectorAll(
+    ".container .main-content form.main-form .main-goup .form-group button"
+  );
+  const input = document.querySelectorAll(
+    ".container .main-content form.main-form .main-goup .form-group input"
+  );
+  const span = document.querySelectorAll(
+    ".container .main-content form.main-form .main-goup .form-group span"
+  );
+  const form = document.querySelector('.container .main-content form.main-form');
+
+  setTimeout(() => {
+    spScreen.classList.add("display-none");
+  }, 3000);
+  setTimeout(() => {
+    h2.classList.add("cubizbezier");
+    select.forEach((e) => e.classList.add("cubizbezier"));
+    button.forEach((e) => e.classList.add("cubizbezier"));
+    input.forEach((e) => e.classList.add("cubizbezier"));
+    span.forEach((e) => e.classList.add("cubizbezier"));
+    form.classList.add("cubizbezier");
+  }, 4000);
 });
