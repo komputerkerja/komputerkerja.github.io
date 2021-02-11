@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung PPh21</title>
+</head>
+<body>
+
+    <div class="container">
+
+
+        <section class="main-content">
+
+            <h2>Hitung PPh21</h2>
+            <form class="main-form" action="">
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <select name="npwp" id="npwp">
+                            <option value="yes">Punya!!</option>
+                            <option value="no">Belum Punya..</option>
+                        </select>
+                        <label for="npwp">Sudah Punya NPWP?</label>
+                    </div>
+                    <div class="form-group">
+                        <select name="status" id="status">
+                            <option value="tk">Belum</option>
+                            <option value="k">Sudah</option>
+                        </select>
+                        <label for="status">Sudah Menikah?</label>
+                    </div>    
+                    <div class="form-group">
+                        <select name="tanggungan" id="tanggungan">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <label for="tanggungan">Tanggungan (Maximal 3 Orang)</label>
+                    </div>
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <select name="tahunpajak" id="tahunpajak">
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                        <label for="tahunpajak">Tahun Pajak</label>
+                    </div>                
+                    <div class="form-group">
+                        <span class="inline-form-group">
+                            <select name="awalkerja" id="awalkerja">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span> Sampai </span>
+                            <select name="akhirkerja" id="akhirkerja">
+                                <option value="12">12</option>
+                                <option value="11">11</option>
+                                <option value="10">10</option>
+                                <option value="09">09</option>
+                                <option value="08">08</option>
+                                <option value="07">07</option>
+                                <option value="06">06</option>
+                                <option value="05">05</option>
+                                <option value="04">04</option>
+                                <option value="03">03</option>
+                                <option value="02">02</option>
+                                <option value="01">01</option>
+                            </select>
+                        </span>
+                        <label for="">Kontrak atau masa kerja (bulan)</label>
+                    </div>
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <input type="number" name="gajipokok" id="gajipokok" value="0">
+                        <label for="gajipokok">Gaji Bulanan</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="tunjanganpajak" id="tunjanganpajak" value="0">
+                        <label for="tunjanganpajak">Tunjangan Pajak</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="lembur" id="lembur" value="0">
+                        <label for="lembur">Lembur</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="honor" id="honor" value="0">
+                        <label for="honor">Honor</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="asuransi" id="asuransi" value="0">
+                        <label for="asuransi">Asuransi</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="natura" id="natura" value="0">
+                        <label for="natura">Natura(Kenikmatan)</label>
+                    </div>    
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <input type="number" name="bonusthr" id="bonusthr" value="0">
+                        <label for="bonusthr">Bonus / THR</label>
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" name="tunjanganpajaklain" id="tunjanganpajaklain" value="0">
+                        <label for="tunjanganpajaklain">Tunjgangan Pajak Lainnya</label>
+                    </div>   
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <input type="number" name="iuranpensiun" id="iuranpensiun" value="0">
+                        <label for="iuranpensiun">Iuran Pensiun</label>
+                    </div>
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <button id="hitung">Hitung</button>
+                    </div>
+                </div>
+
+                <div class="main-goup">
+                    <div class="form-group">
+                        <input type="number" name="hasil" id="hasil">
+                        <label for="hasil">Hasil Perhitungan</label>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+
+
+
+
+<script src="PPh21.js"></script>   
+<script src="UserInput.js"></script>
+<script src="CallculationTax.js"></script> 
+<script src="app.js"></script>
+</body>
+</html>
