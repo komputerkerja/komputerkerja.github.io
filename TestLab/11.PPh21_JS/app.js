@@ -43,5 +43,5 @@ hitung.addEventListener("click", (e) => {
 
   let pph21 = cTax.getPPh21();
   
-  console.log(pph21);
+  hasil.value = (pph21[11]['hasil']);
 });
