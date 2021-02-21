@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  --color-white: #ffffff;
+  --color-ancend: #260f03;
+  --color-primary: #3a1c08;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section.container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(212, 198, 191);
+  background: linear-gradient(
+    35deg,
+    rgba(212, 198, 191, 1) 0%,
+    rgba(58, 28, 8, 1) 50%,
+    rgba(58, 28, 8, 1) 100%
+  );
+}
+
+.top-line {
+  display: flex;
+  position: relative;
+}
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.title {
+  position: absolute;
+  top: 15%;
+  margin-left: 5%;
+  width: 55vw;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title h1 {
+  font-size: 400%;
+  letter-spacing: 3px;
+}
+.title p {
+  width: 80%;
+  font-size: 165%;
+  line-height: 1.5em;
+  color: #c7c6c6;
+  margin-top: 12px;
+  margin-bottom: 50px;
+}
+
+.btn-group {
+  display: flex;
+  width: 60%;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 120%;
+  margin-right: 5%;
+}
+.btn-contact {
+  background-color: white;
+  color: var(--color-ancend);
+}
+.btn-order {
+  background-color: var(--color-ancend);
+  color: white;
+}
+
+.image-decoration {
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+}
+.image-decoration img:nth-child(2) {
+  position: absolute;
+  right: -13%;
+  top: 15%;
+  width: 100%;
+}
+.image-decoration img:nth-child(1) {
+  position: absolute;
+  top: 4%;
+  right: 16%;
+  width: 80%;
+}
+
+.bottom-line {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 5%;
+}
+.bottom-line .icon {
+  display: inline-block;
+  position: relative;
+  width: 36px;
+}
+.bottom-line .icon img {
+  width: 36px;
+}
+.line-rate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 72vw;
+}
+
+.bottom-line .line-rate span:last-child,
+.bottom-line .line-rate span:first-child {
+  display: inline-block;
+  width: 30vw;
+  height: 5px;
+  background-color: var(--color-white);
+  border-radius: 30px;
+}
+.bottom-line .line-rate span:nth-child(2) {
+  color: var(--color-white);
+}
+
+.bottom-line .space {
+  width: 10vw;
+}
