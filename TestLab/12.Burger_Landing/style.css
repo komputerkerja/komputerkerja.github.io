@@ -12,6 +12,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.btn-group-toggle .btn.btn-contact,
+.btn-group-toggle .btn.btn-order {
+  display: none;
+}
 section.container {
   position: relative;
   overflow: hidden;
@@ -37,7 +42,7 @@ section.container {
 }
 .title {
   position: absolute;
-  top: 15%;
+  top: 23vh;
   margin-left: 5%;
   width: 55vw;
   color: var(--color-white);
@@ -47,12 +52,13 @@ section.container {
 }
 
 .title h1 {
-  font-size: 400%;
+  font-size: 6.9vw;
   letter-spacing: 3px;
 }
 .title p {
-  width: 80%;
-  font-size: 165%;
+  width: 40vw;
+  font-size: 2vw;
+  letter-spacing: 0.2vw;
   line-height: 1.5em;
   color: #c7c6c6;
   margin-top: 12px;
@@ -61,14 +67,14 @@ section.container {
 
 .btn-group {
   display: flex;
-  width: 60%;
+  width: 30vw;
 }
 .btn {
-  padding: 10px 20px;
+  padding: 2vh 2.5vw;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 120%;
-  margin-right: 5%;
+  font-size: 1.4vw;
+  margin-right: 1.5vw;
 }
 .btn-contact {
   background-color: white;
@@ -89,13 +95,13 @@ section.container {
 .image-decoration img:nth-child(2) {
   position: absolute;
   right: -13%;
-  top: 15%;
+  top: 25vh;
   width: 100%;
 }
 .image-decoration img:nth-child(1) {
   position: absolute;
-  top: 4%;
-  right: 16%;
+  top: 8vw;
+  right: 2vw;
   width: 80%;
 }
 
@@ -134,4 +140,101 @@ section.container {
 
 .bottom-line .space {
   width: 10vw;
+}
+
+@media screen and (max-width: 530px) {
+  .bottom-line {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    width: 100vw;
+    height: 15vh;
+  }
+  .bottom-line .icon{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bottom-line .icon img {
+    position: relative;
+    width: 8vw;
+  }
+  .container .bottom-line .line-rate {
+    display: none;
+  }
+
+  .btn-group {
+    display: none;
+  }
+
+  .banner {
+    position: absolute;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .banner * {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .banner .title {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+  .banner .title h1 {
+    font-size: 9vw;
+  }
+  .banner .title p {
+    text-align: center;
+    width: 60vw;
+    font-size: 4.4vw;
+  }
+  .image-decoration {
+    position: relative;
+    top: -3vh;
+    width: 100vw;
+    height: 50vh;
+  }
+  .image-decoration img:nth-child(2) {
+    top: 5vh;
+    left: 25vw;
+    width: 40vw;
+  }
+  .image-decoration img:nth-child(1) {
+    top: 0;
+    left: 25vw;
+    width: 40vw;
+  }
+
+  .btn-group-toggle {
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3vh;
+  }
+  .btn {
+    width: 80%;
+    align-items: center;
+  }
+
+  .btn-group-toggle .btn.btn-contact,
+  .btn-group-toggle .btn.btn-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+  }
 }
