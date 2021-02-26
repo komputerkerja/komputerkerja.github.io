@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  font-family: "Poppins", sans-serif;
+  --color-primari: #1f003d;
+  --color-secondary: #ff9b05;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-font-dark: #161616;
+  --color-font-medium-dark: #333333;
+  --color-font-light: #4e4e4e;
+}
+
+.btn {
+  padding: 16px 20px;
+  text-decoration: none;
+  background-color: var(--color-primari);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.btn-primary {
+  font-size: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================== navbar ================== */
+.container .nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;z-index: 2;
+}
+.container .nav .icon {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5vw;
+}
+.container .nav .icon img {
+  height: 25px;
+  color: var(--color-primari);
+}
+.container .nav .icon span {
+  color: var(--color-primari);
+  font-size: 14px;
+}
+.container .nav ul.nav-menu {
+  position: absolute;
+  position: relative;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-right: 5vw;
+}
+.container .nav .nav-menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 0 4vw;
+  font-size: 14px;
+  color: var(--color-primari);
+}
+/* ================== navbar ================== */
+
+/* ================== Landing ================== */
+.container .landing {
+  margin-top: 50px;
+  height: calc(100vh - 50px);
+  position: relative;
+}
+.container .landing .content {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.container .landing .content .content-title {
+  height: 100%;
+  width: calc(50% - 5vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .landing .content .content-title h1 {
+  width: 90%;
+  font-size: 64px;
+  letter-spacing: 2px;
+  line-height: 100%;
+}
+.container .landing .content .content-title p:nth-child(2) {
+  font-size: 18px;
+  line-height: 100%;
+  margin: 5% 0 0 0;
+  letter-spacing: 2px;
+  color: var(--color-secondary);
+}
+.container .landing .content .content-title p:nth-child(3) {
+  font-size: 18px;
+  line-height: 200%;
+  letter-spacing: 2px;
+  width: 87%;
+  text-align: justify;
+  margin: 5% 0 10% 0;
+  color: var(--color-font-light);
+}
+.container .landing .content .content-title a {
+  text-transform: uppercase;
+  border-radius: 5px 20px;
+  width: fit-content;
+  width: -moz-fit-content;
+  line-height: 100%;
+}
+.container .landing .content .content-picture {
+  position: relative;
+  height: 100%;
+  width: calc(50% - 5vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .landing .content .content-picture::after {
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 20vw;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.44021358543417366) 11%,
+    rgba(31, 0, 61, 1) 59%
+  );
+  transform: rotate(-45deg);
+  top: 20vh;
+  right: -25vw;
+  z-index: -1;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.container .landing .content .content-picture img {
+  height: 80vh;
+}
+/* ================== Landing ================== */
+
+/* ================== About ================== */
+.container .about {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .about .about-title {
+  width: 40vw;
+}
+.container .about .about-title h1 {
+  width: 90%;
+  font-size: 64px;
+  letter-spacing: 2px;
+  line-height: 100%;
+}
+.container .about .about-title p {
+  font-size: 18px;
+  line-height: 200%;
+  letter-spacing: 2px;
+  width: 87%;
+  text-align: justify;
+  margin: 5% 0 10% 0;
+  color: var(--color-font-light);
+}
+.container .about .about-primary-picture {
+}
+.container .about .about-primary-picture img {
+  width: 200px;
+}
+.container .about .about-secondary-picture {
+}
+.container .about .about-secondary-picture img {
+  width: 200px; margin: 5vw;
+}
+
+/* ================== About ================== */
