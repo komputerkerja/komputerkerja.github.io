@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="refresh">Refresh</button>
+    <section class="section">
+      <div class="news">
+        <a class="url" href="https://soona.co/candorclause/"
+          >title: The Candor Clause</a
+        >
+        <div class="body">
+          <p>descendants: 0</p>
+          <p>type: story</p>
+          <p>by: mooreds</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const listofNews =
+        "https://hacker-news.firebaseio.com/v0/newstories.json";
+      const url = "https://hacker-news.firebaseio.com/v0/item/";
+      const section = document.querySelector(".section");
+      const refresh = document.getElementById("refresh");
+
+      refresh.addEventListener("click", (e) => {
+        e.preventDefault();
+        apiUi();
+      });
+
+      async function apiUi() {
+        const start = document.querySelectorAll(".news").length;
+        const newsId = await getApi();
+        newsId.forEach((id, index) => {
+          if (index >= (start - 1) && index <= ((10+start) - index) ) {
+            getJsonObjec(id);
+          } else {
+            return;
+          }
+        });
+      }
+
+      async function getJsonObjec(id) {
+        const dataJson = await fetch(url + id + ".json")
+          .then((res) => res.json())
+          .then((data) => data);
+        createUi(dataJson);
+      }
+
+      async function getApi() {
+        const data = await fetch(listofNews)
+          .then((res) => res.json())
+          .then((data) => data);
+        return data;
+      }
+
+      function createUi(dataJson) {
+        let div = document.createElement("div");
+        div.className = "news";
+        div.innerHTML = `<a class="url" href="${dataJson.url??'#'}">${dataJson.title??'#'}</a>
+                            <div class="body">
+                            <p>descendants: ${dataJson.descendants??'#'}</p>
+                            <p>type: ${dataJson.type??'#'}</p>
+                            <p>by: ${dataJson.by??'#'}</p>
+                        </div>`;
+        section.appendChild(div);
+      }
+    </script>
+  </body>
+</html>
