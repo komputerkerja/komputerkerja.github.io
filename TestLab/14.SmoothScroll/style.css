@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.navigation {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 200px;
+  background-color: rgb(72, 72, 201);
+  border-radius: 30px 0 0 0;
+  height: 50px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.navigation .menu-toogle {
+  position: relative;
+  height: 50px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+.navigation.active {
+  height: 266px;
+}
+.navigation .menu-toogle::before {
+  content: "Menu";
+  position: relative;
+  right: 30%;
+  top: 25%;
+  color: white;
+}
+.navigation.active .menu-toogle::before {
+  content: "Close";
+}
+
+.navigation .menu-toogle span::before {
+  background-color: white;
+  border-radius: 30px;
+  position: absolute;
+  display: block;
+  content: "";
+  width: 35px;
+  height: 2px;
+  right: 10px;
+  top: 30%;
+  transition: 0.2s;
+}
+.navigation .menu-toogle span::after {
+  background-color: white;
+  border-radius: 30px;
+  position: absolute;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 2px;
+  right: 10px;
+  top: 45%;
+  transition: 0.2s;
+}
+.navigation .menu-toogle.active span::before {
+  transform: rotate(135deg);
+  width: 25px;
+  top: 25px;
+}
+.navigation .menu-toogle.active span::after {
+  transform: rotate(-135deg);
+  top: 25px;
+}
+.navigation ul {
+  position: relative;
+  background-color: rgb(22, 22, 22);
+}
+.navigation ul li {
+  list-style: none;
+}
+.navigation ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 18px 20px;
+  color: white;
+  transition: 1s;
+}
+.navigation ul li a:hover {
+  background-color: rgb(72, 72, 201);
+  transition: 0s;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  font-size: 32px;
+}
