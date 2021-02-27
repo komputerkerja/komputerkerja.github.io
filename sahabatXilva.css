@@ -81,6 +81,8 @@ nav ul li ul {
 
 nav ul li ul:hover{
     display: block;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .anim-content{
