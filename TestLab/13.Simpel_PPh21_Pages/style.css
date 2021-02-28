@@ -31,8 +31,13 @@ nav {
   display: flex;
   align-items: center;
   z-index: 2;
+  transition: 0.2s;
 }
-
+.sticky {
+  background-color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+}
 nav .icon {
   height: 50px;
   display: flex;
@@ -234,11 +239,20 @@ section {
   background-color: var(--color-secondary);
   z-index: -1;
 }
+.about .about-primary-picture .img-box {
+  position: absolute;
+  height: 100%;
+  width: 65%;
+  top: 0;
+  right: 0;
+}
 .about .about-primary-picture img {
   position: absolute;
   top: 0;
   right: 0;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ========= PROJECTS ========= */
