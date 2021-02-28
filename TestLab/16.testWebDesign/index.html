@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="icon"><h4>Simpel<span>.</span></h4></div>
+        <div class="menu"></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="title">
+            <h1>Simpel <span>PPh21</span>, Asisten Pribadi</h1>
+            <p>Dinamis Dan Efisien</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod delectus quasi assumenda.</p>
+            <button class="btn">Download</button>
+        </div>
+        <div class="content">
+            <div class="img-box">
+                <img src="img/img2.jpg" alt="img2">
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="content">
+            <div class="img-box">
+                <img src="img/img1.jpg" alt="img1">
+            </div>
+        </div>
+        <div class="title">
+            <h1><span>A</span>bout</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, accusamus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi rem, assumenda veniam aspernatur id quaerat obcaecati blanditiis ratione voluptas sit facere labore tenetur dicta mollitia necessitatibus, doloribus sed provident voluptatum!</p>
+            <button class="btn">View</button>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <div class="title">
+            <h1><span>P</span>rojects</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, expedita! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, sequi!</p>
+        </div>
+        <div class="content">
+            <div class="img-box">
+                <img src="img/img1.jpg" alt="img1">
+            </div>
+            <div class="img-box">
+                <img src="img/img2.jpg" alt="img2">
+            </div>
+            <div class="img-box">
+                <img src="img/img3.jpg" alt="img3">
+            </div>
+            <div class="img-box">
+                <img src="img/bg.jpg" alt="bg.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/bg2.jpg" alt="bg2.jpg">
+            </div>
+            <div class="img-box">
+                <img src="img/bg3.jpg" alt="bg3.jpg">
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="content">
+            <div class="img-box">
+                <h3>Send Email</h3>
+            </div>
+        </div>
+        <div class="title">
+            <h1><span>C</span>ontact Me</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur earum fugit aperiam</p>
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.9322647754!2d106.77547222511133!3d-6.166489928567827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6453f00db5b%3A0x44b69cba2e5fc700!2sAksata%20Sejahtera%20Abadi.%20PT!5e0!3m2!1sid!2sid!4v1614501182613!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright reserved Ronal Latupeirissa - 2021</p>
+    </footer>
+<script>
+    window.addEventListener('scroll',()=>{
+        const nav = document.getElementsByTagName('nav')[0];
+        nav.classList.toggle('sticky',window.scrollY>0);
+    });
+</script>
+</script>
+</body>
+</html>

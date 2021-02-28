@@ -291,9 +291,19 @@ section {
   justify-content: center;
 }
 .projects .cards-group .card {
+  position: relative;
   border-radius: 10px;
   height: 300px;
   width: 200px;
   margin: 30px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.212);
+  overflow: hidden;
+}
+.projects .cards-group .card img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
