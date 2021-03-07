@@ -13,12 +13,15 @@ async function getFirstRequest() {
   await fetch(apiUrl)
     .then((res) => res.json())
     .then((data) => {
-        if(data['response']=='success'){
-            const result = data['results']
-            result.forEach(hero => {
-                createUi(hero);
-            });
-        }
+      if (data["response"] == "success") {
+        content.innerHTML = "";
+        const result = data["results"];
+        result.forEach((hero) => {
+          createUi(hero);
+        });
+      }else{
+        content.innerHTML = data["error"];  
+      }
     });
 }
 
@@ -27,12 +30,12 @@ function createUi(hero) {
   card.className = "card";
   card.innerHTML = `
         <div class="imgBox">
-        <img src="${hero['image']['url']}" alt="${hero['name']}">
+        <img src="${hero["image"]["url"]}" alt="${hero["name"]}">
         </div>
         <div class="title">
-        <h3>${hero['name']}</h3>
-        <p>first-appearance : ${hero['biography']['first-appearance']}</p>
-        <p>publisher: ${hero['biography']['publisher']}</p>
+        <h3>${hero["name"]}</h3>
+        <p>first-appearance : ${hero["biography"]["first-appearance"]}</p>
+        <p>publisher: ${hero["biography"]["publisher"]}</p>
         <button id="detail" class="detail">Detail</button>
         </div>
     `;
