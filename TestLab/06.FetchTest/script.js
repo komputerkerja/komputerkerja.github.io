@@ -22,7 +22,7 @@ button.addEventListener('click' , async () => {
     console.log('tombol ditekan');
 
     let input = document.getElementById('input');input = input.value;input = dataRequestFree + input;
-    let hasil = await fetch(input).then(res=>res.json());
+    let hasil = await fetch(input).then(res=>res.json()).then(data=>data);
     hasil = (hasil.Response === "True" ? hasil.Search : 'Not Found');
 
     console.log('mulai pencaharian');
