@@ -82,7 +82,7 @@ nav ul li ul {
 nav ul li ul:hover{
     display: block;
     height: 50vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .anim-content{
@@ -205,7 +205,7 @@ nav ul li ul:hover{
         z-index: 1;
         opacity: 1;
         overflow-y: auto;
-        height: 300px;
+        height: 50vh;
         overflow-x: hidden;
     }
     nav ul li ul li a{
