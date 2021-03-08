@@ -7,7 +7,9 @@
     --default-mr-pd: 40px;
 }
 body{
+    position: relative;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 *{
     margin: 0;
@@ -401,7 +403,7 @@ footer{
 
 
 
-@media screen and (max-width: 680px){
+@media (max-width: 680px){
     .menu{
         display: block;
     }
@@ -460,23 +462,30 @@ footer{
         flex-direction: column;align-items: center;
         text-align: center;
         width: 100vw;
-        margin: var(--default-mr-pd) 0;
+        justify-content: center;
         padding: 0;
-        height: 100vh;
+        height: calc(100vh - 70px);
     }
     .home .title h1{
-        font-size: 36px;
+        font-size: 42px;
+        width: 60%;
     }
     .home .title button{
-        width: 80%;
+        width: auto;
     }
     .home .title p:nth-child(2),
     .home .title p:nth-child(3){
-        font-size: 18px;
+        font-size: 19px;
         text-align: center;
+    }
+    .home .title p:nth-child(3){
+        margin: 30px 0;
     }
     .home .content{
         width: 100%;
+    }
+    .home .content .img-box{
+        width: 80%;
     }
 
     .about{
@@ -490,7 +499,11 @@ footer{
         margin-bottom: var(--default-mr-pd);
         padding: 0;
         display: flex;
-        flex-direction: column;align-items: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .title h1{
+        margin-bottom: 30px;
     }
     .about .title p:nth-child(3),
     .about .title p:nth-child(2){
@@ -498,9 +511,27 @@ footer{
     }
     .about .content{
         order: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
     }
-    .about .title button{
-        width: 80vw;
+    .about .content .img-box{
+        margin: 0;
+        padding: 0;
+        width: 70%;
+    }
+    .about .title .form {
+        position: relative;
+        width: 80%;
+    }
+    .about .title .form button{
+        width: auto;
+        position: relative;
+        margin-left: 0;
     }
 
     .projects{

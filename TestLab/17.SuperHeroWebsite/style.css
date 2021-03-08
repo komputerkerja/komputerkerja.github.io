@@ -151,9 +151,15 @@ footer{
     object-fit: cover;
 }
 
-@media screen and (max-width: 830px){
+@media (max-width: 830px){
     .home .content{
         max-width: 545px;
     }
 }
 
+@media (max-width: 500px){
+    .home .content .card{
+        width: 80%;
+        margin: 20px 0;
+    }
+}
