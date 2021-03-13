@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="POST" name="userform" id="userform">
+      <ul>
+        <li>
+          <input type="date" name="tanggal" id="tanggal" />
+          <label for="tanggal">Tanggal</label>
+        </li>
+        <li>
+          <input type="text" name="barang" id="barang" />
+          <label for="barang">Barang</label>
+        </li>
+        <li>
+          <input type="number" name="harga" id="harga" />
+          <label for="harga">Harga</label>
+        </li>
+        <li>
+          <input type="number" name="qty" id="qty" />
+          <label for="qty">Qty</label>
+        </li>
+      </ul>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="list-penjualan">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tanggal</th>
+            <th>Barang</th>
+            <th>Harga</th>
+            <th>Qty</th>
+            <th>Jumlah</th>
+          </tr>
+        </thead>
+        <tbody class="listPenjualan"></tbody>
+      </table>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", getDataPenjualan);
+      const listPenjualan = document.querySelector(".listPenjualan");
+      const scriptUrl =
+        "https://script.google.com/macros/s/AKfycbysyS8_fkHFgbIjGVoMfQv-fUJw1mbqGBygkB_hRA3dIDAkKtUpC9dwtYzhHTAf8h1U/exec?penjualan=true";
+      const form = document.getElementById("userform");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptUrl, { method: "POST", body: new FormData(form) })
+          .then((res) => res.json())
+          .then((data) => {
+            getDataPenjualan();
+            console.log(data);
+          })
+          .catch((e) => console.log(e));
+      });
+
+      function getDataPenjualan() {
+        fetch(scriptUrl, { method: "GET" })
+          .then((res) => res.json())
+          .then((data) => {
+            listPenjualan.innerHTML = "";
+            data = data['result'];
+            
+            data.forEach(element => {
+              createUiDisplay(element);
+            });
+            
+          })
+          .catch((e) => console.log(e));
+      }
+
+      function createUiDisplay(e) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>` + e['timestamp'] + `</td>
+            <td>` + e['tanggal'] + `</td>
+            <td>` + e['barang'] + `</td>
+            <td>` + e['harga'] + `</td>
+            <td>` + e['qty'] + `</td>
+            <td>` + e['Jumlah'] + `</td>
+        `;
+        listPenjualan.appendChild(tr);
+      }
+    </script>
+  </body>
+</html>
