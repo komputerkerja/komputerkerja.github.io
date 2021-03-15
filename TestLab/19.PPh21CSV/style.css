@@ -77,14 +77,13 @@ section{
 }
 .home .container .title  h1{
     color: var(--colorBlac);
-    font-size: 42px;
+    font-size: 28px;
 }
 .home .container .title h1 span{
     color: var(--colorOrange);
-    font-size: 42px;
 }
 .home .container .title form{
-    border: 1px solid rgba(32, 32, 32, 0.432);
+    border: 1px solid rgba(255, 68, 0, 0.425);
     padding: 5px;
     border-radius: 10px;
 }
@@ -117,7 +116,7 @@ section{
     /* display: none; */
 }
 .home .container .title form #csvbulanan{
-    /* display: none; */
+    display: none;
 }
 .home .container .title form #csvtahunan{
     display: none;
@@ -162,3 +161,4 @@ section{
     padding: 10px;
     color: var(--colorBlac);
 }
+

@@ -45,25 +45,14 @@
     <section class="projects" id="projects"><h1>Projects</h1></section>
     <section class="contact" id="contact"><h1>Contact</h1></section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="isloading"></div>
 
     <script src="app.js"></script>
     <script src="helper.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", makeUI);
       function makeUI() {
-        for (let x = 1; x <= 10; x++) {
+        for (let x = 1; x <= 3; x++) {
           createUI(x);
         }
       }
@@ -81,32 +70,32 @@
             <th>Akhir Kerja</th>
             <th>Tahun Pajak</th>
             <th>Gaji</th>
-            <th>Tunj Pjk 1</th>
-            <th>Tunj lain, Lembru</th>
+            <th>Tunjangan Pajak</th>
+            <th>Tunjangan lain, Lembur</th>
             <th>Honor/ Imbalan Lainnya</th>
             <th>Asuransi</th>
             <th>Natura</th>
-            <th>Bonus, THR</th>
+            <th>Bonus/THR</th>
             <th>Iuran Pensiun (IP)</th>
-            <th>PPh 21 di tempat sebelumny</th>  
+            <th>PPh 21 di tempat sebelumnya</th>  
             `;
           tableHeader.appendChild(tr);
         } else {
           tr.innerHTML = `
                 <td>${x-1}</td>
-                <td>Ronal</td>
-                <td>024602021325000</td>
-                <td>TK/0</td>
+                <td>${(x==3)?`CONTOH2`:`CONTOH1`}</td>
+                <td>12345602132500${x++}</td>
+                <td>${(x==3)?`TK/0`:`K/1`}</td>
                 <td>1</td>
                 <td>2</td>
                 <td>2021</td>
-                <td>8000000</td>
+                <td>${(x*2)}000000</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
-                <td>8000000</td>
+                <td>${x*2}000000</td>
                 <td>150000</td>
                 <td>0</td>    
                 `;
