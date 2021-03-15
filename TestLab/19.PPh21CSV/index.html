@@ -1,30 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-    <form action="" method="POST" id="myform">
-        <ul>
-            <li>
-                <input type="file" name="myFile" id="myFile">
-                <button type="submit">Upload</button>
-            </li>
-        </ul>
-    </form>
-    <table>
-        <thead class="tableHeader"></thead>
-        <tbody class="tableList"></tbody>
-    </table>
-    											
-    	
+  </head>
+  <body>
 
-    
-<script src="app.js"></script>    
-</body>
+    <nav>
+        <div class="icon">Simpel<span>21</span></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="title">
+                <form action="" method="POST" id="myform">
+                    <input type="file" name="myFile" id="myFile" />
+                    <label for="myFile">Pilih File</label>
+                    <button type="submit" id="submit">Upload</button>
+                    <button type="button" id="csvbulanan">CSV Masa</button>
+                    <button type="button" id="csvtahunan">CSV 1721A1</button>
+                    <button type="button" id="csvtemplate">CSV Template</button>
+                </form>    
+                <h1>CSV <span>Upload</span></h1>
+            </div>
+            <div class="content">
+                <table>
+                    <thead class="tableHeader"></thead>
+                    <tbody class="tableList"></tbody>
+                  </table> 
+            </div>             
+        </div>      
+    </section>
+
+    <section class="about" id="about"><h1>About</h1></section>
+    <section class="projects" id="projects"><h1>Projects</h1></section>
+    <section class="contact" id="contact"><h1>Contact</h1></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+    <script src="helper.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", makeUI);
+      function makeUI() {
+        for (let x = 1; x <= 10; x++) {
+          createUI(x);
+        }
+      }
+      function createUI(x) {
+        const tr = document.createElement("tr");
+        const tableList = document.querySelector(".tableList");
+        const tableHeader = document.querySelector(".tableHeader");
+        if (x == 1) {
+          tr.innerHTML = `
+                <th>No</th>
+            <th>Nama</th>
+            <th>NPWP</th>
+            <th>Status</th>
+            <th>Mulai Kerja</th>
+            <th>Akhir Kerja</th>
+            <th>Tahun Pajak</th>
+            <th>Gaji</th>
+            <th>Tunj Pjk 1</th>
+            <th>Tunj lain, Lembru</th>
+            <th>Honor/ Imbalan Lainnya</th>
+            <th>Asuransi</th>
+            <th>Natura</th>
+            <th>Bonus, THR</th>
+            <th>Iuran Pensiun (IP)</th>
+            <th>PPh 21 di tempat sebelumny</th>  
+            `;
+          tableHeader.appendChild(tr);
+        } else {
+          tr.innerHTML = `
+                <td>${x-1}</td>
+                <td>Ronal</td>
+                <td>024602021325000</td>
+                <td>TK/0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2021</td>
+                <td>8000000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>8000000</td>
+                <td>150000</td>
+                <td>0</td>    
+                `;
+          tableList.appendChild(tr);
+        }
+      }
+
+</script>
+  </body>
 </html>

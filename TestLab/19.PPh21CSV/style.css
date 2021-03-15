@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    font-family: 'Poppins', sans-serif;
+    --colorBlac: #0c0c0c;
+    --colorOrange: #ff4500;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--colorBlac);
+    z-index: 5;
+}
+nav .icon{
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+}
+nav .icon span{
+    color: var(--colorOrange);
+    font-weight: 800;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    padding: 10px 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+nav ul li:last-child > a{
+    background-color: var(--colorOrange);
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.home{
+    overflow: hidden;
+}
+.home .container{
+    position: relative;
+    width: 100%;
+    padding: 0 40px;
+}
+.home .container .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.home .container .title  h1{
+    color: var(--colorBlac);
+    font-size: 42px;
+}
+.home .container .title h1 span{
+    color: var(--colorOrange);
+    font-size: 42px;
+}
+.home .container .title form{
+    border: 1px solid rgba(32, 32, 32, 0.432);
+    padding: 5px;
+    border-radius: 10px;
+}
+.home .container .title form input{
+    display: none;
+}
+.home .container .title form button{
+    padding: 10px 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    background-color: var(--colorBlac);
+    font-weight: 300;
+    /* display: none; */
+}
+.home .container .title form label{
+    padding: 10px 30px;
+    color: var(--colorBlac);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    /* display: none; */
+    /* display: unset; */
+}
+.home .container .title form #submit{
+    /* display: none; */
+}
+.home .container .title form #csvbulanan{
+    /* display: none; */
+}
+.home .container .title form #csvtahunan{
+    display: none;
+}
+.home .container .title form #csvtemplate{
+    /* display: none; */
+}
+
+.displayUnset{
+    display: unset;
+}
+.displayNone{
+    display: none;
+}
+
+.home .container .content{
+    background-color: whitesmoke;
+    height: 60vh;
+    overflow: auto;
+}
+.home .container .content table{
+    border-collapse: collapse;
+}
+.home .container .content table thead{
+    background-color: rgb(48, 46, 46)
+}
+.home .container .content table thead tr th{
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+.home .container .content table .tableBody{
+    max-height: 40vh;
+    overflow: auto;
+}
+.home .container .content table tbody tr:nth-child(even){
+    background-color: rgba(72, 72, 73, 0.11);
+}
+.home .container .content table tbody tr td{
+    text-align: center;
+    padding: 10px;
+    color: var(--colorBlac);
+}

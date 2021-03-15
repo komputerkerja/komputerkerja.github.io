@@ -11,6 +11,9 @@ myFile.addEventListener('change',(e)=>{
     reader.onload = (e) => {
         const content = reader.result;
         const contentArray = content.split('\n');
+        DataJson.data = [];
+        tableList.innerHTML = '';
+        tableHeader.innerHTML = '';
         contentArray.forEach((line,index) => {
             const subArray = line.split(';');
             if(index==0){
@@ -73,12 +76,29 @@ function createHeaderTable(e){
 }
 
 myform.addEventListener('submit',(e)=>{
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec';
+    const masaPajak= 2;
+    const Pembetulan = 0;
+    const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${masaPajak}&pembetulan=${Pembetulan}`;
     e.preventDefault();
     
     const raw = JSON.stringify({'data':DataJson.data});
     fetch(apiUrl,{method: 'POST',body: raw})
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>{
+        console.log(data);
+        if(data['response']=='success'){
+            if(data['result'][1]){
+                downloadCsvMasa(data['result'][1]);
+            }
+        }
+    })
     .catch(err=>console.log(err));
 })
+
+function downloadCsvMasa(url){
+    const a = document.createElement('a');
+    a.setAttribute('href',url);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
