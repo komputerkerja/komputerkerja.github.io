@@ -56,9 +56,23 @@
       </ul>
       <p class="text-loading">Mengirim data..</p>
   </div>
+
     <div class="containerModal">
       <div class="alertBox">
-        
+        <h3>Confirmasi Status Masa Pajak</h3>
+        <ul>
+          <li>
+            <label for="masa">Masa Pajak</label>
+            <select name="masa" id="masa"></select>
+          </li>
+          <li>
+            <label for="pembetulan">Pembetulan</label>
+            <input type="number" name="pembetulan" id="pembetulan" value="0">
+          </li>
+          <li>
+            <button class="statusBtn">Ok</button>
+          </li>          
+        </ul>
       </div>
     </div>
 
@@ -69,6 +83,9 @@
       function makeUI() {
         for (let x = 1; x <= 3; x++) {
           createUI(x);
+        }
+        for (let x = 1;x <= 12; x++){
+          createOption(x);
         }
       }
       function createUI(x) {
@@ -117,7 +134,13 @@
           tableList.appendChild(tr);
         }
       }
-
+      function createOption(x){
+        const masa = document.getElementById('masa');
+        const option = document.createElement('option');
+        option.value = x;
+        option.innerHTML = x;
+        masa.appendChild(option);
+      }
 </script>
   </body>
 </html>

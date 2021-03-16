@@ -1,9 +1,10 @@
-class DataJson{static data = []}
+class DataJson{static data = [];static masaPajak = 1;static Pembetulan = 0;}
 const myFile = document.getElementById('myFile');
 const tableList = document.querySelector('.tableList');
 const tableHeader = document.querySelector('.tableHeader');
 const myform = document.getElementById('myform');
 const submit = document.getElementById('submit');
+const statusBtn = document.querySelector('.statusBtn');
 
 myFile.addEventListener('change',(e)=>{
     // File Validation For CSV File
@@ -14,7 +15,8 @@ myFile.addEventListener('change',(e)=>{
         myFile.value = '';
         return
     }
-    updateClass(submit,{addDisplayElement: 'displayUnset'}) // Show Upload Button
+    toggleAlert();
+    updateElementById(submit,{addDisplayElement: 'displayUnset'}) // Show Upload Button
     const csvFile = myFile.files[0];
     const reader = new FileReader();
     reader.readAsText(csvFile)
@@ -38,6 +40,13 @@ myFile.addEventListener('change',(e)=>{
         });
     }
 });
+statusBtn.addEventListener('click',(e)=>{
+    const masaPajak = document.getElementById('masa');
+    const pembetulan = document.getElementById('pembetulan');
+    toggleAlert();
+    DataJson.masaPajak = masaPajak.value;
+    DataJson.Pembetulan = pembetulan.value;
+})
 function createUi(e,i){
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -83,28 +92,39 @@ function createHeaderTable(e){
     tableHeader.appendChild(tr);
 }
 myform.addEventListener('submit',(e)=>{
-    const masaPajak= 2;
-    const Pembetulan = 0;
-    const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${masaPajak}&pembetulan=${Pembetulan}`;
+    const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${DataJson.masaPajak}&pembetulan=${DataJson.Pembetulan}`;
     e.preventDefault();
     toggleDisplayFlex(); // Loading animation
     statusLoading('Menghitung pph21...'); // Status Loading Text
-    updateClass(submit,{removeDisplayElement: 'displayUnset'})
+    updateElementById(submit,{removeDisplayElement: 'displayUnset'})
 
     const raw = JSON.stringify({'data':DataJson.data});
     fetch(apiUrl,{method: 'POST',body: raw})
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
         if(data['response']=='success'){
             statusLoading('Menyiapkan File CSV...'); // Status Loading Text
             if(data['result'][1]){
+                console.log(data);
                 downloadCsvMasa(data['result'][1]); // Membuat Download Url Dengan DOM
                 statusLoading('Prosess selesai...'); // Status Loading Text
                 setTimeout(() => {
                     toggleDisplayFlex(); // Loading animation
                 }, 2000);
+            }else{
+                console.log(data);
+                statusLoading('Membuat CSV Manual...'); // Status Loading Text
+                console.log('Membuat CSV Manual...');
+                setTimeout(() => {
+                    toggleDisplayFlex(); // Loading animation
+                }, 3000);
             }
+        }else{
+            console.log(data);
+            statusLoading('Server gagal membuat csv...'); // Status Loading Text
+            setTimeout(() => {
+                toggleDisplayFlex(); // Loading animation
+            }, 3000);
         }
     })
     .catch(err=>{
@@ -128,10 +148,11 @@ function statusLoading(text){
     const e = document.querySelector('.text-loading');
     e.innerHTML = text;
 }
-function updateClass(elementId,{removeDisplayElement, addDisplayElement}){
+function updateElementById(elementId,{removeDisplayElement, addDisplayElement}){
     if(removeDisplayElement) elementId.classList.remove(removeDisplayElement);
     if(addDisplayElement) elementId.classList.add(addDisplayElement);
 }
-function showAlert(){
-    
+function toggleAlert(){
+    const containerModal = document.querySelector('.containerModal');
+    containerModal.classList.toggle('toggleTransform')
 }
