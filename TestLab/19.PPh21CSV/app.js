@@ -3,8 +3,18 @@ const myFile = document.getElementById('myFile');
 const tableList = document.querySelector('.tableList');
 const tableHeader = document.querySelector('.tableHeader');
 const myform = document.getElementById('myform');
+const submit = document.getElementById('submit');
 
 myFile.addEventListener('change',(e)=>{
+    // File Validation For CSV File
+    const fileName = myFile.files[0].name;
+    const fileExtension = fileName.substring((fileName.length)-4,fileName.length);
+    if(fileExtension != '.csv'){
+        console.log('Silahkan Memiliha File CSV')
+        myFile.value = '';
+        return
+    }
+    updateClass(submit,{addDisplayElement: 'displayUnset'}) // Show Upload Button
     const csvFile = myFile.files[0];
     const reader = new FileReader();
     reader.readAsText(csvFile)
@@ -28,7 +38,6 @@ myFile.addEventListener('change',(e)=>{
         });
     }
 });
-
 function createUi(e,i){
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -51,7 +60,6 @@ function createUi(e,i){
     `;
     tableList.appendChild(tr);
 }    
-
 function createHeaderTable(e){
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -74,31 +82,56 @@ function createHeaderTable(e){
     `;
     tableHeader.appendChild(tr);
 }
-
 myform.addEventListener('submit',(e)=>{
     const masaPajak= 2;
     const Pembetulan = 0;
     const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${masaPajak}&pembetulan=${Pembetulan}`;
     e.preventDefault();
-    
+    toggleDisplayFlex(); // Loading animation
+    statusLoading('Menghitung pph21...'); // Status Loading Text
+    updateClass(submit,{removeDisplayElement: 'displayUnset'})
+
     const raw = JSON.stringify({'data':DataJson.data});
     fetch(apiUrl,{method: 'POST',body: raw})
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
         if(data['response']=='success'){
+            statusLoading('Menyiapkan File CSV...'); // Status Loading Text
             if(data['result'][1]){
-                downloadCsvMasa(data['result'][1]);
+                downloadCsvMasa(data['result'][1]); // Membuat Download Url Dengan DOM
+                statusLoading('Prosess selesai...'); // Status Loading Text
+                setTimeout(() => {
+                    toggleDisplayFlex(); // Loading animation
+                }, 2000);
             }
         }
     })
-    .catch(err=>console.log(err));
+    .catch(err=>{
+        statusLoading('Prosess gagal...'); // Status Loading Text
+        toggleDisplayFlex(); // Loading animation
+        console.log(err)
+    });
 })
-
 function downloadCsvMasa(url){
     const a = document.createElement('a');
     a.setAttribute('href',url);
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+}
+function toggleDisplayFlex(){
+    const e = document.querySelector('.loading-animation')
+    e.classList.toggle('displayFlex');
+}
+function statusLoading(text){
+    const e = document.querySelector('.text-loading');
+    e.innerHTML = text;
+}
+function updateClass(elementId,{removeDisplayElement, addDisplayElement}){
+    if(removeDisplayElement) elementId.classList.remove(removeDisplayElement);
+    if(addDisplayElement) elementId.classList.add(addDisplayElement);
+}
+function showAlert(){
+    
 }

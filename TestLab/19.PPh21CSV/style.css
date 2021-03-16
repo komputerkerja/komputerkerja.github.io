@@ -113,7 +113,7 @@ section{
     /* display: unset; */
 }
 .home .container .title form #submit{
-    /* display: none; */
+    display: none;
 }
 .home .container .title form #csvbulanan{
     display: none;
@@ -121,15 +121,15 @@ section{
 .home .container .title form #csvtahunan{
     display: none;
 }
-.home .container .title form #csvtemplate{
-    /* display: none; */
-}
 
 .displayUnset{
-    display: unset;
+    display: unset !important;
 }
 .displayNone{
     display: none;
+}
+.displayFlex{
+    display: flex !important;
 }
 
 .home .container .content{
@@ -162,3 +162,41 @@ section{
     color: var(--colorBlac);
 }
 
+
+
+/* Loading Animasi */
+.loading-animation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(29, 28, 28, 0.904);
+    transition: 0.3s;
+    z-index: 6;
+}
+.loading-animation ul{
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+}
+.loading-animation ul li{
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+    animation: loading 1.5s infinite ease-in-out;
+}
+.loading-animation p{margin-top: 60px;letter-spacing: 2px;color: white;}
+@keyframes loading{0%,100%{transform: scale(1);}50%{transform: scale(2);}}
+.loading-animation ul li:nth-child(1){animation-delay: 0s;}
+.loading-animation ul li:nth-child(2){animation-delay: 0.2s;}
+.loading-animation ul li:nth-child(3){animation-delay: 0.4s;}
+.loading-animation ul li:nth-child(4){animation-delay: 0.6s;}
+.loading-animation ul li:nth-child(5){animation-delay: 0.8s;}
+.loading-animation ul li:nth-child(6){animation-delay: 1s;}

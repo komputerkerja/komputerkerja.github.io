@@ -24,7 +24,7 @@
             <div class="title">
                 <form action="" method="POST" id="myform">
                     <input type="file" name="myFile" id="myFile" />
-                    <label for="myFile">Pilih File</label>
+                    <label class="myFileLabel" for="myFile">Pilih File</label>
                     <button type="submit" id="submit">Upload</button>
                     <button type="button" id="csvbulanan">CSV Masa</button>
                     <button type="button" id="csvtahunan">CSV 1721A1</button>
@@ -45,7 +45,22 @@
     <section class="projects" id="projects"><h1>Projects</h1></section>
     <section class="contact" id="contact"><h1>Contact</h1></section>
 
-    <div class="isloading"></div>
+    <div class="loading-animation">
+      <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+      <p class="text-loading">Mengirim data..</p>
+  </div>
+    <div class="containerModal">
+      <div class="alertBox">
+        
+      </div>
+    </div>
 
     <script src="app.js"></script>
     <script src="helper.js"></script>
