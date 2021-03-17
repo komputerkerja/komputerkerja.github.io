@@ -92,7 +92,8 @@ function createHeaderTable(e){
     tableHeader.appendChild(tr);
 }
 myform.addEventListener('submit',(e)=>{
-    const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${DataJson.masaPajak}&pembetulan=${DataJson.Pembetulan}`;
+    const grossup = document.getElementById('grossup')
+    const apiUrl = `https://script.google.com/macros/s/AKfycbzfW5OvTQtUVgn2gUFI7hAUvb6Y6eYF6SuCU6suOj2z69Na7S-8yDAQW5-0A-IEvqKv/exec?kodePajak=21-100-01&masaPajak=${DataJson.masaPajak}&pembetulan=${DataJson.Pembetulan}&gorssup=${grossup.checked}`;
     e.preventDefault();
     toggleDisplayFlex(); // Loading animation
     statusLoading('Menghitung pph21...'); // Status Loading Text

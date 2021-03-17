@@ -124,6 +124,61 @@ section{
 .home .container .title form #csvtahunan{
     display: none;
 }
+.home .container .grossupGroup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+}
+.home .container .grossupGroup .form-group{
+    display: flex;
+}
+.home .container .grossupGroup .form-group input{
+    display: none;
+}
+.home .container .grossupGroup .form-group input:checked ~ label::after{
+    transform: translateX(0);
+}
+.home .container .grossupGroup .form-group label{
+    position: relative;
+    display: block;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(48, 13, 0, 0.466);
+}
+.home .container .grossupGroup .form-group label::before{
+    content: 'Non Gross-up';
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(224, 224, 224);
+    font-weight: bold;
+}
+.home .container .grossupGroup .form-group label::after{
+    content: 'Gross-up';
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    font-weight: bold;
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+.home .container .grossupGroup p{
+    color: var(--colorBlac);
+    font-size: 14px;
+}
 
 .displayUnset{
     display: unset !important;
