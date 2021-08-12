@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./mqttws31.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+
+  <button onclick="connect();">Connect</button>
+
+<script>
+  function connect(){
+    const client = new Paho.MQTT.Client("broker.mqtt-dashboard.com", 8000, "webBrowser-7895421");
+
+    var options = {
+        timeout: 3,
+        keepAliveInterval: 60,
+        cleanSession: true,
+        useSSL: false,
+        onSuccess:onConnect,
+        onFailure: onFail
+    };
+  
+    // set callback handlers
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+    
+    // connect the client
+    client.connect(options);
+  
+    // called when the client connects
+    function onConnect() {
+      console.log("onConnect");
+      client.subscribe("xilvaTest");
+      const message = new Paho.MQTT.Message("Hello");
+      message.destinationName = "xilvaTest";
+      client.send(message);
+    }
+  
+    function onFail(){
+      console.log("onFail");
+    }
+  
+    // called when the client loses its connection
+    function onConnectionLost(responseObject) {
+      if (responseObject.errorCode !== 0) console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+    
+    // called when a message arrives
+    function onMessageArrived(message) {
+      console.log("onMessageArrived:"+message.payloadString);
+    }
+  }
+</script>
+</body>
+</html>
