@@ -1,100 +1,44 @@
-class Hero{
-    constructor(game,offsetY,super_dog){
+import { STATE } from "./state.js";
+import { Game } from "./game.js";
+
+export class Hero{
+    constructor({game,sprites}){
         this.game=game;
-        this.image=super_dog;
-        this.spriteWidth=(this.image.width/12)+2;
-        this.spriteHeight=this.image.height/10;
-        this.width=100;
-        this.height=100;
-        this.x=0;
-        this.offsetY=offsetY
-        this.bottom=this.game.canvas.height-this.height-this.offsetY
+        this.image=sprites.image;
+        this.hFrame=sprites.hFrame;
+        this.vFrame=sprites.vFrame;
+        this.spriteWidth=(this.image.width/this.hFrame)+sprites.offsetW;
+        this.spriteHeight=(this.image.height/this.vFrame)+sprites.offsetH;
+        this.width=this.spriteWidth/6
+        this.height=this.spriteHeight/6;
+        this.status='run'
+        this.frameX=0
+        this.frameY=STATE[this.status].frameY;
+        this.frameMax=STATE[this.status].frameX;
+        //======================================
+        this.fpsMax=10;
+        this.fpsNormal=50;
+        this.frameFps=50;
+        this.frameTimer=0;
+        //================
+        this.x=20;
         this.y=0;
         this.vx=0;
         this.vy=0;
-
-        this.sprites = {
-            idle: {
-                status: 'idle',
-                frameX: 7,
-                frameY: 0,
-            },
-            jump: {
-                status: 'jump',
-                frameX: 7,
-                frameY: 1
-            },
-            fall: {
-                status: 'fall',
-                frameX: 7,
-                frameY: 2
-            },
-            run: {
-                status: 'run',
-                frameX: 9,
-                frameY: 3
-            },
-            take_hit2: {
-                status: 'take_hit2',
-                frameX: 11,
-                frameY: 4
-            },
-            sit: {
-                status: 'sit',
-                frameX: 5,
-                frameY: 5
-            },
-            roll: {
-                status: 'roll',
-                frameX: 7,
-                frameY: 6
-            },
-            slide: {
-                status: 'slide',
-                frameX: 7,
-                frameY: 7
-            },
-            dead: {
-                status: 'dead',
-                frameX: 12,
-                frameY: 8
-            },
-            take_hit1: {
-                status: 'take_hit1',
-                frameX: 4,
-                frameY: 9
-            },
-        }
-        this.state="run"
-
-        this.frameX=0;
-        this.frameY=this.sprites[this.state].frameY;
-        this.frameMax=this.sprites[this.state].frameX;
-
-        this.frameInterval=50;
-        this.frameTimer=0;
-
-        this.movementSpeed = 4;
-        this.maxSpeed = 5;
-        this.jumpSpeed = 20;
-        this.weight = 0.8;
-        this.isJump=false;
+        this.weight=1;
+        this.movementSpeed=4;
+        this.maxJump=24;
+        this.boost=2;
     }
-    draw(){
-        // this.game.ctx.beginPath()
-        // this.game.ctx.strokeStyle = 'red'
-        // this.game.ctx.arc(this.x+this.width/2,this.y+this.height/2,this.width/3,0,Math.PI*2)
-        // this.game.ctx.stroke()
-        // this.game.ctx.closePath()
+    draw(ctx){
+        // ctx.beginPath()
+        // ctx.strokeStyle = 'yellow'
+        // ctx.arc(this.x+this.width/2,this.y+this.height/2,this.width/2,0,Math.PI*2)
+        // ctx.stroke()
+        // ctx.closePath()
+        // ctx.fillRect(this.x,this.y,this.width,this.height)
 
-        // this.game.ctx.beginPath()
-        // this.game.ctx.strokeStyle = 'black'
-        // this.game.ctx.rect(this.x,this.y,this.width,
-        //     this.height)
-        // this.game.ctx.stroke()
-        // this.game.ctx.closePath()
-
-        this.game.ctx.drawImage(this.image,
+        ctx.drawImage(this.image,
             this.frameX*this.spriteWidth,
             this.frameY*this.spriteHeight,
             this.spriteWidth,
@@ -102,174 +46,227 @@ class Hero{
             this.x,
             this.y,
             this.width,
-            this.height)
+            this.height,)
     }
-    update(deltaTime,enemies){
-        // Update Frames
-        if(this.frameTimer > this.frameInterval){
-            if(this.frameX >= (this.sprites[this.state].frameX)-1) this.frameX = 0
-            else this.frameX++
-            this.frameTimer = 0;
-        }this.frameTimer += deltaTime
-
+    update(deltaTime){
         this.vy+=this.weight;
-        
-        if(this.game.keys.includes(69,0)){ // E
-                Game.speed += 1
-                this.on('roll', ()=>this.state="roll")
-                this.vy=0
-                this.vx+=(this.movementSpeed)
-        }else if(this.game.keys.includes(81,0)){ // Q
-            if(this.onGround()){
-                this.on('roll', ()=>this.state="roll")
-                this.vy=0
-                this.vx+=(this.movementSpeed)
-            }else{
-                this.on('roll', ()=>this.state="roll")
-                this.vy+=(this.movementSpeed)
-                this.vx=0
-            }
-        }else if(this.onGround()){
-            if(this.game.keys.includes(70,0)){ // F
-                Game.speed += 1
-                this.on('slide', ()=>this.state="slide")
-                this.vy=0
-                this.vx=(this.movementSpeed*2)
-            }else if(this.game.keys.includes(83,0)){ // SIT
-                Game.speed=0
-                this.y=this.bottom
-                this.vy=0
-                this.vx=0
-                this.isJump=false
-                this.on('sit', ()=>this.state="sit")
-            }else if(this.game.keys.length==0){ // IDLE RUN
-                this.y=this.bottom
-                this.vy=0
-                this.vx=0
-                this.isJump=false
-                this.on('run', ()=>this.state="run")
-            }else if(this.game.keys.includes(87,0) && !this.isJump){ // W
-                this.vy-=this.jumpSpeed
-                this.isJump=true
-                this.on('jump', ()=>this.state="jump")
-            }else{ // IDLE RUN
-                this.y=this.bottom
-                this.vy=0
-                this.isJump=false
-                this.on('run', ()=>this.state="run")
-            }
-        }else if(this.onFall()){
-            this.on('fall', ()=>this.state="fall")
-        }
-
-        if(this.game.keys.includes(65,0)){ // A
-            this.vx=-this.movementSpeed
-        }else if(this.game.keys.includes(68,0)){ // D
-            this.vx=this.movementSpeed
-        }
-
+        this.playerControls();
         this.x+=this.vx;
         this.y+=this.vy;
-        if(this.x+this.width>this.game.canvas.width) this.x=this.game.canvas.width-this.width
-        if(this.x<0) this.x=0
-
-        // COLLISION DETECTION
-        enemies.forEach((enemy) => {
-            const dx = enemy.x - this.x
-            const dy = enemy.y - this.y
+        // **********COLLITIONS***********
+        this.game.enemies.forEach(enemy => {
+            const dx = (enemy.x+(enemy.width/2)) - (this.x+(this.width/2))
+            const dy = (enemy.y+(enemy.height/2)) - (this.y+(this.height/2))
             const distance = Math.sqrt((dx*dx)+(dy*dy))
-            if(distance<(this.width/3)+(enemy.width/3)) {
-                if(this.state=='slide' || this.state=='roll'){
-                    this.game.playSoundBoom()
+            const sumSize = this.width+enemy.width
+            if(distance<(sumSize/3)) {
+                if(this.status=='roll' || this.status=='slide'){
                     this.game.enemies=this.game.enemies.filter(e => e!= enemy)
                     this.game.score++
-                } else Game.gameOver=true;
-            }    
+                }else this.game.gameOver=true;
+            } 
         });
-
-        // DUST
-        if(this.state=='run') this.game.createDustParticles(this.x+this.width/2,this.y+this.height)
-        if(this.state=='slide' || this.state=='roll') this.game.createFireParticles(this.x+this.width/2,this.y+this.height)
+        // **********PARTICLES***********
+        if(this.status=='run') this.game.createDustParticle(this.x+this.width/2,this.y+this.height)
+        if(this.status=='roll' || this.status=='slide') this.game.createFireParticle(this.x+this.width/2,this.y+this.height)
+        // FRAME PER SECOND LOOP **********
+        if(this.frameTimer>=this.frameFps){
+            if(this.frameX>=this.frameMax-1)this.frameX=0;
+            else this.frameX++
+            this.frameTimer=0;
+        }else this.frameTimer+=deltaTime
     }
     onGround(){
-        return this.y > this.bottom
+        return this.y+this.height+this.vy >= this.game.ground;
     }
     onFall(){
-        return Math.floor(this.y)<=(this.bottom-this.height-this.height-this.jumpSpeed)
+        return this.vy+this.maxJump == this.maxJump+1;
     }
-    on(state, fnc){
-        switch(state){
+    onSit(){
+        return this.game.keys.includes(83,0);
+    }
+    onSlide(){
+        return this.game.keys.includes(70,0);
+    }
+    onRollToRight(){
+        return this.game.keys.includes(69,0);
+    }
+    onRollToLeft(){
+        return this.game.keys.includes(81,0);
+    }
+    toLeft(){
+        return this.game.keys.includes(65,0);
+    }
+    toRight(){
+        return this.game.keys.includes(68,0);
+    }
+    toUp(){
+        return this.game.keys.includes(87,0);
+    }
+    toDown(){
+        return this.onSit() && !this.onGround();
+    }
+    notKeyPressed(){
+        return this.game.keys.length;
+    }
+    preventOnGround(){
+        this.y = this.game.ground-this.height
+        this.vy=0
+    }
+    preventToLeft(){
+        return this.x+this.vx <= 0;
+    }
+    preventToRight(){
+        return this.x+this.vx>=this.game.width-this.width;
+    }
+    playerControls(){
+                
+        if(this.onGround() && 
+            !this.onSit() &&
+            !this.onRollToLeft() &&
+            !this.onRollToRight() &&
+            !this.onSlide()
+        ){ // IDLE RUN
+            this.preventOnGround()
+            this.on('run')
+        }
+        if(this.onSit() && this.onGround()){ // DOWN
+            this.preventOnGround()
+            this.game.speed=0
+            this.on('sit')
+        }
+        
+        if(this.toUp() && this.onGround()){ // JUMP
+            this.vy = -this.maxJump
+            this.on('jump')
+        }
+        if(this.onFall()&&!this.onGround()){ // FALL
+            this.on('fall')
+        }
+        if(this.onSlide()){ // F
+            this.vx+=(this.boost*2)
+            if(this.onGround()) this.preventOnGround()
+            this.game.speed=10
+            this.on('slide')
+        }
+        if(this.onRollToLeft()){ // Q
+            this.vx-=this.boost
+            if(this.onGround()) this.preventOnGround()
+            this.on('roll')
+        }
+        if(this.onRollToRight()){ // E
+            this.vx+=this.boost
+            if(this.onGround()) this.preventOnGround()
+            this.game.speed=4
+            this.on('roll')
+        }
+        if(this.toDown()){ // S
+            this.vy+=this.boost
+            if(this.onGround()) this.preventOnGround()
+            this.on('roll')
+        }
+        if(this.toLeft()) { // LEFT
+            this.vx = -this.movementSpeed
+        }
+        if(this.toRight()) { // RIGHT
+            this.frameFps = this.fpsMax
+            this.vx = this.movementSpeed
+        }else this.frameFps = this.fpsNormal
+        if(this.notKeyPressed() == 0 && this.onGround){ // IDLE RUN
+            this.vx = 0
+        }
+        if(this.preventToLeft()){
+            this.vx = 0
+            this.x = 0
+        }
+        if(this.preventToRight()){
+            this.x=this.game.width-this.width
+            this.vx=0
+        }
+
+    }
+    on(status){
+        switch(status){
             case 'idle':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'jump':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'fall':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'run':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'take_hit2':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'sit':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'roll':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'slide':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'dead':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
             case 'take_hit1':
-                if(this.state != this.sprites[state].status){
-                    this.frameY=this.sprites[state].frameY;
-                    this.frameX=0
-                    fnc()
+                if(this.status != status){
+                    this.frameX = 0
+                    this.status = status
+                    this.frameMax = STATE[status].frameX
+                    this.frameY = STATE[status].frameY
                 }
                 break;
         }
-
     }
 }

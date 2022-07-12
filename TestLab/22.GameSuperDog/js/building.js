@@ -1,38 +1,37 @@
-class Buildng{
-    constructor(game,layer,speed){
+export class Building{
+    constructor(game,image,speed){
         this.game=game
-        this.x=0;
-        this.y=0;
+        this.image=image
         this.speed=speed
-        this.vx=0;
-        this.vy=0;
-        this.image=layer;
-        this.width=this.image.width;
-        this.height=this.image.height;
+        this.width=this.image.width
+        this.height=this.image.height
+        this.x=0
+        this.x2=-this.image.width
     }
-    draw(){
-        this.game.ctx.drawImage(this.image,
+    draw(ctx){
+        ctx.drawImage(this.image,
             this.x,
-            this.y,
+            0,
             this.width,
             this.height,
             0,
             0,
             this.width,
-            this.game.canvas.height)
-        this.game.ctx.drawImage(this.image,
-            this.x-this.width,
-            this.y,
+            this.game.height)
+        ctx.drawImage(this.image,
+            this.x2,
+            0,
             this.width,
             this.height,
             0,
             0,
             this.width,
-            this.game.canvas.height)
+            this.game.height)
     }
     update(){
-        this.x+=(this.speed*Game.speed);
-        this.y+=this.vy;
-        if(this.x>this.width) this.x = 0
+        this.x+=this.speed*this.game.speed
+        this.x2+=this.speed*this.game.speed
+        if(this.x>=this.width)this.x=0
+        if(this.x2>=0)this.x2=-this.image.width
     }
 }

@@ -1,17 +1,30 @@
 body{
+    margin: 0;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
     background-color: black;
-    margin: 0;
+}
+canvas{
+    background-color: white;
 }
 .images{
     display: none;
 }
-canvas{
-    background-color: white;
-    border: 1px solid black;
+button{
+    position: absolute;
+    font-size: 4vmin;
+    right: 50%;
+    transform: translate(50%,0);
+    top: 10px;
+    padding: 5px 20px;
+    border-style: none;
+    background-color: rgb(111, 103, 222);
+    color: white;
+}
+.display_none{
+    display: none;
 }
