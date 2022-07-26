@@ -13,10 +13,31 @@
         <video muted autoplay id="localvideo"></video>
         <video muted autoplay id="remotevideo"></video>
     </div>
+    
+    <div class="input-group-hide">
+        <div class="input">
+            <input id="btn-offer" type="button" value="Create Offer">
+            <textarea id="text-offer"></textarea>
+        </div>
+        <div class="input">
+            <input id="btn-answer" type="button" value="Create Answer">
+            <textarea id="text-answer"></textarea>
+            <input id="add-answer" type="button" value="Add Answer">
+        </div>
+    </div>
 
-    <button onclick="testFetch()">get</button>
-    <button onclick="testPost()">post</button>
+    <div class="input-group mt-10">
+        <div class="input">
+            <input id="btn-send" type="button" value="send">
+            <input type="text" id="text-send">
+        </div>
+        <div class="input mt-10">
+            <label for="text-message" class="align-start">Pesan</label>
+            <textarea id="text-message"></textarea>
+        </div>
+    </div>
 
+    <script src="db.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
