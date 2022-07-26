@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video muted autoplay width="200px" height="200px" id="local-video" style="background-color: black;"></video>
+    <video muted autoplay width="200px" height="200px" id="remote-video" style="background-color: black;"></video>
+
+    <div class="input-group" style="width: 90%;">
+        <div class="input" style="width: 100%; display: flex; flex-direction: column;">
+            <input type="button" id="btn-offer" value="Create Offer">
+            <textarea id="text-offer" style="width: 100%; height: 50px;"></textarea>
+        </div>
+        <div class="input" style="width: 100%; display: flex; flex-direction: column;">
+            <input type="button" id="btn-answer" value="Create Answer">
+            <textarea id="text-answer" style="width: 100%; height: 50px;"></textarea>
+            <input type="button" id="btn-addanswer" value="Add Answer">
+        </div>
+    </div>
+
+    <div class="input-group" style="width: 90%;">
+        <div class="input" style="width: 100%; display: flex; flex-direction: column;">
+            <input type="text" id="text-send">
+            <input type="button" id="btn-send" value="Send">
+            <textarea id="text-message" style="width: 100%; height: 50px;"></textarea>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
