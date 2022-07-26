@@ -50,6 +50,7 @@ createAnswer = async () => {
       dataChannel = e.channel
       dataChannel.onopen = () => console.log("open channel")
       dataChannel.onmessage = msg => textmessage.value += "[Teman] : " + msg.data + "\n"
+      showMessage("Berhasil Menghubungkan","display-none")
   }
 
   const offer = JSON.parse(textoffer.value)
@@ -78,6 +79,15 @@ document.getElementById('btn-send').onclick = () => {
   textmessage.value += "[Aku] : " + message + "\n"
   dataChannel.send(message)
 }
+document.querySelector('.flip').addEventListener('click', () => {
+  if(localvideo.classList.contains('localvideo')){
+    localvideo.className = "remotevideo"
+    remotevideo.className = "localvideo"
+  }else{
+    localvideo.className = "localvideo"
+    remotevideo.className = "remotevideo"
+  }
+})
 
 localvideo.onclick = () => localvideo.muted = !localvideo.muted
 remotevideo.onclick = () => remotevideo.muted = !remotevideo.muted
@@ -94,6 +104,7 @@ async function testGet(){
   me = Date.now()+""+Math.floor(Math.random()*100000)  
   const data = await DB.getData()
   if(data.length == 1){
+    showMessage("Menunggu Teman Terhubung..","")
     await createOffer()
     setTimeout(async () => {
       const dataObject = {
@@ -107,8 +118,10 @@ async function testGet(){
         const data = await DB.getData()
         if(data.length == 3){
           textanswer.value = (data[2][2])
+          showMessage("Berhasil Menghubungkan","")
           await DB.deleteData()
           await addAnswer()
+          showMessage("Berhasil Menghubungkan","display-none")
           clearInterval(checkFriendConnected)
         }else console.log("waiting...")
       }, 3000);
@@ -116,6 +129,7 @@ async function testGet(){
       checkFriendConnected()
     }, 3000);
   }else if(data.length == 2){
+    showMessage("Menghubungkan Dengan Teman..","")
     textoffer.value = (data[1][2]) // get offer
     await createAnswer()
     setTimeout( async () => {
@@ -129,3 +143,8 @@ async function testGet(){
   }else {}
 }
 
+function showMessage(message, classname){
+  const elMessage =  document.querySelector('.waiting-message')
+  elMessage.innerHTML = message
+  if(classname!="") elMessage.classList.add(classname)
+}

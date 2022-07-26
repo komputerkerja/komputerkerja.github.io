@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="waiting-message">
+        . . . . . .
+    </div>
+    <div class="flip">&#10176;</div>
     <div class="videos">
-        <video muted autoplay id="localvideo"></video>
-        <video muted autoplay id="remotevideo"></video>
+        <video muted autoplay id="localvideo" class="localvideo" ></video>
+        <video muted autoplay id="remotevideo" class="remotevideo"></video>
     </div>
     
-    <div class="input-group-hide">
+    <div class="input-group display-none">
         <div class="input">
             <input id="btn-offer" type="button" value="Create Offer">
             <textarea id="text-offer"></textarea>
@@ -27,13 +30,13 @@
     </div>
 
     <div class="input-group mt-10">
-        <div class="input">
-            <input id="btn-send" type="button" value="send">
-            <input type="text" id="text-send">
+        <div class="input flxdirrow">
+            <input type="text" id="text-send" class="flex70 fs16">
+            <input id="btn-send" type="button" value="&#10146;" class="flex30 btn fs20">
         </div>
         <div class="input mt-10">
-            <label for="text-message" class="align-start">Pesan</label>
-            <textarea id="text-message"></textarea>
+            <label for="text-message" class="align-start greydark-color">Pesan</label>
+            <textarea id="text-message" class="fs16"></textarea>
         </div>
     </div>
 
