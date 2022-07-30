@@ -33,7 +33,10 @@ createOffer = async () => {
 
   dataChannel = await peer.createDataChannel("channel")
   dataChannel.onopen = () => console.log("open channel")
-  dataChannel.onmessage = msg => textmessage.value += "[Teman] : " + msg.data + "\n"
+  dataChannel.onmessage = msg => {
+    const chats = "[Teman] : " + msg.data + "\n" + textmessage.value
+    textmessage.value = chats
+  }
 
   const offer = await peer.createOffer()
   await peer.setLocalDescription(offer)
