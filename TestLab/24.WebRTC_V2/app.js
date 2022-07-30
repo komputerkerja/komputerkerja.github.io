@@ -33,10 +33,7 @@ createOffer = async () => {
 
   dataChannel = await peer.createDataChannel("channel")
   dataChannel.onopen = () => console.log("open channel")
-  dataChannel.onmessage = msg => {
-    const chats = "[Teman] : " + msg.data + "\n" + textmessage.value
-    textmessage.value = chats
-  }
+  dataChannel.onmessage = msg => textmessage.value += "[Teman] : " + msg.data + "\n"
 
   const offer = await peer.createOffer()
   await peer.setLocalDescription(offer)
@@ -52,10 +49,7 @@ createAnswer = async () => {
   peer.ondatachannel = e => {
       dataChannel = e.channel
       dataChannel.onopen = () => console.log("open channel")
-      dataChannel.onmessage = msg => {
-        const chats = "[Teman] : " + msg.data + "\n" + textmessage.value
-        textmessage.value = chats
-      }
+      dataChannel.onmessage = msg => textmessage.value += "[Teman] : " + msg.data + "\n"
       showMessage("Berhasil Menghubungkan","display-none")
   }
 
@@ -82,8 +76,7 @@ document.getElementById('add-answer').onclick = async () => await addAnswer()
 document.getElementById('btn-send').onclick = () => {
   const message = textsend.value
   textsend.value = ""
-  const chats = "[Aku] : " + message + "\n" + textmessage.value
-  textmessage.value = chats
+  textmessage.value += "[Aku] : " + message + "\n"
   dataChannel.send(message)
 }
 document.querySelector('.flip').addEventListener('click', () => {
@@ -104,6 +97,7 @@ remotevideo.onclick = () => remotevideo.muted = !remotevideo.muted
 
 async function testPost(storeData){
   const data = await DB.postData(storeData)
+  console.log(data)
 }
 
 async function testGet(){
@@ -132,7 +126,7 @@ async function testGet(){
         }else console.log("waiting...")
       }, 3000);
 
-      // checkFriendConnected()
+      checkFriendConnected()
     }, 3000);
   }else if(data.length == 2){
     showMessage("Menghubungkan Dengan Teman..","")

@@ -1,0 +1,32 @@
+function testFunction(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('user_rtc');
+  ss.getRange(2,1,10,3).deleteCells(SpreadsheetApp.Dimension.ROWS)
+}
+
+function doPost(e){
+  var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('user_rtc');
+  var jsObj =  e.postData.getDataAsString();
+  var updates = JSON.parse(jsObj);
+
+  var lastRow = ss.getLastRow() + 1
+
+  ss.getRange(lastRow,1).setValue(updates['timestamp'])
+  ss.getRange(lastRow,2).setValue(updates['username'])
+  ss.getRange(lastRow,3).setValue(updates['sdp'])
+
+  var allRange = ss.getDataRange().getValues()
+  allRange = JSON.stringify(allRange)
+
+  return ContentService.createTextOutput(JSON.stringify({"result": allRange})).setMimeType(ContentService.MimeType.JSON)
+}
+
+function doGet(e){
+  var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('user_rtc');
+  var deleteData = e.parameter
+
+  if(deleteData['delete']) ss.getRange(2,1,10,3).deleteCells(SpreadsheetApp.Dimension.ROWS)
+
+  var allRange = ss.getDataRange().getValues()
+  allRange = JSON.stringify(allRange)
+  return ContentService.createTextOutput(JSON.stringify({"result": allRange})).setMimeType(ContentService.MimeType.JSON)
+}
