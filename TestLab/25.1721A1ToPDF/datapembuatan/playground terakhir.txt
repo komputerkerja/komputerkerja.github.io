@@ -1,0 +1,1271 @@
+// playground requires you to assign document definition to a variable called dd
+
+var dd = {
+	content:[
+    // ========== HEADER SURAT ==========
+    "_______________________________________________________________________________________________",
+    
+	{
+		table: {
+			widths: [150, '*', 150],
+			body: [
+				[
+					{
+					    border: [false, false, true, false],
+						stack: [
+						    {
+                                image: 'data:image/jpeg;base64,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a0oshJBZRJphRhT0cR7AgJrI4Ovh/iSwRGbilroE/umC7HpfaF/xX8Nfd6zb522+CRQU6EB77HL8mKqsTxJ2d+F6RVTDdTKdKn7mI+ZMdpr+JFU6oroquqr6+L4s/DbuslsstYsGRfeyLOBbnEauH4Db6p9I2NwMje0f4XPjy1HSwmSH/MCQIZdRks7AiKJ+H7cgqXy5vY5WJVSfQ5X9oNZnbwE2Aaf9iN5+egc/YjefnwHF6IXn5+BxeiF5+fgc/Yld/nwPF6IXn5+BxeiF5+fgcXohefn4HF6IXn5+BxeiF5+fgc/Yld/nwPF6IXn5+BxeiF5+fgcXohefn4HF6IXn5+BxeiF5+fgcXohefn4HF6IXn5+BxeiF5+fgcXohefn4HF6JXS/VfehIkwkM+vzdIO3sHh1SxI0Wi/l+I0HvNNrwbyCvLLGlrMBLK+R+AvPF6T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+956T09/T+94hldUU1uLmMfdim0VXFUUtbWxfd/Edk5252525252525252525252525252525252525252525252T/9xnnhGhknnlZFF9Msh/UlVyORkjGvY9rmQXdMQMSRBaBywfTPI/1LVcFMFLgZOKTFPE/X5SN7mSaOrY6vv6KzmWEC4BKlDtK09ZkCOHI5Ld0sJrQZrUOItNlkP56ap4Bos9YTeQFdAEzn29XWta8+xFEaGeEbA2cMqEiMzRZ4CdIDroAaULRUFjL5INwCTJ4kRO/AL6jsZnRA2wRcxmmzoJLxjLyvHni12UkkZGzR1bn8mmhHhlmnkZHGl5SrXrYpaCKEmxx6/PT1Kc9dpPcPUEtg1DHKgKgjnHmjmhCuKk+CWcKyFJh+mWR/qWq5FPDPCyWGVkkcury0EksU2irI5Qbips0eoFkKUhRgoUDyCyYR4AbOvsoXTAGwFRTWVaOUOKQcPCRzvx+uykb3MfpKtjwzgz4EIDKhIhIvaQQtgZVsFATws0QGB5BhMQ8EBA5MEc48zJYvXqP3/wBOW2D98IKGFgkIJnjhhGLGLgYQNPHNCHeUp80kAVqGTN7dun/w3SLzpz05x15iq8+wrFkL6YTEUWv02PUmWYXB/wDT7qTzHfsd+jwn0k/zPozH2udTLWsnSizf7M/fdF9Lf4+BG6YPPMIySf3ij3sOSE2DIWLLYdLcwF7izUllofZ9VsDlM9lozqus8ieryORytc/QA1vlT4DHA7WA7S6hZDZb6pb022OfMo5JYgNwmVTqx203wrdTHg5p6ZmAYQtr1BvXUWNsivH2Jq6mbAWmEuZFe2LZ4HJ2Al5dk1fjP6V4PJWuWAtjq3zTe/Nj4fodp+Rf/T9PyjToStLW+qfA/cQZyHpHL9HWdq3o5oyq0hmWtO7E6L/8k6vnTHp9kL/IQnWdYsxOC8eY6j3+RiIe+uq/oAuv2aa/7lJFnX9TaN2GSdA+rpMti/O5URy+bgE+ie70mSVXINu/+pnT324uo6fWJWlXTyBsn6ZqCH1F0YlGS+SjPqiNkLuthGq8x183QZiqs/8AX1c/6d3vMmfBW9OKk2d3aJKuzTNp1CRyodsjhrPppanjL3hk6iKmQz+WqyUGkyGSqstVMECTxv8Abtf+TdNzC9Ws9m8oDVFAnykdNam3Mv8AQa+0BeI7CJ3wHUnmIw1DpOmQ7JwoGGdL9OfCSbjrz4WGb1OJpDdFFoKFT5cJs8PcWkwFDQuAn6VUFSfYbIkwOOeXJGzYDal5Swkctb1x7riI+MGhNomCy/czmksemDTaTQ1RcgT5rXqdqqQqCrnEo7IAA/rZGOaJCTDpa4jppqB9DUwL6N1GLbs9Dlc1WFosGr6WaNlAaTPtDbNM9olvulhRL5O8/Rh/bAA8nbK6CVsT/BJL1IuoKC+zOkAOmu7WnNpehcoRsfgnpN90sDpawU7I+eXsrylu+khZNOEogd/k57Xp1k7mtRUtejC9sTqudPOqufzGaiqzQzpZsABaXW0utoaBIHD0+pae21/USOyrhi21BBXTPZeiGS96JKqx6g9Qb40G4fXR67LX+IOo9RPoSLh/Uq/AB2GFu18cggfW/JmFDCxg2iSKvOnmKzGjn1M1vX+fJuGUuHwlnFThxCPoOkukWhEVm2MAjwc17Srs8aKUiWNtv7LQY+XKF1Z8uh6gzlUnTnOZdOynp0cv/TPcF3pnkZy4mf0u2FCX8Cc3gqa56WDjRwRxldI9aSSKRmbTuyz9qpzsnPCnOyc7c7f++dudk52TnZOdk9nZOdvYqJztztzsnO3s7c7ezsnO3Oyc7c8Kc7J354edk4qc7c7ezsnOye3tzwpztzsnO3Oyf7p//8QAUBAAAgECAwUCCAgLBwMCBwAAAQIDAAQREiEFEzFRYSJBEBQyQlJxc4EGI0BicnSR0hUgMDM0Q2OCsbKzJFBTkqGi0USTwWDCVGRwhMPE4v/aAAgBAQANPwD/ANDqCWYnAADUmlJW42y4xjHNbYee9QvhtGyubkTJcyd7lvMlNW2AubGcZJoT6u8f3axyxxgZpJWPBI1GpNRapszPg83I3JH9IVAvkaQT3MQ9LhuYqsY8tu6R7oTxr6aN+dSoB/Y7+BsEl6wv56nviapXyWu0U0tbn7kn91+fGDhDbD053q5XGGEcIRyjB0hi6miMbLZsQxhhPKFD/rI1KcYrNDjGnV/Tao2DJIjFWQjvUjgaOkV9yPN8PJb54qVNLwgTTwJ3GcDHeIPTFMmcRB95c2qc4T+sQehT+cvceRHEH+54lLPI7BVUDmTQBMm03GSe4XnbhvIT55pGIudsOuKl+B3OOssnzqkY+N7RlO87fN3896l8uVzizfiE9u0c+R1iNO+N9seY5IXb1fqZKh/Ttmzrgk3SeP8AhItRJjJZy+f8+FuDp/cs+ltZwjPNM3QChJ/Ytiwnexh+4EDWeWocDHssPg0vI3BX/SMUgyBE7Ekye7yFod340fB14MPRcHQioP0S7hOXE/Mb+MZrPhYbZt/i0dxwIb9TJTOEt9sIn2C6UeT9KnUMrKcQQeBBH9xRtkur9/0a0++/QVMP7XdznSHN3zP5ico1qVMUXuhB7oxwhSh+ahTSGHog/JOuTfOM8kf0/TFTx622YTT28f7In85H8ypWLTbKZ9U5m2J8hucZqNsk0EgySwuOKSJ8vj4u/wDAAak0i5mRzurq6T9qf1UZqJNb4DdTToOJtwfITnIaGIlv8McX7ynpv8807FnkY5mcniSTxP5RyDNayfmn+61AA3dnL+an6ToP9JBVrF7p1/hNFRHxTg/2a76wP8tmXGKyh4genKeEaVNpYbLt1zJEeUMf8ZWpHxtNjRHPEr//AJpKXyLRD5fWU0OA/HOJQ+kAcD+IOJplzKJEKFl5jN3eCI4xyxnBlNIw8V2jGd3g/MN+repCEg2uqYbvkLgL5DcnFZQYrxBvLm2Tu3gH52P54qUYpJG2KkfKVBLMxwAA4kk0Cy3G2ZFxXqtsvnt86s+G0ds3Jzoj85H4zSVN+k3U7YlPpkeQvKMU/e3BR6KDgq0PAAaaKNLr55lGcP4RTAFTNq7A/MFWUMkbO8RIlzvnJ0p2ypcRnPGx8KXiSCKbEtNHE9W9w7PJNjojLVtIUky6g94I6EeDgQaYFGhftyRKfQzcV+YalJefZLPhk5+LE+Q3zDWfG/2LcDdRu3eCn6mWrfS5sZxlli+8Oo+Tu2WKJBnlmf0Y1HE1C+eLZYfWXvU3RHFuUYqGPSHEQ3FxEO6T/CiqMZBcIMkjj9n6IrHGiM88noRDj7zwFHZ8aRqO4REjwTwo1yMMDCZOHrSrWXFpfTjTyBVlhvMfKfnk+gNT4LdGlKRJvMrcFdl5CoXcBSuOJTVs7eYV76lZUdcgGQsMwCemSNRUsA13OJcSYhOxxUEjsmlJU48cQcNevgtkwsE7rpZG017ilQ5WtY7cEC6EnBV+iaup2kKA45O4LQBNWlghkUcZosMxH0lo0dJEOscoHc61BFoy8Jeh7po6h1sNoW5wSU84HP8ArG1SNlt9qRjC1n6P6EnyUAbzX+z2vWd//ZVynZXuhH8IIqYY2dhFrFB0hQ/6yNSHGK0Q/Fp1PpN4JJxCjHHMxI8oD0av23h6RriqCsZ4/wCDeC3s5YyjefFgcHWilG2uml6uxK0FGNCN7fSVYu3odC1bUmnkDeMx4R74VsyaOQ43UZz5EyVcW0MOTxuLEbusTIUJDdmQ4ggisK3SZfsrHAMMDW8f+NNgv+Y4VHGij90AVczRtbA8AJz/AABqE694YHgyHvVqRgyOpwZSO9SNQakwVL3l1l++KmTS4wE09vGf8UD87H8+nGPiyPvbi2HOBvPUegabvGhU+iwPA/IYlLPI5yhQKwJk2g/YuLlO/chvzafPNRsVuNsOuOZuB3AOsr/PNOxF3tGY7zt83f8AWPUpxeWQ5mPglcmVuUadpq8WwgQcFMWqAUbSIAcsBgRUF6n2SAr4Dcz5blNJIiNB7qt5TG2HA4d46GoJfGrhF0LudAmNRSdg95RhmWvF2l4byNiCB20NWlxdI6sAXk3IBBV/Mxq5nijiwUAoHjz4yHz6W0gd33SmMiYkEJHwXDuNbx1MkjFmIU4DEmsKnRTKrd3VD3VMoD444oRoSvUilYr9hqW8hHuDYmsa2fs55Xbk0rYRirHU82hY9oeEti9o7aDrEfMotjfbIm7EMp+h+qkqDS+sZxgk3SZPPHKRajHbtZDiJB6cD8HX8vcHC2soBmmmboO4dTWfCx2NB8bGH7hl/XS1CQ0Oy1fWTkbkjyzyQUoyCJOxJKnJ8vkp0ocAPBI6oiDizMcAB66gRLfBuKMSS48FhfOqeym+NSowkn+Rx4JyHMigncuNMx+aaNvBi6HEE1v4ifo5azrGjdxEYy0A0G6utSVOBzVtCSWSfTXGUYHLrVhIjw6d6LkGOtTQxxN2dMsdaSb6A9gmQ4lfWKINRIilD5TaYArzBq3I3kbHEjHhhzxpmLfaaRpJP8iGsau7zdRdYrUZAalRoyOYYYVFN4u0uHZEo4L6yB4U4OvePRYcCtQ/ol7AcmLfsm/ihoyf2DbUHYiLjgc/GGWiwSDa8a6x8hdKOHRxTqCjKQysDqCCPyl3A0xup9IoYkbKWUee/Spxje31wexDj3zv5g5RrU0f/aHJRwhjoY7qNdIoRyQfiWnxUHtXGre4VtcCCc8AlxHrG5+n4NqWBx6y2p+7UlrMv+2ioqaz0xGIIRsWFXYYhO6ORfKAq+wglZe9DqcayvA/N8naDmleNne7YBkxHBa9oPu17Qfdr2g+7SShWhtzjEpA4rWBqJFCEjUYClGAY92HSsTh9tQWTfbIQKgt3ZfpcFpIFaTq79tqOWK3j73mlOVRUkRE0nOZtTJ6wahkaOT6SHA/iOm7zuueWNeT+mtSJrZA76e3Q8dwf1ic0NAPNd7MlfIqYauYSdY3HoGriGOYK4ysBIoYBh+T2Tfrv+Yt7n4qStuWS3UJHdPb/FOB6wQ1Q3UscsjnFnZWwzMTqcfxOVTK8zeuRqkXGNxxSRNUb3GkJhuk71mj0atnX8MrHlE5yPWRsBz0q4h3sJBxDJmK/aCMCK3oEIHex7qtp80yt5Pk4dmjvYgT3F1IFWebPIPJMr0IFKpHLut1gdWNfWx96vrY+9X1sfeoTuFgY5miwOGRjzFNoB1OlaZrlT2ggHkYc6jzFZ3Om6w4dWoCprK2lTnkckrV9foJRzhg+Meia2MPc93L9xfBcQxTe/DK34sA0hHkF4kzsa+EF8J7zuORm8ZnJoAAD8ndQPEemYYY1sC+EN73uI0bxecGtpW6sD3GSLQ/iXrl7WX0Fj0X3PVki21zA3lRumn2N4NsjK3JbuL761cQSRj1sNKWJYpceIeLsNWytszxdVR3qC4R2+iDrVtFvoJR58XEr1BFA40bUTzSd5lGq/5eAp4nXGxx3zNxA01K16pK9UlKCTo9Ek4nicTxPWllQsegOJqTtR5BmJHOpIyI/nE+jU1zGrjmo1IoXFvbr0EMdbMsFj9U1ycx/wBopQEhTiXlfRFo4y3L8c00mrmjWyxuXfzLmbHNkHRKDCSH2UuoHu8IBNbVuke+XvMKfHzVsOzS0g5b+57cjD1KAPyu3LPxyHDmw3E1bAuDBN/9udzJ4cpwqK2iX7FqFMt1AP8AqoOX0082plzI3/g8iK0kt5PQmjOKkU2KzJ6EqHBxSXS3cP0LoY/6GhOZ1HSSMSA/7awxq6gw4ZxBvl+1aAGHuq4CGYgasV1yIOXM0GdJLrJn3QIwIK19Xjr6vHQifKniyds4cKwGlLi5B78tOCuGOIAPELyxpJEWPOdEUngBUFvLJ6icFFXO1buXN0DYVtK9mnXpGDkStjgTS8nupR2B+4PBLHmvLgf9LAf/AHvwAqFMqL05nmTxNSwSRnqYziPDJOHl9nF22rYVgLQdXI38zVtOaW/uPXcnMPyuz74Q3J7vFrz4t625ZC6iXzDIBuZvedDVrM8MnrjOHgVt2ZcOwHwxCk91TW8bqehXwXkg8aXutJm4TAeg/fXEEHu6VtgGWPkl1EO0P3xV/bzWcv0k+Mjq+2RGx6mNzGajkeM/ukrUUIgmgP62MaBhVvM8anvKg6VdSFEb0Yk+8a/CbGIy6xdpyMX6V9CvZ0YsGSBBvSG0OTwQpi6k4Yq2mA60kgG4Ze2ycCxNBi6OwwMmGmOB4CoLYKPcDJTWIyc95dn/APqrG1RFX03AygDqWqdmuLp/Smk1P2cKumMdnB6b97HkqcSamcy3VweMsp4n1Du8GSVwijFjnIVQBUblHQ8VYaEeCztzEj+obySvhRfh7xx5eS4O/lf3JSqAByA/K3VtJFmOuVmGhrY12tveg8cjnxSetowLN03kfYfwG5TOjDEMrJROL7OJxki5m3J/loHBxwaNvRdTwNSKUdGGIZTxBFSYnZk7Hio427/OXuqJlntW9GaLVatZIbvKNDHJC+Ei1O0ttjzWdM6UbjeD1SDNUdxIgRvIOThqNVNLKVmEhxcP1JpmdN8NXKynyEHOmjjl3WOIwJwyN/A19YSvrCU00ai6ilV3jPQADwCVfswpDg2FRwgH3nGtpXRhT99xEKWYzyAehZp2cehNbMy3dz35rhtIoz6uNRDFsOLE8FXqauUASLiLWDzYh19I+BNJp2/R7X6Z726CpcN7eS+X6kHmLT3k5HqzGgCa27cxvc8xH+kTVsOwECdLm67bFfUg/L7Utxf2ydZxu5iPU9bEm3N4Dq4MZ3EngvoME+nF2h4BxmUYpMPRnXgwNd0ROMc49KBvOHSiQyOvlxSLwdeoqzw3uHCZPNnToa21FJNAO5Z8MJk/eGtfB25jErMSZZpLd8Dk5AKau7NT/wBs1cEF8urRsPOUVJb4TFOaHTNVpCN2Pny6Y1a2wiY8nJLEU0KHOJHwfqMHr2j/AH6aY9u7clHAHAAs2tAE00Z3rIfLD6lTRiET5V1Kjhh1pGcAnU4CmYXZMgJQbhd7i+HVq2bapZlAcw3qks4Toxq6drq8djhld9cOgQVaOTs+Nv10g0Nw4/kpPLkc4AU3F/JubsdPQjNJ5KL/AB6moYWKjm57KiuJPXiamuFaT2UXbetgbPECN5iyzDeysOoQAVteeS+l6b49geoL+Xs7w21z7C87GJ+i1bYtBfp0LjczVbyvFIOTRnKat7ogwv2MrJgVKtR0O+XCB2+ZIMRhTcGBxU+8Vjip4Ojc0I4GuCX4GMsPITqOI+fVv27OZTmSVTxiJHFHpryLNho9gQ2Ry57uQq7tjc2pckthIN24J5hqiz2sx6js/wAUqSDNAcxVlZDrlIqfERSHRgw1yPU8QSVwNcF5Hup3TLbkYsUl89zSRhWjgjLRIR5qHKa9i33KUOzpeqU3eOgZNBUpyKOpqNMJWkByrl07PPNRBDov6tuGtTypH6zI2FbF2UsZ9cvbP+0VtDaQnurNWJEsTduPsd5jAxqPI9/cpoJsdRboevFqdQttYw+WQNB9BBzNI2aC0T9Gtvvv1NGu5Mc0jE8kXU1HJnaa6GRpm4AiMa4CreYxiQjDMQNdK2fbGNT7s8lfCzaGeTJ5ovG3rn1CIUiKqqOAVRgB+XuIHC9G4qfcasLgW+0W4EJN/Z5s3qetoRJOv0x2Hq/ACknQTJ5P+am0aNwGU+sGjrkQ57dj86JqH/VWGLgD58TaisMHj4OMe5kbWlVpLnZshwiIGpaE+Y1bdijmtRKBjLCiYArh5yntVsbaAspIc2DXQlGUYfTFWV9Bf5IsSgSfUhOgqJg0bjiDTFGSaNhuwyHjgaa6GYcwmLYU0olucNQgXgtRO4S2mhDugxr6sKit+xLAm7VMx1U0sbsKQAlcdQOtTTKdBhjl1Jpbgyt6ogWr4RbWCNchiHjRHyCNujgdmtkK9taY+TmHZlkH8q1K015HPcAYR2szaMqDi9S63N3McZJD85jwFDQx2q5gv0pPJFN+otO3P6mlOgri1xKd7MxPfnao1wjXveRtFWji7tzJ1Jrb92m/C6MI5TvZT7o6+D2zgFUd1xd/8Rj5DtBDf23quew/+SQVs6QQ3X27iWu7DiCOVIMAx0FyB3j5/MeEcJ4yY5l6hlprRw/jnYmiXDiJE8qrSKF0UjLLAwUZJo+aGthhfwqUYZJh5jxcyFJatsbNuLHOD2WcrvIaidS8ZHEocWUijHvZIF1Rk7ynJ07xWIIKnA61axyEy4YtJIi5sq/+TQnBZrw4SYstfTNIkastprDw/mpnZo5RqVA0w9RqJmzO4PbDjXNUZ4nmwBOFQ2Hi8JHHfXbCNQKeFGXXARJbamQnuJNbNQCG2kIBmnj8uSbohqGzuUjubrMkcwLYO6YasEoHEQn4m3U9ESl4IgyqPcPBGMXkfQCoMRbxHiecj9TV1cqr9I17T18G9mhOgluhnY+5FrbF5NfENqQkhwjHuT5ClybC7fu3N3oC/RXFbWt/H7Ye2G6mPueoneJ+jocpqEhLlVncZJR5w6NXzLxq+c6SfxFfPtYnpYg0sQtFjZkVhjgy1GitZXkWpQEcD6SHvFXl4sXjKa2xuYkyNHm5NSONo7HY+ZJAc8lv92tqxi7g6NJq6VLiJEU9h8dNVOlZDh7qa3RLqYjKBjq6rzJNKkbYmYRCFa+uJQnZfFQ2fckaFcaiXLkJ8oc1odx4mnYuR36nQVEW2zfqeOnYghFX7oTEvaf9lbxCob+drmzBwlmmkbPkk5IKiS6YNkDrDDkA1SvmWUdfMiijr6zk/lFY4gS3TtrVsDHJJnL72XvwJJ0Wtn2hTOe4t23PuUV8Ldpes4Xr/wABDUMaRoo7lUYAfIZ4DuzykXtIfcRSTCzvu4BLn4mQnorir5Euk6sdJKwyyRt5EqcmpQN7A5AeM11kUV1mSlic7kSB95gPI99TxG4eALntjvRnEYjPDCmhK3MZ7pCcWzcmq5votxeOcJoljBJiY+lyambPFaXTlntn5wvHmYVG5XeKCA+HeAcDrQPgeA5FsCRISD5wXuFDrJTSuVMhxfAnEZz6XOlPlDzaJ1Y6moZOxHeZ8mYcJOyMGwqG9gklfOGW4DNl3aoNFA82iCIogcY7RT5kfN+bUbO2F7JCody4JART3NV5arPHdXLYy5gcrRlzxB417dK6TJ/zX01o4rPdj/VIvvUo/wBBXwkvI0kPeq3OrN7olr4PWGJ6T3YyIPcg+Rz43liG5XQ7uiSirFhDdA8QT8TJ/vFc6AAw1VJ+qa11TGvYrUiMjZYkBwYYGoVCJc24+PijXhvY+8DmKvp5JI8oBhMKnIscqUzhog5Jt52GgMMn/g0O9Yxj9pqS8htnn4KVk0BcUv66EbyM0DqMMPtBpkdJLmJcxw4hCOpFBTgNx3/5abEtj3k8TWOAWNC1Xd9DbiAt8cwc6nktR9lYioIw99RPnWXLlOcajBV8o0x9V3cKf6amkkWezSL0JhiRNJ3BeZp4dzHBGmaKCPNmwxfVmJ4musKV7ICl4uxZRUYITQh5PnviT7hV1cIh6INXPuAr4O7N9SpcXX/EYrbN7Lc9RCpyQr6go+RvK2zbn6F1rGfc4q8Tx61HS60f3JIKQlJAeIZTgQfAmBKSgSJGOrP5IojUR27SfzGv2VnEtckdYv5RQdmW0uuw6ZtTklFQFFu7WbBspcYgo61s+9ltVkbi0aYFMeoFWdx4nbQv5CBVxZ8PSJNd0MgFyi/Rz6imUJcSpCIzHl4FlWopAVZ1zoA3ZJI7xV7niCx22DZMNXFP2UjXUnqT3Co18iK0Q6nU9o1KuV57lyzj6GGASrG9mtBI3lMkZ7JNWV21naI2qwqgBLgek1Z2Q3t42C4qcGyxrqcKnI301uwgUhdAuQA6Cv2sMUtcpbID+Q0B23tocZR+49dxkOi+ocB4Nm2pAc8A83E+5a+F20ikIPmi7ORB6liFQRJEg5Kgyj5G0BeAjiJo+2lORZ33QXQya9I5RV6Bdx/v6P4F496uPRcd4rvdAZYSfdqK+cxX+NdJQaJwbaE6FIIuqg6u1SyEoDrNeXL1NK9xckcN7KcSB6quJ0vIWc6ESrgynka6PiaOmSGEhNfSZwBhRJIxGZCrcmXQ1DEsMI8opGvBRV2iBZIlDSIE7ynHKa9GZXiP+4UNSFfMavry4uuOOAdtAa2pIr748ILrySH5K4q4Ia8sCwQSH/FhPAPQ0eC6Uwup5YnQ17UGh5sKM5NHR2x+Of7goUK+El2iJ6ro/wABEK2Bs7f5V4LNN8VEh9SD5KkpvLE8hdfGp/25BUQEVz03nYf7JB+KGyFJRijCTTWhiDJGkkzL6s+AojI07sZ5voxrGCFojCKWeEQRAnzu2RUr57ie+n37yyHixEYp8SiQ2meQ9QHIqO4NvIYbKMKkoGbIcM2BrdiQvukTsN80pVoXE1wbULEDG+7ID7oAkGt80OM0CP20Ac+bwAagobxW5sojJgRjwVqXlE8LVcnNcwWtwswEn+LEDgQTUoyNHfWrLGw9eoocLSY+MxJ0Ug51q8Ywq8OdpFA1JAkru0/Eu7mOEkdyse0fcK+Duzt5gDwluhkUe5BW2L+SaLmLeL4qIH5Lc59mXbe17cP+8Vck31lyyXX3JRQ0YciND4Zc7yS4ZiiIMTgKYxFb26xkK5XDHBRQ1YSSeL26j6EdSGZVe0MKRKYQGfeykgJoabeFbsAyh0kQNb7okZM76mrbad9BtOSMuuSePSBsLYBhHhSDZtzOksaLcTGItHiJG1WRVUM8dbXhuDPENBFOJTJExbXPxwapjkuxKGLCMkHPEV89cOB0NX07u8m9nLvG9wJijRnsDFdCRTttGINNM43cN1kSMt2TnKImBFW96ZILNJED4wWyw28+JwPdgyVPty0u7m7Du0MnxZklOfAYK7IBhUsctw4htjdlkUARgquBCyMfKqC1R5Zcc8LyY5JUT0gjdnNQlkj8YtSYHzxnI2qYY1bSOzWt6gd8HTKAJFq1TO9q5zoQOOVj+Jsy1Op7nmr4T7RZLQNo+S4fcwr7kq3hSJPUgw+SiMTQMO6WA7xKv0Fhd9BdDMnuSQVcsLqH1S+V9jeGB80b/wChB6EVbkxQSgndSyhcdRUtrLPcWkUZilREbxa7tWiQ65c+aI8cVqSWGeUzQrMUntPiUKomVGiePzKnihWZQA7ubcloyEh0QqTTuWMs7iIHqVSj3RQffLVySXd/yYV1uZP+a+sSf810uZK5ToktfMxhenh3G+yY4R8hJFXi8UDIAJ4JETHV8DiHrZgmNtHC7O8e5jcZpAAA8lyTVvLLBOpOebxkHOQCnYEahsFqG4aKaGM53cxngz/ifCO6WCPNyum3Y+xK2BYG5fq7jcQr8ntLhrnZ6co5/j4gnqeiohnHtfuuv4lw4kwj8uGTgSBV4c0uWEwktzld6YYeLWxMaYcmPFqPL8kOEkLFDX/xMQAmHV14PVxI0xVI2iQzPxaQvVxM0spAwGZzicPDdzpCDyznAmvg9s8zychLON3Ep6hQTW1b99y3/wAtbHdRfJ7+KTZU/rPx0NRubqwU+hdDeLk6JJXAg9xGhHybZ1uXx5Sy9kV8I71rez7jkdvFYBVrbxwg88gwx+TwKLm1I4ia3O8XLW04fwfcHrcDeRfY4qWXxmL6M+vyb4Q3O4thwJNwdylbFszezL3BkG5g+U7HujcbPy8QH/tUFNZje51LghwCV/cavZvXs3r2b17N69k9ezevZvXs3r2b17N69k9ezevZvXs3r2b17N69m9ezevZvXs3rpG1bCsPHGHOT8xCtbSvjFB9XssYk+U3NjJaXqWsRmcFDnifIKdixwsrivqdzX1O5r6nc19Tua+p3NfU7mvqdzX1O5r6nc19Tua+p3NfU7mvqdzX1O5r6nc19Tua+p3NfU7mvqdzX1O5r6nc1eQlEY2UoGc6KWd6trdI/WQNT7z/9IY1LO7kKqqNSSTX1yKiMQwOIIPIirfHfyJMjLFgMTnIOAwr65FT6rJG4dSOhWlODA3cQIIpVLtHDOkjBeZCk1C+SXdSLJkbk2U6GmIC27zIspzcMFJxr63FRBIjhuEkbAcTgppjgGnmWIE/vU3kyROHX3FawByTXCRtgejGgMckNwkjfYp8CKWaKGdJGABwxIUmkwzRS3KI6466gmmYBQLuIkk+CNS7u5yqqqMSSTwAoHA3O+TdA44eXjhX1yH71ZsvjO/TdY44YZ8ctSDMkkbB1ZeYIqLEPJFKsip9IqSBX1uKmGKuhDKR0IqNyjxvdRBlYaEEE0nlGCZZcPXkxpcM0sriNFxOGrNoKDZS8MglXNxwJUmp/zMLyKjyd3YUnE+FSVZTdxAgjmCabHCSJxIpw6rT5csMk6JIcxwGCsQTj4EwzyyuERcTgMSakUMkiMGVlPAgiscPFt+m9x5ZMcaQYvJIwVVHMk064pJGwdWHQio/LjhmSR1wOHaCnT8Q7Muv6ZqYzhpRNKvCUqNA1W2M9uT3YEffrC5/omsZd9+l8zk/NU74W29r8Iy7j9J8jH9hUcGSZsbnRHP7ervaT+LL5qYY4yNW0AXM513OPFBRvI48++lfQg+mag2c8sj76V9AmdhgzVPcMkUW9ZFAT6FbTm3Nzalyy4AivEEzfneOBy/maN1pu9+f69PCIIiP8WXsY1tKDdX+PBTNXicsm930o7UMWCnANQuZMJN9IvkPpop8H4Ku8P+01eM//ALQrxaLxr9N/O5Rn8innjeLy++b9t2quYUu9nE8pVz5aEsn9GnnmQyieVNB0Q1kM0Kucchyh6/CU3i35/jvXz/mKSPG8PxuQDXN+drad4jS9I0qceM2WesT/AD+FdpyCHf3htjk9zrQtWbEnFNCtWlynieBOkcPlfZHUkIEvSROy9f2b+ulW+yklf1ImNfhwzcThus336udmCVfU9PCsV7evoIg70+DTTnypW/E/Blz/AEzUG91jVMhzyF+Jer/GO3hfEOEJrC5/pGpTPkvBGN8GSQ1YEiA98ka1JtGVon8Whnyr65iKMBlkfxWCAMqdYjQu5rcZ9exLjmFX0geymbgC/A1+EYansRE3fpImWt+WtruBARWzZBKJ5hgZNQTR2WCY5kDr5FXriO8tU4JU6C7eYDOAJBo3uSrKEzJazI5ByeuV6j2ZcwT/AE4o68YuP56KEI2GODdx1q4Se3hKQIissq5KzRyOnem8uQ1QW0STy+IWz53UanEtS3ccaQmNI8MJBwCVsrZtrNEU1dkRA5FGV/6NLNK+MSIV7XrcVOm6tYpBgx4LQv3Cb6MPlxlkxyVtJ89tK/6o1szLBBcxIS2mKaZStQ3aI7yoQ4Xli7voaihM/wAXqxSp5UjTGOLAFz0k8EO1JEQ72SP+Qir3C2iyE53MmhOPEkLVzAJHs40fIplGJBwlFWwknsHwBDOKmeNJTuQoOSUSVdpBbuiHuiAL0I8vim6fc+rDe1spJUw+Y5q8Tf7/AIvv1JC1szFBnOrRIcuX1p/6l//EAEERAAIBAwEFBAYGCAUFAAAAAAECAwAEEQUSEyExQQYiUWEUFTBxgZEQIzJCcsEHQFJikqGxwiAzU9HTJFBwgqL/2gAIAQIBAT8A/wCyQW8k7YUcOpq4sZIRtDvL+r2tg0mGkyq9B1NIiooVQAPoutPDZeLn1WmVlYhgQf1NEeRgqgk1a2CR4d+83QdB/huLWOdePBscDU9tLA2GHDof1G3tJJznko5k1bQwxp9Xg+LVfapBZXNlBIDm4cqD4fRqGqWOnR7d1OsYPIHma0ftPpl99X6QolLsApyMjP0SakFmUIAUHM0N3NHnGVYZq4ssDeQnaT2wBNWun5AebgOYWu0XaCCy0mZrSRTIXMK46NXZG5e50C3dmy/fBNaW019PNBqMRMljdBo2IxkMcCtB1a4v7rVFkXCQz7KV2jWyu9Wm327cJsKMzBcePCltdPjw6QRBwpKkXI+0G9/hVpMsllFKpDAxg5HEUbglj3aiYJYq3LEWa7H9oi8t5a3D90F5UJ6Cnt7e8iWe3cHaGQRyNPG8bFWBB9nFDJM2ygNW1lHCAT3n8a7S6mthpV2yON6Ewo6944zSO8+mzoWJMUyyfBu6TX6PJ9vSZo+qTGrRdTtu0epQybbQSgzRvzAwQcVpFzdntRqdsECW6RBiAOG22DmtYKtqlyU2Njaj5wknunvcdmis2wQGizu2H+QeZfP7PhVg6Np8TRjhu+HDFEvtHhWozGDQriQ81tj/AEqwYxR3txnGIig98nD+ldgNVzaT2k0mAjDYz+/U0Ecy7Lj3GrmzkgOeadD7G1gE8oUtgVFEkShUGBRYKMkgVquqm7167MzHcOzQkeC1ZwvFfS2j8DIHiPv+7/Ov0dThGvYXbGWXZq7tL6HtTFcQSBobiILPHtcQAMbWKme+btRpyRKVgFvvJWHJiQV41rypHqtyCRxbPFgOfvkWsx+K/wAQ/wCWrJd3pUQzjENYOeDjia7VzrB2dnj2xttGoxUg3WmwJ1mkLn3L3R+dSSPZQW8SErISJnI6H7orR7wXum2k+Rl4lJFEAggjI6ir+0SIB0OATy9hBJu5kb976O3mqT2VvZRwOVd5ds+5avYlcC7izu5G74/Yc9Kd2kht7xDiSEqkh932WqwlFtqM7ocLvoJ1/Cxx/R67Q2Zk1HSby3vEiuFbCq5wJF5kVr0F/PPpMcBKwpcM878gqxnIzXaQMuokptYZFPd2v7UakMrOoxJxI6P/AMdXBEWnMD0jAqNUaRF48WFdtZ83NzFnhHBFGB5u21/bUkSNfBH4w2cQ2/8A05j4tSJLfXbsxxkl3Y8lHU12S1hvXcNqjEW5jMaKfLjn6NTk2plToo9jZyby3Q9QMGu1l6NSvnspCI5rZyIyeAcHpUEj2kzxTxnYbuyIeBx/uKijW2uTA7g29wmA/TDcm+BqNH2EVx39zNA34oe+K1pLC/0DT57q4MByhjlAzssR1rW7K+vdJjtbadSXeLey5wCgXJau0Itf+hdHjkQw4VzsHOzw5uRVksL3dugEWTIvSL8mrV3MdngDIYgVYKHvIVKdc1q8qz6rO7cVN4zN+G2Sp97uo4AC0904lcdeP2RVy6wReiQnPEGZx95vAeQrSn9UXEV9MBvVBMUP3jkYyfAVaStJaQyyc2jBNSvvJXfxPsdLlwXT4iu19tHd6pLPZ99+U0f31ZeuKS6V0EF4pIAwr/fT/ceVLDsx+jyurQOcwzjkrflnqKhLQQrJPH9dlSykdIzsM496mrM2j9kZor2NpY4C0bhPtAI3MVFard9nfRNMu9tZYQqSOeShuINXyWqaXYw2k5lW3ZoXdNviw4n7FaQsj6lag7zG2Oe9/urWpCXiRTyGSK0zaTfzN9lIyc1HszqUkGN4Acgd4tKxkKj3qKcXAlchCbycHu8t0h/p+QreW9lwiIln/wBTmqfh8T51YWclxcxz3bFINvaeV+vuzzNPcxtpsckeQrqAg8vZW0m7njbzwa7caDOtx6ztQSG/zcdCOtDUJHAW6iWceLcH/iFWHorzKkFxsLIwDwTDIYeRFRbMk8ysmxuxjdM3gNgYJ5q44Guy9zvbO+DRhi6BzER1xsMPmK0f1dcafcQ6crWxcyI6NzjdhV1a6bZ6UbCCQTNbSgzO2zgu/wCIGuzMcTarGVEfdUnK7sn/AOVFX0qz3Ujg9cVMhg0G5ORtT9xT+LuipHiktDOcRLtMoxz2DwBA/aYLitSK4UyyLbLMu3LGoLSM2etemQw8LW2AP+pJ32+A5CtB0i+1zUEaUu0KEGR28ulagVUxQpwWNfZ61YXep6Ur2lw8VwgyMNjax0NS3esRO0MuSynBV0DH+Yq0m1Pfwt6GrAOCcQKP5gUzQW9tdxtKbiISiPIBDxgkk/DIrR9Q9FntJFfbZ9otsglXU8M+TcKEFsyG5t41VnAJIGCffV7pFvY6Pc7gsWd9475OWJ9xFdlkc3kpfawI+pb82am0cyTOUkGxmtdvozLb2alhEpKDgcs5GOdJcRn01VkUOFDtPjKIVOAqDyB4Gro3kaWy20O+iEQIlaEOW2iW6g4o32pocBQh8olU/wAhXY/TNT4319PKExmOIn+ZFTSbyV38T7PTHDCWJuRGa7QdmL2IyXVrqjxxcyjyEAUwlDDb1iMkH9p2/Klurcxybm5gF1IRttskI46g7Qxxq6WUW8uwXhMZXeQhiUw/JlrTO0c+kQxWhuQWVQWWRSV7wyACuTSXVvrGiTSQshYodpVPdyPJhXZiKGK2ubuTYEXR+7ju+5Vq+7a7bMiTosWcARKS5HxwBSJPDcXpkuZdiLi5RiDJtcvnSSQwrLDebmKJh3YFyxDA832alcyybaapEuAAoUOgAHQYWtE0HU9SbaGsfVLz2JGJowR2GnblGY8NnLHJOfaWsm7uI288H41PBDcRPFKgdGGCDV1+j3S5ZC0M0kQP3eYrVOz1vo1wqlkckZV5Xwv8KjJp7G/ugYoIZX3rhpZ2GyGI5AZ6Cpezb3Em3JE+0FVdreABtkYzyOK0WyvdIdzbxQFHXDh5GYn5LWorfXln6GtvbJATllDt+QpuyuzxELHyEw/NRV3puoQ3dxI1q8sE698LxKj4dVqGwjvp4reRleQkKGyYpceDAg5xUP6ObEEGS7lNabpNjpkO6tYgo6nqa1STLpH4DJ9rbSbyBG8sGrhZGhcRnDYqSJGkDSIC65AJGSKA8BSWlw+MRH38qGm3HkPjXqy4/dPxprG5XP1ZPupkZThlIpoo2dXKKWU8DjiK05ZhGS5Oyfs1yqeQyTO/ifa6XJwePzyPok02N5C4cjJyRUVvDEO4g955/wCF0RwQyg0+mQlwQ5UdRSKqKFA4AYFXkm7t3PUjA+PtrWYQzK55da9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8q9ZW3n8qvrtJwgTOAcn/AMC//8QAOBEAAgIBAwEFBQUGBwAAAAAAAQIDEQAEEiExBRMwQWEQMlFxgRQgIiOhM0BCUpHRUHCCorLB4f/aAAgBAwEBPwD/AAUj96r91A+6R+51iozKxH8Is+xEeQ0ik5Jppo+WQ1Xsv2V44GaeAyTKpBAqz8s1SBJ5FAoA5LSBTG3DrRGTRLGsZBsstnNMZEjtCRd9FvDJO3BJroRtxuCR8Dj9uSrKR3PC2D8/LEtgp+NZrNNsWN1HWgR64V5o+KBmnj7yZF8rygk6GqDLWdoLU/zGSd02njZeHBojHRBpYmu3J/TIf2a8N59Dgq+jdf5sawW+ZyV9f3sn5djfVUOSTwfXIAS0YPU1eTDcYk9bP0ztGILKGA94eyvCr2QwbdKhX3h+LJW3RLIPIhs7SFtGw+GK8Z0pRhTKbU4gj+yyEkFr4GQWYxV4d1ef9P8AzH6scEMjS/h1ak3xTfwk5o1/PiGL+Kdz5KKH1wKJXdiLX3QMkXZI6fA+yvAHs0EKyyPuHAGQsR+U3Veh+IxQFaSI9GBK5MN8SX1pl+oyBwI5UZCVI6/DNM0arKX5NUB8805pCPXC3B6fp/fNQ6pBK7dApJzSx6KTUwqruDvHUdc0K+4fUn+gwMe6se9K3H1xisMYA69AM1enqAyH3y1n2HwRmjUxKJaJVhz6Y6iVQyEWOQcZjJGGAp4zyMZhyR5srD68ZA0kczqi3wbHxGad0SYsyngGh65De5wQQbsjJOEPXp652nKYtFKwUN5UfXOzCkmtRW0wVkBIPwGQgrEAOu3/AJHEI3M54VBQyMF271v9I9MnvUKY06ebY1AkDyPhA5oZdke1xSn3ThjIO+Ej1HkcL229RTgfiX4jGpnIUnb5H581jbvtQKGiTY+uFymp3ypyDZGKzGZmcAbhdZNt7tqr9M7XaaolicKbtvQZ2NHq7kMw44UfE41rRB6f9cYChAs/lp/uObXl961TyHmcmlVIykYtqoAY3BIPW/D0OoUDupKoni87gDmNip+fGTd4FJdLKjhlw8IvN7vMfO/6jNQu11o9OhyYyCRTId3AII8xm+SSYOwIDDjNRYQdevrnaTabUat7mKkDYB5WM7Jg7mCIb99nfeAEOF6mrPzyC7O1d5U0CeBndM3Mkn0HGamaLTxlU27iKFYT4enkRHBdQy4qaZwCpFehyWODY1SHp/NlO7xkAI226PRsmjJ38VX6YSehPTFkZpEJ8ugzUVS9Mm7Cjk1DSd6QhNkVzeaeLanAA2gAfIYUb8okEi6C+Z9TkQjJcu21t1UGrBFp/wCa/m2aySG9kSjjqfEGafUxgBHhDfAgZakcac/pndvYLI+wA0L5GRFS4umBBpvPj45LpjMzOqcXQrCjRSgMCOcnsuF5vE0LkA7DfXmqxijRx7Y13NwL8s2sxBi3Mw6v/bEG1eYGPxJo5qNTElj7P+Ly3DGJJJNeKCQQQaIxO0Z1FGmyPVSTqeoHmFwTRRnc7KNooIMXXbAQGFWSBWT6hJveLWOhAyOSJHD7mJHQ0MHaBPG4fOsjnheJB3gV1Ni8MrRKzrYHUjqMbtKY9FGSSPIxLmzh8Y4CwFAkfcrK9gZgCATg8cH2Vlfer2Hxhl5eXl5eXl5eXl4T/kL/AP/Z',
+                                width: 60,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'KEMENTERIAN KEUANGAN RI DIREKTORAT JENDERAL PAJAK',
+                                alignment: 'center',
+                                fontSize: 8,
+                                bold: true
+                            }
+							
+                            
+						]
+					},
+					
+					
+					
+					{
+					    border: [false, false, true, false],
+						stack: [
+						    
+                            {
+                                text: 'BUKTI PEMOTONGAN PAJAK PENGHASILAN PASAL 21 BAGI PEGAWAI TETAP ATAU PENERIMA PENSIUN ATAU TUNJANGAN HARI TUA/JAMINAN HARI TUA BERKALA',
+                                alignment: 'center',
+                                fontSize: 9,
+                                bold: true
+                            },
+                            {
+                                
+                                margin: [0, 10, 0, 0],
+                                text: '___________________________________'
+                            },
+                            {
+                                text: 'NOMOR : ' + '1.1-12.22-0000003',
+                                alignment: 'center',
+                                fontSize: 8,
+                                bold: true,
+                            }
+						]
+					},
+					
+					
+
+					{
+					    border: [false, false, false, false],
+                        fontSize: 7,
+						stack: [
+                            {
+                                text: 'FORMULIR 1721 - A1',
+                                alignment: 'right',
+                                fontSize: 13,
+                                bold: true,
+                            },
+                            {
+                                text: 'Lembar ke-1: untuk Penerima Penghasilan',
+                                alignment: 'left',
+                                fontSize: 7,
+                            },
+                            {
+                                text: 'Lembar ke-2 : untuk Pemotong',
+                                alignment: 'left',
+                            },
+                            {
+                                text: 'MASA PEROLEHAN \nPENGHASILAN [mm - mm]',
+                                alignment: 'center',
+                                margin: [0, 15, 0, 0],
+                                bold: true, 
+                            },
+                            {
+                                text: '01' + ' - ' + '12',
+                                alignment: 'center',
+                                margin: [0, 5, 0, 0],
+                                fontSize: 8,
+                            },
+							
+                            
+						]
+					},
+				]
+			]
+		}
+	},
+    
+    
+    
+    // ========== PEMOTONG ==========
+    
+	{
+		table: {
+			widths: [100, 10, '*'],
+			body: [
+				[
+				    {
+					    border: [true, true, false, false],
+                        text: 'NPWP PEMOTONG',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, true, false, false],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, true, true, false],
+                        text: '82.196.886.4-043.000',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				],
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: 'NAMA PEMOTONG',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, true, true],
+                        text: 'PT.WIJAYA PANGAN UTAMA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				],
+			]
+		}
+	},
+	
+	
+	// ========== DEVIDER ==========
+
+    {
+        text: 'A. IDENTITAS PENERIMA PENGHASILAN YANG DIPOTONG',
+        bold: true,
+        fontSize: 9,
+        margin: [0, 10, 0, 10],
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    
+    // ========== PENERIMA ==========
+    
+    
+	{
+		table: {
+			widths: [10, 60, 10, '*', 10, '*'],
+			body: [
+				[
+				    
+					{
+					    border: [true, true, false, false],
+                        text: '1',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, true, false, false],
+                        text: 'NPWP',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, true, false, false],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, true, false, false],
+                        text: '82.196.886.4-043.000',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, true, false, false],
+                        text: '6',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, true, true, false],
+                        text: 'STATUS /JUMLAH TANGGUNGAN KELUARGA UNTUK PTKP :',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+                        bold: true,
+					},
+				],
+				
+				
+				[
+				    {
+					    border: [true, false, false, false],
+                        text: '2',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, false],
+                        text: 'NIK/NO. PASPOR',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: '0000000000000000',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, false, false],
+                        text: '7',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, true, false],
+                        text: 'NAMA JABATAN :',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+                        bold: true,
+					},
+				],
+				
+				[
+				    {
+					    border: [true, false, false, false],
+                        text: '3',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, false],
+                        text: 'NAMA',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: 'RONAL LATUPEIRISSA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, false, false],
+                        text: '8',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, true, false],
+                        text: 'KARYAWAN ASING :',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+                        bold: true,
+					},
+				],
+				
+				[
+				    {
+					    border: [true, false, false, false],
+                        text: '4',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, false],
+                        text: 'ALAMAT',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, false],
+                        text: 'JATI SARI PASA REBO RT:11, RW: 09 KALISARI, JAKARTA TIMUR',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, false, false],
+                        text: '9',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, true, false],
+                        text: 'KODE NEGARA DOMISILI :',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+                        bold: true,
+					},
+				],
+				
+				
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: '5',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'JENIS KELAMIN',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: ':',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: 'LAKI-LAKI | PEREMPUAN',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, true, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				],
+			
+			]
+		}
+	},
+    
+    
+    
+	// ========== DEVIDER ==========
+    
+    {
+        text: 'B. RINCIAN PENGHASILAN DAN PENGHITUNGAN PPh PASAL 21',
+        bold: true,
+        fontSize: 9,
+        margin: [0, 10, 0, 10],
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        // ========== RINCIAN ==========
+    
+	{
+		table: {
+			widths: ['*', 100],
+			body: [
+				[
+				    {
+					    border: [true, true, true, true],
+                        text: 'URAIAN',
+                        alignment: 'center',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, true, true, true],
+                        text: 'JUMLAH (Rp)',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	
+	{
+		table: {
+			widths: [130, 10, '*', 100],
+			body: [
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: 'KODE OBJEK PAJAK',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: ':',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '21-100-01',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '',
+                        alignment: 'center',
+                        fontSize: 8,
+                        fillColor: '#dddddd',
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	
+	{
+		table: {
+			widths: [130, 10, '*', 100],
+			body: [
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: 'PENGHASILAN BRUTO :',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '',
+                        alignment: 'center',
+                        fontSize: 8,
+                        fillColor: '#dddddd',
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	//-------------------------------------------------------------------
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '1.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'GAJI/PENSIUN ATAU THT/JHT',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '2.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'TUNJANGAN PPh',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '3.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'TUNJANGAN LAINNYA, UANG LEMBUR DAN SEBAGAINYA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '4.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'HONORARIUM DAN IMBALAN LAIN SEJENISNYA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '5.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PREMI ASURANSI YANG DIBAYAR PEMBERI KERJA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '6.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PENERIMAAN DALAM BENTUK NATURA DAN KENIKMATAN LAINNYA YANG DIKENAKAN PEMOTONGAN PPh PASAL 21',
+                        alignment: 'left',
+                        fontSize: 6.6,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '7.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'TANTIEM, BONUS, GRATIFIKASI, JASA PRODUKSI DAN THR',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '8.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'JUMLAH PENGHASILAN BRUTO (1 S.D.7)',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	//-------------------------------------------------------------------
+	{
+		table: {
+			widths: [130, 10, '*', 100],
+			body: [
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: 'PENGURANGAN :',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '',
+                        alignment: 'center',
+                        fontSize: 8,
+                        fillColor: '#cccccc',
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '9.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'BIAYA JABATAN/ BIAYA PENSIUN',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '10.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'IURAN PENSIUN ATAU IURAN THT/JHT',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '11.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'JUMLAH PENGURANGAN (9 S.D 10)',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	//-------------------------------------------------------------------
+	{
+		table: {
+			widths: [180, 10, '*', 100],
+			body: [
+				[
+				    {
+					    border: [true, false, false, true],
+                        text: 'PENGHITUNGAN PPh PASAL 21 :',
+                        alignment: 'left',
+                        bold: true,
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [false, false, false, true],
+                        text: '',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '',
+                        alignment: 'center',
+                        fontSize: 8,
+                        fillColor: '#cccccc',
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '12.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'JUMLAH PENGHASILAN NETO (8-11)',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '13.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PENGHASILAN NETO MASA SEBELUMNYA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '14.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'JUMLAH PENGHASILAN NETO UNTUK PENGHITUNGAN PPh PASAL 21 (SETAHUN/DISETAHUNKAN)',
+                        alignment: 'left',
+                        fontSize: 7,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '15.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PENGHASILAN TIDAK KENA PAJAK (PTKP)',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '16.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PENGHASILAN KENA PAJAK SETAHUN/DISETAHUNKAN (14 - 15)',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '17.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PPh PASAL 21 ATAS PENGHASILAN KENA PAJAK SETAHUN/DISETAHUNKAN',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '18.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PPh PASAL 21 YANG TELAH DIPOTONG MASA SEBELUMNYA',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '19.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PPh PASAL 21 TERUTANG',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	{
+		table: {
+			widths: [23, '*', 100],
+			body: [
+				[
+					{
+					    border: [true, false, true, true],
+                        text: '20.',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				    {
+					    border: [false, false, false, true],
+                        text: 'PPh PASAL 21 DAN PPh PASAL 26 YANG TELAH DIPOTONG DAN DILUNASI',
+                        alignment: 'left',
+                        fontSize: 8,
+                        margin: [3, 3, 5, 3],
+					},
+					{
+					    border: [true, false, true, true],
+                        text: '0',
+                        alignment: 'center',
+                        fontSize: 8,
+                        margin: [3, 3, 3, 3],
+					},
+				]
+			]
+		}
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ========== DEVIDER ==========
+
+    {
+        text: 'C. IDENTITAS PEMOTONG',
+        bold: true,
+        fontSize: 9,
+        margin: [0, 2, 0, 2],
+    },
+    
+    
+]
+	
+}
