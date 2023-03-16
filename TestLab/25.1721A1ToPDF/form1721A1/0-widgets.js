@@ -47,6 +47,6 @@ class DataTables {
 }
 
 class DataPemotong {
-    static nama = "PT.WIJAYA PANGAN UTAMA"
-    static npwp = "82.196.886.4-043.000"
+    static nama = ""
+    static npwp = ""
 }

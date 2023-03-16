@@ -47,7 +47,12 @@ csv_file.addEventListener('change', e => {
         })
         await UI.pushData(contentTables)
         await DataTables.pushData(contentTables)
-        UI.createTable()
+        if(DataPemotong.nama == "" || DataPemotong.npwp == ""){
+            btn_modal.click()
+        } else {
+            UI.createTable()
+        }
+        
     }
 })
 
@@ -64,4 +69,11 @@ document.addEventListener('click', e => {
         const singleData = DataTables.find(nobuk)
         singleData.forEach(item => printBupotFromCSV(item))
     }
+})
+
+simpan_data_pemotong.addEventListener('click', e => {
+    DataPemotong.nama = nama_perusahaan.value
+    DataPemotong.npwp = npwp_perusahaan.value
+    UI.createTable()
+    close_btn_pemotong.click()
 })

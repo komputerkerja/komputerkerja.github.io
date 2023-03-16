@@ -55,6 +55,36 @@
 
 
 
+<!-- Modal -->
+<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn_modal" hidden>
+    Perusahaan
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="npwp_perusahaan" placeholder="000000000000000" value="000000000000000">
+                <label for="npwp_perusahaan">NPWP Perusahaan</label>
+                </div>
+                <div class="form-floating">
+                <input type="text" class="form-control" id="nama_perusahaan" placeholder="PT.CONTOH INDONESIA" value="PT.CONTOH INDONESIA">
+                <label for="nama_perusahaan">Nama Perusahaan</label>
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close_btn_pemotong">Close</button>
+            <button type="button" class="btn btn-primary" id="simpan_data_pemotong">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+  
+      
 
 
 <!-- ============================================================================== -->
