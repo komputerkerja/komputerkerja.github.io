@@ -28,11 +28,6 @@ function printBupotFromCSV(bupot){
     pdfDocGenerator=null
 }
 
-printout.addEventListener('click', e => {
-    e.preventDefault()
-    if(DataTables.data.length == 0) return
-    DataTables.data.forEach(item => printBupotFromCSV(item))
-})
 
 csv_file.addEventListener('change', e => {
     const csvFile = csv_file.files[0];
@@ -44,14 +39,29 @@ csv_file.addEventListener('change', e => {
     }
     const reader = new FileReader()
     reader.readAsText(csvFile)
-    reader.onload = e => {
+    reader.onload = async e => {
         const content = reader.result.split('\n')
         const contentTables = []
         content.forEach(item => {
             contentTables.push(item.split(';'))
         })
-        contentTables.pop()
-        contentTables.shift()
-        DataTables.data = contentTables
+        await UI.pushData(contentTables)
+        await DataTables.pushData(contentTables)
+        UI.createTable()
+    }
+})
+
+printout.addEventListener('click', e => {
+    e.preventDefault()
+    if(DataTables.data.length == 0) return
+    DataTables.data.forEach(item => printBupotFromCSV(item))
+})
+
+document.addEventListener('click', e => {
+    if(e.target.className == 'badge bg-primary') {
+        const row = e.target.parentElement.parentElement
+        const nobuk = row.children['4'].textContent
+        const singleData = DataTables.find(nobuk)
+        singleData.forEach(item => printBupotFromCSV(item))
     }
 })
