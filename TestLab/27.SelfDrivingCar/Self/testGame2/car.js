@@ -42,8 +42,9 @@ class Car{
         }
         this.draw(ctx)
         if(this.moveValue != this.x+this.y ){
-            this.moveValue = this.x+this.y
-            this.score++
+            const what = this.moveValue - Math.abs(this.x+this.y)
+            this.moveValue=Math.abs(this.x+this.y)
+            if(what>3) this.score++
         }
         if(this.damage) {
             cars.forEach((myCar,i) => {
