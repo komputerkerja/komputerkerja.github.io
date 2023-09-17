@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #868686;
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;
+}
+#mycanvas{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #c7c6c6;
+}
+.group-btn{
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+}
+.btn{
+    font-weight: bold;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #2929b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+.btn:hover{
+    background-color: #f0e80f;
+    color: #161212;
+}

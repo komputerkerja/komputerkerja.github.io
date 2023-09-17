@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{overflow: hidden;width: 100vw;height: 100%;}
+        #mycanvas{background-color: #e0e0e0;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+    </style>
+</head>
+<body>
+
+    <canvas id="mycanvas"></canvas>
+    
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const canvas = document.querySelector('canvas')
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+
+const ctx = canvas.getContext('2d')
+
+const A={x:180,y: 50}
+const B={x:70,y: 220}
+const C={x:60,y: 40}
+const D={x:250,y: 250}
+const mouse={x:0,y:0}
+document.addEventListener('mousemove',e=>{ mouse.x=e.x;mouse.y=e.y })
+let angel=0;
+
+function animate(){
+    const radius = 100
+    A.x=mouse.x+Math.sin(angel)*radius
+    A.y=mouse.y-Math.cos(angel)*radius
+    B.x=mouse.x-Math.sin(angel)*radius
+    B.y=mouse.y+Math.cos(angel)*radius
+    angel+=0.02
+
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+    ctx.beginPath()
+    ctx.moveTo(A.x,A.y)
+    ctx.lineTo(B.x,B.y)
+    ctx.moveTo(C.x,C.y)
+    ctx.lineTo(D.x,D.y)
+    ctx.stroke()
+    drawDot(A,"A")
+    drawDot(B,"B")
+    drawDot(C,"C")
+    drawDot(D,"D")
+
+    const i = getInterseption(A,B,C,D)
+    if(i) drawDot(i,"i")
+
+    requestAnimationFrame(animate)
+}
+
+function getInterseption(A,B,C,D){
+    const tTop=(D.x-C.x)*(A.y-C.y)-(D.y-C.y)*(A.x-C.x)
+    const uTop=(C.y-A.y)*(A.x-B.x)-(C.x-A.x)*(A.y-B.y)
+    const bottom=(D.y-C.y)*(B.x-A.x)-(D.x-C.x)*(B.y-A.y)
+    if(bottom!=0){
+        const t = tTop/bottom
+        const u = uTop/bottom
+        if(t>=0&&t<=1 && u>=0&&u<=1){
+            return {
+                x: LIP(A.x,B.x,t),
+                y: LIP(A.y,B.y,t),
+                offset: t
+            }
+        }
+    }
+    return null;
+}
+
+function LIP(A,B,t){
+    return A+(B-A)*t;
+}
+
+function drawDot(point, label, isRed){
+    ctx.beginPath()
+    ctx.fillStyle = isRed?"red":"white"
+    ctx.arc(point.x,point.y,10,0,Math.PI*2)
+    ctx.fill()
+    ctx.stroke()
+    ctx.fillStyle = "black"
+    ctx.font = "bold 14px Arial"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(label,point.x,point.y)
+}
+
+animate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

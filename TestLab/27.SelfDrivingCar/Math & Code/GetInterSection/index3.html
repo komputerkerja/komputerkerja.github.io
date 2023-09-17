@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{overflow: hidden; background-color: #5f5f5f;} 
+        #mycanvas{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: #c9c8c8;}       
+    </style>
+    <title>Document</title>
+</head><body><canvas id="mycanvas"></canvas><script>
+
+const canvas = document.querySelector('canvas')
+canvas.width=window.innerWidth*0.9
+canvas.height=window.innerHeight/2
+const ctx = canvas.getContext('2d')
+
+const mouse={x:0,y:0} 
+document.onmousemove=e=>{
+    mouse.x=e.x-((window.innerWidth-canvas.width)/2)
+    mouse.y=e.y-((window.innerHeight-canvas.height)/2)
+}
+
+const A={x: 150, y: 35}
+const B={x: 50, y: 150}
+const C={x: 30, y: 30}
+const D={x: 205, y: 150}
+
+let angel = 0
+let touch = false
+
+function animate(){
+    const len = 50
+    A.x=mouse.x+Math.cos(angel)*len
+    A.y=mouse.y-Math.sin(angel)*len
+    B.x=mouse.x-Math.cos(angel)*len
+    B.y=mouse.y+Math.sin(angel)*len
+    angel+=0.02
+
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+    ctx.beginPath()
+    ctx.moveTo(A.x,A.y)
+    ctx.lineTo(B.x,B.y)
+    ctx.moveTo(C.x,C.y)
+    ctx.lineTo(D.x,D.y)
+    ctx.stroke()
+    ctx.closePath()
+
+    drawDot(A, "A", 10, "black")
+    drawDot(B, "B", 10, "black")
+    drawDot(C, "C", 10, "black")
+    drawDot(D, "D", 10, "black")
+
+    const I=getInterSection(A,B,C,D)
+    touch = I.t>0 && I.t<1
+    if(touch) drawDot(I, "I", 10, "black")
+
+    requestAnimationFrame(animate)
+} animate()
+
+function getInterSection(A,B,C,D){
+    const top = (D.x-C.x)*(A.y-C.y)-(D.y-C.y)*(A.x-C.x)
+    const bottom = (D.y-C.y)*(B.x-A.x)-(D.x-C.x)*(B.y-A.y)    
+    const t = top/bottom
+    const x = LinerInterpolation(A.x,B.x,t)
+    const y = LinerInterpolation(A.y, B.y, t)
+    return ({x:x,y:y,t:t})
+}
+
+function LinerInterpolation(A,B, t){
+    return A+(B-A)*t
+}
+
+function drawDot(point, label, radius, color="black", inLine=true){
+    ctx.beginPath()
+    ctx.fillStyle=(inLine)?"white":"red"
+    ctx.arc(point.x,point.y,radius,0,Math.PI*2)
+    ctx.stroke()
+    ctx.fill()
+    ctx.fillStyle=(inLine)?color:"white"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.font = "bold 14px Arial"
+    ctx.fillText(label, point.x, point.y)
+    ctx.closePath()
+}
+
+</script></body></html>

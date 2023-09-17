@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{width: 100vw;height: 100%;overflow: hidden;background-color: #767676;}
+        #mycanvas{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: #dadada;}
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const canvas = document.querySelector('canvas')
+const canvasWidth=canvas.width=window.innerWidth
+const canvasHeight=canvas.height=window.innerHeight
+const ctx = canvas.getContext('2d')
+
+const mouse={x:0,y:0}
+document.onmousemove = e => {mouse.x=e.x;mouse.y=e.y}
+
+const a = {x:10, y:10, w:30, h:30}
+const b = {x:50, y:100, w:30, h:30}
+let range = 100
+
+function animate(){
+    ctx.clearRect(0,0,canvasWidth,canvasHeight)
+
+    a.x=mouse.x;
+    a.y=mouse.y;
+
+    let dx = a.x - b.x
+    let dy = a.y - b.y
+    // range = Math.sqrt((dx*dx)+(dy*dy))
+    range = Math.hypot(dx,dy)
+
+    writeRange(200,10,150,50,"Range: "+range+" px")
+    createSquare(a,"black","A","white")
+    createLine(a,b)
+    createSquare(b,"red","B","white")
+
+    requestAnimationFrame(animate)
+} animate()
+
+function writeRange(x,y,w,h,text){
+    ctx.beginPath()
+    ctx.fillStyle="black"
+    ctx.fillRect(x,y,w,h)
+    ctx.fillStyle="white"
+    ctx.textAlign="center"
+    ctx.textBaseline="middle"
+    ctx.font="bold 15px Arial"
+    ctx.fillText(text,x+(w/2),y+(h/2))
+    ctx.closePath()
+}
+
+function createSquare(point,color,text, textColor){
+    ctx.beginPath()
+    ctx.lineWidth=2
+    ctx.fillStyle=color
+    ctx.fillRect(point.x,point.y,point.w,point.h)
+    ctx.textAlign="center"
+    ctx.textBaseline="middle"
+    ctx.font="bold 15px Arial"
+    ctx.fillStyle=textColor
+    ctx.fillText(text,point.x+(point.w/2),point.y+(point.h/2))
+    ctx.closePath()
+}
+
+function createLine(pointA,pointB){
+    ctx.moveTo(pointA.x,pointA.y)
+    ctx.lineTo(pointB.x,pointB.y)
+    ctx.stroke()
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

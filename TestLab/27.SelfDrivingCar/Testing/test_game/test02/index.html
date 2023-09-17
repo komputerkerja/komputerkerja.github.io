@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{width: 100vw;height: 100%; overflow: hidden;background-color: #616161;}
+        #mycanvas{position: absolute;top: 50%; left: 50%; height: 50%; transform: translate(-50%,-50%);background-color: #c9c9c9;}
+    </style>
+</head>
+<body>
+
+    <canvas id="mycanvas"></canvas>
+    
+<script>
+
+const canvas = document.querySelector('canvas')
+canvas.width=window.innerWidth*0.8
+canvas.height=window.innerHeight/2
+const ctx = canvas.getContext('2d')
+ctx.lineWidth = 2
+
+let pos = {x:canvas.width/2, y: canvas.height/2}
+let line = 100
+let angel = 0
+
+const car = {x:canvas.width/2,y:canvas.height-50,w:30,h:50,keys:[],speed:0,acceleration:0.2,maxSpeed:3,friction:0.05,angel:0,update: function(){
+    if(this.keys.up) this.speed-=this.acceleration
+    if(this.keys.down) this.speed+=this.acceleration
+    if(this.speed>=this.maxSpeed)this.speed=this.maxSpeed
+    if(this.speed<=-this.maxSpeed)this.speed=-this.maxSpeed
+    if(this.speed>0) this.speed-=this.friction
+    if(this.speed<0) this.speed+=this.friction
+    if(Math.abs(this.speed)<=this.friction)this.speed=0
+
+    if(this.speed!=0){
+        const flip=(this.speed>0)?1:-1
+        if(this.keys.left) this.angel-=0.03*flip
+        if(this.keys.right) this.angel+=0.03*flip
+    }
+
+    this.x+=Math.sin(this.angel)*this.speed
+    this.y+=Math.cos(this.angel)*this.speed
+},draw:function(ctx){
+    ctx.save()
+    ctx.translate(this.x,this.y)
+    ctx.rotate(-this.angel)
+    ctx.beginPath()
+    ctx.fillRect(-this.w/2,-this.h/2,this.w,this.h)
+    ctx.closePath()
+    ctx.restore()
+}}
+
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+
+    car.update()
+    car.draw(ctx)
+
+    createCircle()
+    creatText("Learning...")
+    createRotateangel(0.01)
+    requestAnimationFrame(animate)
+}
+animate()
+
+function createCircle(){
+    ctx.beginPath()
+    ctx.arc(canvas.width/2,canvas.height/2,105,0,Math.PI*2)
+    ctx.stroke()
+    ctx.closePath()
+}
+function creatText(text){
+    ctx.beginPath()
+    ctx.font = "bold 14px Arial"
+    ctx.fillText(text, 10, 20)
+    ctx.closePath()
+}
+function createRotateangel(speed){
+    ctx.save()
+    ctx.beginPath()
+    ctx.translate(pos.x,pos.y)
+    ctx.rotate(angel)
+    ctx.moveTo(0,0)
+    ctx.lineTo(0,line)
+    ctx.stroke()
+    ctx.closePath()
+    ctx.restore()
+    angel+=speed
+}
+
+
+document.addEventListener('keydown', e => {
+    switch(e.key){
+        case 'w':
+            car.keys.up=true;
+            break;
+        case 'a':
+            car.keys.left=true;
+            break;
+        case 'd':
+            car.keys.right=true;
+            break;
+        case 's':
+            car.keys.down=true;
+    }
+})
+document.addEventListener('keyup', e => {
+    switch(e.key){
+        case 'w':
+            car.keys.up=false;
+            break;
+        case 'a':
+            car.keys.left=false;
+            break;
+        case 'd':
+            car.keys.right=false;
+            break;
+        case 's':
+            car.keys.down=false;
+    }
+})
+
+</script>
+</body>
+</html>
