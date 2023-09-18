@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', getTrackAndBrain('track3.json','brain01.json'))
+document.addEventListener('DOMContentLoaded', getTrackAndBrain('track4.json','brain01.json'))
 function gameInit(tracks, loadedBrain){
     const canvas = document.querySelector('canvas')
     const canvasWidth = canvas.width = window.innerWidth*0.9
@@ -7,7 +7,7 @@ function gameInit(tracks, loadedBrain){
     let animationId;
     let isAnimating = true;
     const road = new Road(canvasWidth/2, canvasWidth*0.9,3,tracks)
-    const N = 100
+    const N = 200
     const cars = generateAiCar(N)
     let bestCar = cars[0]; 
 
@@ -25,7 +25,7 @@ function gameInit(tracks, loadedBrain){
             car.brain=JSON.parse(localStorage.getItem('bestBrain'))
             if(i!=0 && car) NeuralNetwork.mutate(
                 car.brain ,
-                Math.random()/10
+                0.03
             )
         })
     }
