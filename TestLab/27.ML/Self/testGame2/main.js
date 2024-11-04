@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', getTrackAndBrain('track4.json','brain01.json'))
+document.addEventListener('DOMContentLoaded', getTrackAndBrain('track3.json','brain01.json'))
 function gameInit(tracks, loadedBrain){
     const canvas = document.querySelector('canvas')
     const canvasWidth = canvas.width = window.innerWidth*0.9

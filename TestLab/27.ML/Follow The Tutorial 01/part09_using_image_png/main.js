@@ -12,31 +12,31 @@ const cars = generateAiCar(N)
 let bestCar = cars[0]; 
 
 //BRAIN DARI FILE JSON
-// fetch("localstorage_brain.json")
-// .then(res => res.json())
-// .then(data => {
-//     let dataIter=0
-//     for(let i=0; i<cars.length; i++){
-//         if(i==0){
-//             console.log('ok')
-//             bestCar.brain=data[dataIter]
-//         }else{
-//             NeuralNetwork.mutate(cars[i].brain,0.5)
-//             cars[i].brain=data[dataIter]
-//         } 
-//         if(dataIter < data.length-1) dataIter++
-//         else dataIter=0
-//     }
-// })
-// .catch(err => console.log(err));
+fetch("localstorage_brain.json")
+.then(res => res.json())
+.then(data => {
+    let dataIter=0
+    for(let i=0; i<cars.length; i++){
+        if(i==0){
+            console.log('ok')
+            bestCar.brain=data[dataIter]
+        }else{
+            NeuralNetwork.mutate(cars[i].brain,0.5)
+            cars[i].brain=data[dataIter]
+        } 
+        if(dataIter < data.length-1) dataIter++
+        else dataIter=0
+    }
+})
+.catch(err => console.log(err));
 
 //BRAIN DARI LOCAL STORAGE BROWSER
-if(localStorage.getItem('bestBrain')){
-    cars.forEach((car,i)=>{
-        car.brain=JSON.parse(localStorage.getItem('bestBrain'))
-        if(i!=0) NeuralNetwork.mutate(car.brain,Math.random()/10)
-    })
-}
+// if(localStorage.getItem('bestBrain')){
+//     cars.forEach((car,i)=>{
+//         car.brain=JSON.parse(localStorage.getItem('bestBrain'))
+//         if(i!=0) NeuralNetwork.mutate(car.brain,Math.random()/10)
+//     })
+// }
 
 const trafics = [
     new Car(road.getLaneCount(1),canvasHeight*0.5, 30, 50, "DUMMY",2,getRandomColor()),
